@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GradInsight</title>
+</head>
+<body>
+  <h1>GradInsight</h1>
+
+  <button onclick="loadData()">Get Employment Rate</button>
+  <p id="output"></p>
+
+  <script>
+    function loadData() {
+      fetch("http://127.0.0.1:5000/analytics/employment-rate?university=National%20University%20of%20Singapore")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("output").innerText =
+            "Average Employment Rate: " + data.avg_employment_rate + "%";
+        });
+    }
+  </script>
+</body>
+</html>

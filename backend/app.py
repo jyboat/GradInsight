@@ -47,7 +47,7 @@ def years():
     })
 
 # ----------------------------
-# Combined Employment Analytics
+# Employment Analytics
 # ----------------------------
 @app.route("/analytics/employment")
 def employment_analytics():

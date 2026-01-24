@@ -81,7 +81,7 @@
             startYearInput.min = years.min;
             startYearInput.max = years.max;
             startYearInput.value = years.min;
-            
+
             endYearInput.min = years.min;
             endYearInput.max = years.max;
             endYearInput.value = years.max;
@@ -127,6 +127,14 @@
         }
 
         loadMetadata();
+        document.getElementById("startYear").addEventListener("change", (e) => {
+            document.getElementById("endYear").min = e.target.value;
+        });
+
+        document.getElementById("endYear").addEventListener("change", (e) => {
+            document.getElementById("startYear").max = e.target.value;
+        });
+
     </script>
 
 </body>

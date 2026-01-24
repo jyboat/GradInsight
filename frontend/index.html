@@ -1,23 +1,134 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>GradInsight</title>
+    <title>GradInsight</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        select,
+        input,
+        button {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>GradInsight</h1>
 
-  <button onclick="loadData()">Get Employment Rate</button>
-  <p id="output"></p>
+    <h1>GradInsight</h1>
+    <h2>Employment Rate Analysis</h2>
 
-  <script>
-    function loadData() {
-      fetch("http://127.0.0.1:5000/analytics/employment-rate?university=National%20University%20of%20Singapore")
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById("output").innerText =
-            "Average Employment Rate: " + data.avg_employment_rate + "%";
-        });
-    }
-  </script>
+    <label>University:</label>
+    <select id="universitySelect">
+        <option value="">All</option>
+    </select>
+
+    <label>Degree:</label>
+    <select id="degreeSelect">
+        <option value="">All</option>
+    </select>
+
+    <br><br>
+
+    <label>Start Year:</label>
+    <input type="number" id="startYear">
+
+    <label>End Year:</label>
+    <input type="number" id="endYear">
+
+    <br><br>
+
+    <button onclick="runAnalytics()">Run Analysis</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        const API_BASE = "http://127.0.0.1:5000";
+
+        async function loadMetadata() {
+            const universities = await fetch(`${API_BASE}/metadata/universities`).then(r => r.json());
+            const degrees = await fetch(`${API_BASE}/metadata/degrees`).then(r => r.json());
+            const years = await fetch(`${API_BASE}/metadata/years`).then(r => r.json());
+
+            universities.forEach(u => {
+                const opt = document.createElement("option");
+                opt.value = u;
+                opt.text = u;
+                document.getElementById("universitySelect").appendChild(opt);
+            });
+
+            degrees.forEach(d => {
+                const opt = document.createElement("option");
+                opt.value = d;
+                opt.text = d;
+                document.getElementById("degreeSelect").appendChild(opt);
+            });
+
+            const startYearInput = document.getElementById("startYear");
+            const endYearInput = document.getElementById("endYear");
+
+            // Set min, max, and default values based on dataset
+            startYearInput.min = years.min;
+            startYearInput.max = years.max;
+            startYearInput.value = years.min;
+            
+            endYearInput.min = years.min;
+            endYearInput.max = years.max;
+            endYearInput.value = years.max;
+        }
+
+        async function runAnalytics() {
+            const university = document.getElementById("universitySelect").value;
+            const degree = document.getElementById("degreeSelect").value;
+            const startYear = document.getElementById("startYear").value;
+            const endYear = document.getElementById("endYear").value;
+
+            if (startYear && endYear && parseInt(startYear) > parseInt(endYear)) {
+                document.getElementById("result").innerText =
+                    "Start year cannot be later than end year.";
+                return;
+            }
+
+            const params = new URLSearchParams();
+            if (university) params.append("university", university);
+            if (degree) params.append("degree", degree);
+            if (startYear) params.append("start_year", startYear);
+            if (endYear) params.append("end_year", endYear);
+
+            const res = await fetch(`${API_BASE}/analytics/employment-rate?${params}`);
+            const data = await res.json();
+
+            if (data.error) {
+                document.getElementById("result").innerText = data.error;
+                return;
+            }
+
+            document.getElementById("result").innerHTML = `
+  <p><strong>Filters Applied</strong></p>
+  <ul>
+    <li>University: ${university || "All"}</li>
+    <li>Degree: ${degree || "All"}</li>
+    <li>Years: ${startYear || "Any"} - ${endYear || "Any"}</li>
+  </ul>
+  <p><strong>Overall Employment Rate:</strong> ${data.overall_employment_rate}%</p>
+  <p><strong>Full-Time Employment Rate:</strong> ${data.full_time_employment_rate}%</p>
+`;
+
+        }
+
+        loadMetadata();
+    </script>
+
 </body>
+
 </html>

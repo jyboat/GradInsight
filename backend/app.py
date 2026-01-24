@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 import pandas as pd
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)   
 
 df = pd.read_csv("data/GraduateEmploymentSurvey.csv")
 
@@ -19,37 +21,67 @@ numeric_columns = [
 for col in numeric_columns:
     df[col] = pd.to_numeric(df[col], errors="coerce")
 
-UNIVERSITY_ALIASES = {
-    "NUS": "National University of Singapore",
-    "NTU": "Nanyang Technological University",
-    "SMU": "Singapore Management University",
-    "SIT": "Singapore Institute of Technology",
-    "SUSS": "Singapore University of Social Sciences",
-    "SUTD": "Singapore University of Technology and Design"
-}
+@app.route("/metadata/universities")
+def universities():
+    return jsonify(sorted(df["university"].unique().tolist()))
+
+@app.route("/metadata/degrees")
+def degrees():
+    return jsonify(sorted(df["degree"].dropna().str.strip().unique().tolist()))
+
+
+@app.route("/metadata/years")
+def years():
+    return jsonify({
+        "min": int(df["year"].min()),
+        "max": int(df["year"].max())
+    })
 
 @app.route("/analytics/employment-rate")
 def employment_rate():
     university = request.args.get("university")
+    degree = request.args.get("degree")
+    start_year = request.args.get("start_year", type=int)
+    end_year = request.args.get("end_year", type=int)
 
     data = df
+
+    # University alias handling
     if university:
-        university_full = UNIVERSITY_ALIASES.get(university.upper(), university)
-        data = data[data["university"] == university_full]
+        data = data[data["university"] == university]
+
+    # Degree filter
+    if degree:
+        data = data[data["degree"] == degree]
+
+    # Year range filter
+    if start_year:
+        data = data[data["year"] >= start_year]
+    if end_year:
+        data = data[data["year"] <= end_year]
 
     if data.empty:
         return jsonify({
-            "error": f"No data found for university: {university}"
+            "error": "No data found for the selected filters."
         }), 404
 
     result = {
-        "university": university,
-        "avg_employment_rate": round(
+        "filters": {
+            "university": university,
+            "degree": degree,
+            "start_year": start_year,
+            "end_year": end_year
+        },
+        "overall_employment_rate": round(
             data["employment_rate_overall"].mean(), 2
+        ),
+        "full_time_employment_rate": round(
+            data["employment_rate_ft_perm"].mean(), 2
         )
     }
 
     return jsonify(result)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

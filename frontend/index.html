@@ -3,6 +3,7 @@
 
 <head>
     <title>GradInsight</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,6 +22,8 @@
             font-size: 18px;
         }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -49,12 +52,19 @@
     <br><br>
 
     <button onclick="runAnalytics()">Run Analysis</button>
+    <button onclick="resetFilters()">Reset Filters</button>
 
     <div class="result" id="result"></div>
+    <canvas id="employmentChart" width="700" height="350"></canvas>
 
     <script>
         const API_BASE = "http://127.0.0.1:5000";
+        let chart;
+        let minYear, maxYear;
 
+        // ----------------------------
+        // Load metadata
+        // ----------------------------
         async function loadMetadata() {
             const universities = await fetch(`${API_BASE}/metadata/universities`).then(r => r.json());
             const degrees = await fetch(`${API_BASE}/metadata/degrees`).then(r => r.json());
@@ -64,77 +74,138 @@
                 const opt = document.createElement("option");
                 opt.value = u;
                 opt.text = u;
-                document.getElementById("universitySelect").appendChild(opt);
+                universitySelect.appendChild(opt);
             });
 
             degrees.forEach(d => {
                 const opt = document.createElement("option");
                 opt.value = d;
                 opt.text = d;
-                document.getElementById("degreeSelect").appendChild(opt);
+                degreeSelect.appendChild(opt);
             });
 
-            const startYearInput = document.getElementById("startYear");
-            const endYearInput = document.getElementById("endYear");
+            minYear = years.min;
+            maxYear = years.max;
 
-            // Set min, max, and default values based on dataset
-            startYearInput.min = years.min;
-            startYearInput.max = years.max;
-            startYearInput.value = years.min;
+            startYear.min = minYear;
+            startYear.max = maxYear;
+            startYear.value = minYear;
 
-            endYearInput.min = years.min;
-            endYearInput.max = years.max;
-            endYearInput.value = years.max;
+            endYear.min = minYear;
+            endYear.max = maxYear;
+            endYear.value = maxYear;
         }
 
+        // ----------------------------
+        // Run analytics
+        // ----------------------------
         async function runAnalytics() {
-            const university = document.getElementById("universitySelect").value;
-            const degree = document.getElementById("degreeSelect").value;
-            const startYear = document.getElementById("startYear").value;
-            const endYear = document.getElementById("endYear").value;
+            const university = universitySelect.value;
+            const degree = degreeSelect.value;
+            const start = startYear.value;
+            const end = endYear.value;
 
-            if (startYear && endYear && parseInt(startYear) > parseInt(endYear)) {
-                document.getElementById("result").innerText =
-                    "Start year cannot be later than end year.";
+            if (start && end && parseInt(start) > parseInt(end)) {
+                result.innerText = "Start year cannot be later than end year.";
                 return;
             }
 
             const params = new URLSearchParams();
             if (university) params.append("university", university);
             if (degree) params.append("degree", degree);
-            if (startYear) params.append("start_year", startYear);
-            if (endYear) params.append("end_year", endYear);
+            if (start) params.append("start_year", start);
+            if (end) params.append("end_year", end);
 
-            const res = await fetch(`${API_BASE}/analytics/employment-rate?${params}`);
+            const res = await fetch(`${API_BASE}/analytics/employment?${params}`);
             const data = await res.json();
 
             if (data.error) {
-                document.getElementById("result").innerText = data.error;
+                result.innerText = data.error;
                 return;
             }
 
-            document.getElementById("result").innerHTML = `
-  <p><strong>Filters Applied</strong></p>
-  <ul>
-    <li>University: ${university || "All"}</li>
-    <li>Degree: ${degree || "All"}</li>
-    <li>Years: ${startYear || "Any"} - ${endYear || "Any"}</li>
-  </ul>
-  <p><strong>Overall Employment Rate:</strong> ${data.overall_employment_rate}%</p>
-  <p><strong>Full-Time Employment Rate:</strong> ${data.full_time_employment_rate}%</p>
-`;
+            result.innerHTML = `
+    <p><strong>Filters Applied</strong></p>
+    <ul>
+      <li>University: ${university || "All"}</li>
+      <li>Degree: ${degree || "All"}</li>
+      <li>Years: ${start} - ${end}</li>
+    </ul>
+    <p><strong>Overall Employment Rate:</strong> ${data.summary.overall_employment_rate ?? "N/A"}%</p>
+    <p><strong>Full-Time Employment Rate:</strong> ${data.summary.full_time_employment_rate ?? "N/A"}%</p>
+  `;
 
+            renderChart(data.trend);
         }
 
+        function resetFilters() {
+            // Reset dropdowns
+            universitySelect.value = "";
+            degreeSelect.value = "";
+
+            // Reset year inputs
+            startYear.value = minYear;
+            endYear.value = maxYear;
+            startYear.max = maxYear;
+            endYear.min = minYear;
+
+            // Clear results
+            result.innerHTML = "";
+
+            // Clear chart
+            if (chart) {
+                chart.destroy();
+                chart = null;
+            }
+        }
+
+
+        // ----------------------------
+        // Render Chart
+        // ----------------------------
+        function renderChart(trend) {
+            const ctx = document.getElementById("employmentChart").getContext("2d");
+
+            if (chart) chart.destroy();
+
+            chart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: trend.years,
+                    datasets: [
+                        {
+                            label: "Overall Employment Rate",
+                            data: trend.overall,
+                            borderWidth: 2,
+                            spanGaps: true
+                        },
+                        {
+                            label: "Full-Time Employment Rate",
+                            data: trend.full_time,
+                            borderWidth: 2,
+                            spanGaps: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // ----------------------------
+        // Init
+        // ----------------------------
         loadMetadata();
-        document.getElementById("startYear").addEventListener("change", (e) => {
-            document.getElementById("endYear").min = e.target.value;
-        });
 
-        document.getElementById("endYear").addEventListener("change", (e) => {
-            document.getElementById("startYear").max = e.target.value;
-        });
-
+        startYear.addEventListener("change", e => endYear.min = e.target.value);
+        endYear.addEventListener("change", e => startYear.max = e.target.value);
     </script>
 
 </body>

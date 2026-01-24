@@ -3,8 +3,11 @@ import pandas as pd
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)   
+CORS(app)
 
+# ----------------------------
+# Load and preprocess dataset
+# ----------------------------
 df = pd.read_csv("data/GraduateEmploymentSurvey.csv")
 
 numeric_columns = [
@@ -21,14 +24,20 @@ numeric_columns = [
 for col in numeric_columns:
     df[col] = pd.to_numeric(df[col], errors="coerce")
 
+# ----------------------------
+# Metadata endpoints
+# ----------------------------
 @app.route("/metadata/universities")
 def universities():
-    return jsonify(sorted(df["university"].unique().tolist()))
+    return jsonify(
+        sorted(df["university"].dropna().str.strip().unique().tolist())
+    )
 
 @app.route("/metadata/degrees")
 def degrees():
-    return jsonify(sorted(df["degree"].dropna().str.strip().unique().tolist()))
-
+    return jsonify(
+        sorted(df["degree"].dropna().str.strip().unique().tolist())
+    )
 
 @app.route("/metadata/years")
 def years():
@@ -37,8 +46,11 @@ def years():
         "max": int(df["year"].max())
     })
 
-@app.route("/analytics/employment-rate")
-def employment_rate():
+# ----------------------------
+# Combined Employment Analytics
+# ----------------------------
+@app.route("/analytics/employment")
+def employment_analytics():
     university = request.args.get("university")
     degree = request.args.get("degree")
     start_year = request.args.get("start_year", type=int)
@@ -46,42 +58,61 @@ def employment_rate():
 
     data = df
 
-    # University alias handling
+    # Apply filters
     if university:
         data = data[data["university"] == university]
-
-    # Degree filter
     if degree:
         data = data[data["degree"] == degree]
-
-    # Year range filter
     if start_year:
         data = data[data["year"] >= start_year]
     if end_year:
         data = data[data["year"] <= end_year]
 
     if data.empty:
-        return jsonify({
-            "error": "No data found for the selected filters."
-        }), 404
+        return jsonify({"error": "No data found for the selected filters."}), 404
 
-    result = {
+    # ---- Summary statistics ----
+    overall_mean = data["employment_rate_overall"].mean()
+    ft_mean = data["employment_rate_ft_perm"].mean()
+
+    summary = {
+        "overall_employment_rate": round(overall_mean, 2) if pd.notnull(overall_mean) else None,
+        "full_time_employment_rate": round(ft_mean, 2) if pd.notnull(ft_mean) else None
+    }
+
+    # ---- Trend analysis ----
+    trend_df = (
+        data.groupby("year")[["employment_rate_overall", "employment_rate_ft_perm"]]
+        .mean()
+        .reset_index()
+        .sort_values("year")
+    )
+
+    # Drop years with no usable employment data (e.g. incomplete 2023)
+    trend_df = trend_df.dropna(
+        subset=["employment_rate_overall", "employment_rate_ft_perm"],
+        how="all"
+    )
+
+    # Convert NaN → None (JSON-safe)
+    trend_df = trend_df.where(pd.notnull(trend_df), None)
+
+    trend = {
+        "years": trend_df["year"].tolist(),
+        "overall": trend_df["employment_rate_overall"].tolist(),
+        "full_time": trend_df["employment_rate_ft_perm"].tolist()
+    }
+
+    return jsonify({
         "filters": {
             "university": university,
             "degree": degree,
             "start_year": start_year,
             "end_year": end_year
         },
-        "overall_employment_rate": round(
-            data["employment_rate_overall"].mean(), 2
-        ),
-        "full_time_employment_rate": round(
-            data["employment_rate_ft_perm"].mean(), 2
-        )
-    }
-
-    return jsonify(result)
-
+        "summary": summary,
+        "trend": trend
+    })
 
 if __name__ == "__main__":
     app.run(debug=True)

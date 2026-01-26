@@ -1,3 +1,5 @@
 flask
 pandas
 flask-cors
+matplotlib
+seaborn

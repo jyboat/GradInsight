@@ -255,32 +255,32 @@ async function runSalaryComparison() {
   });
 }
 
-async function runTrends() {
-  const metric = document.getElementById("trendMetric").value;
+// async function runTrends() {
+//   const metric = document.getElementById("trendMetric").value;
 
-  const res = await fetch(`${API_BASE}/analytics/trends?metric=${metric}`);
-  const data = await res.json();
+//   const res = await fetch(`${API_BASE}/analytics/trends?metric=${metric}`);
+//   const data = await res.json();
 
-  if (data.error) {
-    document.getElementById("trendResult").innerText = data.error;
-    return;
-  }
+//   if (data.error) {
+//     document.getElementById("trendResult").innerText = data.error;
+//     return;
+//   }
 
-  document.getElementById("trendResult").innerHTML =
-    `<p><strong>Metric:</strong> ${metric}</p>`;
+//   document.getElementById("trendResult").innerHTML =
+//     `<p><strong>Metric:</strong> ${metric}</p>`;
 
-  const ctx = document.getElementById("trendChart").getContext("2d");
-  if (trendChart) trendChart.destroy();
+//   const ctx = document.getElementById("trendChart").getContext("2d");
+//   if (trendChart) trendChart.destroy();
 
-  trendChart = new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: data.years,
-      datasets: [{ label: "Value", data: data.values, borderWidth: 2, spanGaps: true }]
-    },
-    options: { responsive: true }
-  });
-}
+//   trendChart = new Chart(ctx, {
+//     type: "line",
+//     data: {
+//       labels: data.years,
+//       datasets: [{ label: "Value", data: data.values, borderWidth: 2, spanGaps: true }]
+//     },
+//     options: { responsive: true }
+//   });
+// }
 
 function selectAllSalary() {
   Array.from(salaryItemsBox.querySelectorAll("input[type=checkbox]"))

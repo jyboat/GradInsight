@@ -114,5 +114,125 @@ def employment_analytics():
         "trend": trend
     })
 
+# ----------------------------
+# Analytics Function 2: Salary Distribution & Comparison
+# ----------------------------
+@app.route("/analytics/salary-comparison")
+def salary_comparison():
+    year = request.args.get("year", type=int)
+    group_by = request.args.get("group_by", default="university")  # university or degree
+
+    selected_universities = request.args.getlist("universities") 
+    selected_degrees = request.args.getlist("degrees")            
+
+    if year is None:
+        return jsonify({"error": "Missing required parameter: year"}), 400
+    if group_by not in ["university", "degree"]:
+        return jsonify({"error": "group_by must be 'university' or 'degree'"}), 400
+
+    data = df.copy()
+    data = data[data["year"] == year]
+
+    if group_by == "university" and selected_universities:
+        data = data[data["university"].isin(selected_universities)]
+
+    if group_by == "degree" and selected_degrees:
+        data = data[data["degree"].isin(selected_degrees)]
+
+    data = data.dropna(subset=["gross_monthly_mean", "gross_monthly_median"])
+
+    if data.empty:
+        return jsonify({"error": "No salary data found for the selected filters."}), 404
+
+    grouped = (
+        data.groupby(group_by)[
+            ["gross_monthly_mean", "gross_monthly_median", "gross_mthly_25_percentile", "gross_mthly_75_percentile"]
+        ]
+        .mean()
+        .reset_index()
+        .sort_values("gross_monthly_median", ascending=False)
+    )
+
+    if (group_by == "university" and not selected_universities) or (group_by == "degree" and not selected_degrees):
+        grouped = grouped.head(5)
+
+    grouped = grouped.where(pd.notnull(grouped), None)
+
+    return jsonify({
+        "filters": {
+            "year": year,
+            "group_by": group_by,
+            "universities": selected_universities,
+            "degrees": selected_degrees
+        },
+        "labels": grouped[group_by].tolist(),
+        "mean": grouped["gross_monthly_mean"].tolist(),
+        "median": grouped["gross_monthly_median"].tolist(),
+        "p25": grouped["gross_mthly_25_percentile"].tolist(),
+        "p75": grouped["gross_mthly_75_percentile"].tolist()
+    })
+
+# ----------------------------
+# Analytics Function 3: Trend Analysis Over Time
+# ----------------------------
+@app.route("/analytics/trends")
+def trends():
+    metric = request.args.get("metric", default="employment_rate_overall")
+    university = request.args.get("university")
+    degree = request.args.get("degree")
+    start_year = request.args.get("start_year", type=int)
+    end_year = request.args.get("end_year", type=int)
+
+    allowed_metrics = [
+        "employment_rate_overall",
+        "employment_rate_ft_perm",
+        "basic_monthly_mean",
+        "basic_monthly_median",
+        "gross_monthly_mean",
+        "gross_monthly_median"
+    ]
+    if metric not in allowed_metrics:
+        return jsonify({"error": f"Invalid metric. Allowed: {allowed_metrics}"}), 400
+
+    data = df.copy()
+
+    if university:
+        data = data[data["university"] == university]
+    if degree:
+        data = data[data["degree"] == degree]
+    if start_year:
+        data = data[data["year"] >= start_year]
+    if end_year:
+        data = data[data["year"] <= end_year]
+
+    trend_df = (
+        data.groupby("year")[metric]
+        .mean()
+        .reset_index()
+        .sort_values("year")
+    )
+
+    trend_df = trend_df.dropna(subset=[metric], how="all")
+
+    if trend_df.empty:
+        return jsonify({"error": "No trend data found for the selected filters."}), 404
+
+    # YoY % change
+    trend_df["yoy_pct"] = trend_df[metric].pct_change() * 100
+    trend_df = trend_df.where(pd.notnull(trend_df), None)
+
+    return jsonify({
+        "filters": {
+            "university": university,
+            "degree": degree,
+            "start_year": start_year,
+            "end_year": end_year,
+            "metric": metric
+        },
+        "years": trend_df["year"].tolist(),
+        "values": trend_df[metric].tolist(),
+        "yoy_pct": trend_df["yoy_pct"].tolist()
+    })
+
 if __name__ == "__main__":
     app.run(debug=True)

@@ -24,10 +24,14 @@ export function Step1Universities({
     onChange(universities)
   }
 
+  function clearAll() {
+    onChange([])
+  }
+
   return (
     <div className="space-y-3">
-      {/* Header row: title + button */}
-      <div className="flex items-center justify-end">
+      {/* Header actions */}
+      <div className="flex justify-end gap-2">
         <Button
           variant="outline"
           size="sm"
@@ -35,6 +39,15 @@ export function Step1Universities({
           disabled={selected.length === universities.length}
         >
           Select All
+        </Button>
+
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={clearAll}
+          disabled={selected.length === 0}
+        >
+          Clear All
         </Button>
       </div>
 

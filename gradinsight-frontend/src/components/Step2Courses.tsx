@@ -35,44 +35,57 @@ export function Step2Courses({
     onChange(availableCourses)
   }
 
+  function clearAll() {
+    onChange([])
+  }
+
   return (
-    <div className="space-y-2">
-      <div className="flex justify-end">
+    <div className="space-y-3">
+      {/* Header actions */}
+      <div className="flex justify-end gap-2">
         <Button
           variant="outline"
           size="sm"
           onClick={selectAll}
-          disabled={availableCourses.length === 0}
+          disabled={
+            availableCourses.length === 0 ||
+            selectedCourses.length === availableCourses.length
+          }
         >
           Select All
         </Button>
+
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={clearAll}
+          disabled={selectedCourses.length === 0}
+        >
+          Clear All
+        </Button>
       </div>
 
-      {
-        availableCourses.map(course => (
-          <div key={course} className="flex items-center gap-2">
-            <label
-              key={course}
-              className="flex items-center gap-2 cursor-pointer"
-            >
-              <Checkbox
-                checked={selectedCourses.includes(course)}
-                onCheckedChange={() => toggle(course)}
-              />
-              <span>{course}</span>
-            </label>
+      {/* Checkbox list */}
+      <div className="space-y-1">
+        {availableCourses.map(course => (
+          <label
+            key={course}
+            className="flex items-center gap-2 cursor-pointer"
+          >
+            <Checkbox
+              checked={selectedCourses.includes(course)}
+              onCheckedChange={() => toggle(course)}
+            />
+            <span>{course}</span>
+          </label>
+        ))}
+      </div>
 
-          </div>
-        ))
-      }
-
-      {
-        availableCourses.length === 0 && (
-          <p className="text-sm text-slate-500">
-            No courses available for the selected universities.
-          </p>
-        )
-      }
-    </div >
+      {availableCourses.length === 0 && (
+        <p className="text-sm text-slate-500">
+          No courses available for the selected universities.
+        </p>
+      )}
+    </div>
   )
 }

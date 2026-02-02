@@ -28,7 +28,8 @@ function App() {
         setLoading(true)
         setError(null)
 
-        const [full, years] = await Promise.all([
+        // 1. Fetch data
+        const [full, yearsData] = await Promise.all([
           fetchMetadataFull(),
           fetchYears(),
         ])
@@ -36,10 +37,18 @@ function App() {
         if (cancelled) return
 
         setMetadata(full)
-        setYearsRange(years)
 
-        // Reset years to dataset range
-        setYears({ start: years.min, end: years.max })
+        // 2. Fix: Calculate min/max from the years array (strings)
+        const yearNumbers = yearsData.map((y: any) => parseInt(y, 10)).filter((n: number) => !isNaN(n))
+        
+        if (yearNumbers.length > 0) {
+          const min = Math.min(...yearNumbers)
+          const max = Math.max(...yearNumbers)
+          
+          setYearsRange({ min, max })
+          setYears({ start: min, end: max })
+        }
+
       } catch (e) {
         if (cancelled) return
         setError(e instanceof Error ? e.message : "Failed to load metadata")

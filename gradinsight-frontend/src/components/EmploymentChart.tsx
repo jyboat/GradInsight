@@ -34,7 +34,8 @@ export function EmploymentChart({ series }: Props) {
 
   const labels = series[0].years
 
-  const datasets = series.map((s, idx) => ({
+  // const datasets = series.map((s, idx) => ({
+  const datasets = series.map((s) => ({
     label: `${s.degree} (${s.university})`,
     data: s.overall_employment_rate,
     borderWidth: 2,

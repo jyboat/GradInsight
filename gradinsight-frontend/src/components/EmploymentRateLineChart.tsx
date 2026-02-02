@@ -39,7 +39,7 @@ const COLORS = [
   "#0891b2",
 ]
 
-export function EmploymentChart({ series, aggregate }: Props) {
+export function EmploymentRateLineChart({ series, aggregate }: Props) {
   if (series.length === 0) return null
 
   // ----------------------------

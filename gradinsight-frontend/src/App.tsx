@@ -1,7 +1,7 @@
-import { Step1Universities } from "@/components/Step1Universities"
-import { Step2Courses } from "@/components/Step2Courses"
-import { Step3YearRange } from "@/components/Step3YearRange"
-import { EmploymentChart } from "@/components/EmploymentChart"
+import { EmploymentUniversitiesSelector } from "@/components/EmploymentUniversitiesSelector"
+import { EmploymentCoursesSelector } from "@/components/EmploymentCoursesSelector"
+import { EmploymentYearRangeSelector } from "@/components/EmploymentYearRangeSelector"
+import { EmploymentRateLineChart } from "@/components/EmploymentRateLineChart"
 import { useEffect, useMemo, useState } from "react"
 import { fetchMetadataFull, fetchYears, type MetadataRow } from "@/utils/api"
 
@@ -127,12 +127,23 @@ function App() {
         {loading && <p className="text-slate-600">Loading metadata…</p>}
         {error && <p className="text-red-600">{error}</p>}
 
+        <div className="border-b pb-3">
+          <h2 className="text-xl font-semibold">
+            Employment Rate Analysis
+          </h2>
+          <p className="text-sm text-slate-600">
+            Explore overall graduate employment outcomes by university, course, and year.
+          </p>
+        </div>
+
         {!loading && !error && (
           <>
             {/* STEP 1 */}
             <div>
-              <h2 className="text-lg font-semibold">Step 1: Select University(s)</h2>
-              <Step1Universities
+              <h3 className="text-base font-semibold">
+                Step 1: Select University(s)
+              </h3>
+              <EmploymentUniversitiesSelector
                 universities={allUniversities}
                 selected={selectedUniversities}
                 onChange={(vals) => {
@@ -147,7 +158,7 @@ function App() {
             {selectedUniversities.length > 0 && (
               <div>
                 <h2 className="text-lg font-semibold">Step 2: Select Course(s)</h2>
-                <Step2Courses
+                <EmploymentCoursesSelector
                   coursesByUniversity={coursesByUniversity}
                   selectedUniversities={selectedUniversities}
                   selectedCourses={selectedCourses}
@@ -163,7 +174,7 @@ function App() {
             {selectedCourses.length > 0 && yearsRange && (
               <div>
                 <h2 className="text-lg font-semibold">Step 3: Select Year Range</h2>
-                <Step3YearRange
+                <EmploymentYearRangeSelector
                   startYear={years.start}
                   endYear={years.end}
                   minYear={yearsRange.min}
@@ -198,10 +209,19 @@ function App() {
 
             {/* Chart */}
             {result?.series && (
-              <EmploymentChart
-                series={result.series}
-                aggregate={displayMode === "aggregate"}
-              />
+              <div className="mt-6 space-y-2">
+                <h3 className="text-lg font-semibold">
+                  Employment Rate Over Time
+                </h3>
+                <p className="text-sm text-slate-600">
+                  Overall employment rate (%) of graduates across selected years.
+                </p>
+
+                <EmploymentRateLineChart
+                  series={result.series}
+                  aggregate={displayMode === "aggregate"}
+                />
+              </div>
             )}
           </>
         )}

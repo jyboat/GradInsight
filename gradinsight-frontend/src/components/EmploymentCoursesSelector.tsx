@@ -10,7 +10,7 @@ type Props = {
   onChange: (courses: string[]) => void
 }
 
-export function Step2Courses({
+export function EmploymentCoursesSelector({
   coursesByUniversity,
   selectedUniversities,
   selectedCourses,

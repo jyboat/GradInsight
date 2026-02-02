@@ -8,7 +8,7 @@ type Props = {
   onChange: (years: { start: number; end: number }) => void
 }
 
-export function Step3YearRange({
+export function EmploymentYearRangeSelector({
   startYear,
   endYear,
   minYear,

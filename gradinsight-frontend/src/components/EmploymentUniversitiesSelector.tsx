@@ -7,7 +7,7 @@ type Props = {
   onChange: (vals: string[]) => void
 }
 
-export function Step1Universities({
+export function EmploymentUniversitiesSelector({
   universities,
   selected,
   onChange,

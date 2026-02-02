@@ -2,7 +2,7 @@ import { Step1Universities } from "@/components/Step1Universities"
 import { Step2Courses } from "@/components/Step2Courses"
 import { Step3YearRange } from "@/components/Step3YearRange"
 import { useEffect, useMemo, useState } from "react"
-import { fetchMetadataFull, fetchYears, type MetadataRow } from "@/lib/api"
+import { fetchMetadataFull, fetchYears, type MetadataRow } from "@/utils/api"
 import { EmploymentChart } from "@/components/EmploymentChart"
 
 

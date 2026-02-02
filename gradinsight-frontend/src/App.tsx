@@ -177,7 +177,14 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-50 p-6">
       <div className="max-w-3xl mx-auto space-y-6">
-        <h1 className="text-3xl font-bold">GradInsight</h1>
+        <div className="flex items-center gap-3">
+          <img
+            src="/logo.png"
+            alt="GradInsight logo"
+            className="h-8 w-8"
+          />
+          <h1 className="text-3xl font-bold">GradInsight</h1>
+        </div>
 
         {loading && <p className="text-slate-600">Loading universities and courses…</p>}
         {error && <p className="text-red-600">Error: {error}</p>}

@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react"
 import { fetchMetadataFull, fetchYears, type MetadataRow } from "@/lib/api"
 import { EmploymentChart } from "@/components/EmploymentChart"
 
+
 function App() {
   const [metadata, setMetadata] = useState<MetadataRow[]>([])
   const [yearsRange, setYearsRange] = useState<{ min: number; max: number } | null>(null)
@@ -14,6 +15,12 @@ function App() {
   const [selectedCourses, setSelectedCourses] = useState<string[]>([])
   const [result, setResult] = useState<any>(null)
   const [running, setRunning] = useState(false)
+
+  const API_BASE = import.meta.env.VITE_API_BASE
+
+  if (!API_BASE) {
+    throw new Error("VITE_API_BASE is not defined. Check your .env file.")
+  }
 
   const [years, setYears] = useState({
     start: 2013,
@@ -74,26 +81,34 @@ function App() {
     setRunning(true)
     setResult(null)
 
-    const params = new URLSearchParams()
-
-    selectedUniversities.forEach(u =>
-      params.append("universities", u)
-    )
-    selectedCourses.forEach(d =>
-      params.append("degrees", d)
-    )
-
-    params.append("start_year", String(years.start))
-    params.append("end_year", String(years.end))
+    const payload = {
+      universities: selectedUniversities,
+      degrees: selectedCourses,
+      start_year: years.start,
+      end_year: years.end,
+    }
 
     const res = await fetch(
-      `${import.meta.env.VITE_API_BASE}/analytics/employment?${params.toString()}`
+      `${API_BASE}/analytics/employment`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      }
     )
+
+    if (!res.ok) {
+      const text = await res.text()
+      throw new Error(`Request failed: ${res.status} ${text}`)
+    }
 
     const data = await res.json()
     setResult(data)
     setRunning(false)
   }
+
 
   return (
     <div className="min-h-screen bg-slate-50 p-6">

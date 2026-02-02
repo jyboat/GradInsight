@@ -49,12 +49,15 @@ def years():
 # ----------------------------
 # Analytics Funciton 1: Employment Analytics
 # ----------------------------
-@app.route("/analytics/employment")
+@app.route("/analytics/employment", methods=["POST"])
 def employment_analytics():
-    universities = request.args.getlist("universities")
-    degrees = request.args.getlist("degrees")
-    start_year = request.args.get("start_year", type=int)
-    end_year = request.args.get("end_year", type=int)
+    payload = request.get_json(silent=True) or {}
+
+    universities = payload.get("universities", [])
+    degrees = payload.get("degrees", [])
+    start_year = payload.get("start_year")
+    end_year = payload.get("end_year")
+
 
     if start_year is None or end_year is None:
         return jsonify({"error": "start_year and end_year are required"}), 400

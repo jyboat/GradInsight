@@ -358,6 +358,23 @@ function formatCurrency(val) {
   return `$${Math.round(val).toLocaleString()}`;
 }
 
+function selectAllUniversities() {
+  const checkboxes = universityBox.querySelectorAll("input[type=checkbox]");
+  checkboxes.forEach(cb => cb.checked = true);
+
+  // Trigger step progression
+  onUniversityChange();
+}
+
+function selectAllDegrees() {
+  const checkboxes = degreeBox.querySelectorAll("input[type=checkbox]");
+  checkboxes.forEach(cb => cb.checked = true);
+
+  // Trigger step progression
+  onDegreeChange();
+}
+
+
 // ----------------------------
 // Init
 // ----------------------------

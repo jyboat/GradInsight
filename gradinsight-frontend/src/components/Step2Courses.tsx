@@ -37,36 +37,42 @@ export function Step2Courses({
 
   return (
     <div className="space-y-2">
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={selectAll}
-        disabled={availableCourses.length === 0}
-      >
-        Select All
-      </Button>
+      <div className="flex justify-end">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={selectAll}
+          disabled={availableCourses.length === 0}
+        >
+          Select All
+        </Button>
+      </div>
 
-      {availableCourses.map(course => (
-        <div key={course} className="flex items-center gap-2">
-          <label
-            key={course}
-            className="flex items-center gap-2 cursor-pointer"
-          >
-            <Checkbox
-              checked={selectedCourses.includes(course)}
-              onCheckedChange={() => toggle(course)}
-            />
-            <span>{course}</span>
-          </label>
+      {
+        availableCourses.map(course => (
+          <div key={course} className="flex items-center gap-2">
+            <label
+              key={course}
+              className="flex items-center gap-2 cursor-pointer"
+            >
+              <Checkbox
+                checked={selectedCourses.includes(course)}
+                onCheckedChange={() => toggle(course)}
+              />
+              <span>{course}</span>
+            </label>
 
-        </div>
-      ))}
+          </div>
+        ))
+      }
 
-      {availableCourses.length === 0 && (
-        <p className="text-sm text-slate-500">
-          No courses available for the selected universities.
-        </p>
-      )}
-    </div>
+      {
+        availableCourses.length === 0 && (
+          <p className="text-sm text-slate-500">
+            No courses available for the selected universities.
+          </p>
+        )
+      }
+    </div >
   )
 }

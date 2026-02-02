@@ -132,15 +132,18 @@ function App() {
           <>
             {/* STEP 1 */}
             <div>
-              <h2 className="text-lg font-semibold">
-                Step 1: Select University(s)
-              </h2>
+              <div className="flex items-center justify-between">
+                <h2 className="text-lg font-semibold">
+                  Step 1: Select University(s)
+                </h2>
+              </div>
+
               <Step1Universities
                 universities={allUniversities}
                 selected={selectedUniversities}
                 onChange={(vals) => {
                   setSelectedUniversities(vals)
-                  setSelectedCourses([]) // reset downstream
+                  setSelectedCourses([])
                 }}
               />
             </div>
@@ -148,9 +151,13 @@ function App() {
             {/* STEP 2 */}
             {selectedUniversities.length > 0 && (
               <div>
-                <h2 className="text-lg font-semibold">
-                  Step 2: Select Course(s)
-                </h2>
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-semibold">
+                    Step 2: Select Course(s)
+                  </h2>
+                  {/* Select All handled inside Step2Courses */}
+                </div>
+
                 <Step2Courses
                   coursesByUniversity={coursesByUniversity}
                   selectedUniversities={selectedUniversities}

@@ -45,16 +45,17 @@ function App() {
 
         setMetadata(full)
 
-        // 2. Fix: Calculate min/max from the years array (strings)
-        const yearNumbers = yearsData.map((y: any) => parseInt(y, 10)).filter((n: number) => !isNaN(n))
-        
-        if (yearNumbers.length > 0) {
-          const min = Math.min(...yearNumbers)
-          const max = Math.max(...yearNumbers)
-          
-          setYearsRange({ min, max })
-          setYears({ start: min, end: max })
-        }
+        // 2. Use min/max directly from backend
+        setYearsRange({
+          min: yearsData.min,
+          max: yearsData.max,
+        })
+
+        setYears({
+          start: yearsData.min,
+          end: yearsData.max,
+        })
+
 
       } catch (e) {
         if (cancelled) return

@@ -42,39 +42,42 @@ const COLORS = [
 export function EmploymentRateLineChart({ series, aggregate }: Props) {
   if (series.length === 0) return null
 
-  // ----------------------------
-  // Aggregate by university if needed
-  // ----------------------------
+  console.log("DEBUG: series content", series);
+
   const processed = aggregate
     ? Object.values(
-        series.reduce((acc, s) => {
-          if (!acc[s.university]) {
-            acc[s.university] = {
-              label: s.university,
-              years: s.years,
-              values: s.overall_employment_rate.map(v =>
-                v === null ? [] : [v]
-              ),
-            }
-          } else {
-            s.overall_employment_rate.forEach((v, i) => {
-              if (v !== null) acc[s.university].values[i].push(v)
-            })
+      series.reduce((acc, s) => {
+        if (!acc[s.university]) {
+          acc[s.university] = {
+            label: s.university,
+            years: s.years,
+            values: s.overall_employment_rate.map(v => (v === null ? [] : [v])),
+            // NEW: Initialize source array
+            sources: s.data_source || []
           }
-          return acc
-        }, {} as Record<string, any>)
-      ).map((u: any) => ({
-        label: u.label,
-        years: u.years,
-        data: u.values.map((arr: number[]) =>
-          arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : null
-        ),
-      }))
+        } else {
+          s.overall_employment_rate.forEach((v, i) => {
+            if (v !== null) acc[s.university].values[i].push(v)
+          })
+        }
+        return acc
+      }, {} as Record<string, any>)
+    ).map((u: any) => ({
+      label: u.label,
+      years: u.years,
+      data: u.values.map((arr: number[]) =>
+        arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : null
+      ),
+      // NEW: Pass the source array forward
+      sources: u.sources
+    }))
     : series.map(s => ({
-        label: `${s.degree} (${s.university})`,
-        years: s.years,
-        data: s.overall_employment_rate,
-      }))
+      label: `${s.degree} (${s.university})`,
+      years: s.years,
+      data: s.overall_employment_rate,
+      // NEW: Map individual series sources
+      sources: s.data_source
+    }))
 
   const labels = processed[0].years
 
@@ -86,6 +89,14 @@ export function EmploymentRateLineChart({ series, aggregate }: Props) {
     borderWidth: 2,
     pointRadius: 3,
     spanGaps: false,
+    // --- DASHED LINE LOGIC ---
+    segment: {
+      borderDash: (ctx: any) => {
+        // If the 'next' point (p1) is predicted, dash the line leading to it
+        const isPredicted = s.sources && s.sources[ctx.p1DataIndex] === 'predicted';
+        return isPredicted ? [6, 6] : undefined;
+      }
+    }
   }))
 
   return (
@@ -95,15 +106,19 @@ export function EmploymentRateLineChart({ series, aggregate }: Props) {
         options={{
           responsive: true,
           plugins: {
-            legend: {
-              position: "bottom",
-            },
+            legend: { position: "bottom" },
           },
           scales: {
             y: {
-              beginAtZero: true,
-              max: 100,
+              beginAtZero: false,
+              ticks: {
+                callback: (value) => `${value}%` // Add % back to labels
+              }
             },
+            x: {
+              // Ensures the line touches the edges of the chart
+              bounds: 'data'
+            }
           },
         }}
       />

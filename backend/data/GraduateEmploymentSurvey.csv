@@ -15,7 +15,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2013,Nanyang Technological University,College of Engineering,Materials Engineering,82.5,78.9,2989.0,3000.0,3096.0,3000.0,2800.0,3300.0
 2013,Nanyang Technological University,College of Engineering,Mechanical Engineering,91.6,89.5,3125.0,3000.0,3226.0,3100.0,3000.0,3500.0
 2013,Nanyang Technological University,College of Engineering,Maritime Studies,95.6,93.3,3050.0,3000.0,3111.0,3000.0,2850.0,3200.0
-2013,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Art, Design & Media",81.6,61.4,2639.0,2500.0,2638.0,2500.0,2300.0,2900.0
+2013,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Arts, Design and Media",81.6,61.4,2639.0,2500.0,2638.0,2500.0,2300.0,2900.0
 2013,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Chinese,85.1,80.5,2818.0,2800.0,2924.0,3000.0,2600.0,3300.0
 2013,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Communication Studies,89.4,79.6,2893.0,2930.0,2956.0,3000.0,2700.0,3250.0
 2013,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Economics,89.9,83.5,3085.0,3000.0,3148.0,3000.0,2800.0,3545.0
@@ -23,17 +23,17 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2013,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Linguistics and Multilingual Studies,90.6,81.3,2691.0,2600.0,2725.0,2625.0,2475.0,3018.0
 2013,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Psychology,82.4,71.8,3007.0,3000.0,3061.0,3000.0,2750.0,3255.0
 2013,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Sociology,74.4,55.8,2980.0,3000.0,3082.0,3100.0,2800.0,3310.0
-2013,Nanyang Technological University,College of Sciences,Biomedical Sciences (Traditional Chinese Medicine),90.7,88.4,2840.0,2800.0,2883.0,2807.0,2700.0,3000.0
-2013,Nanyang Technological University,College of Sciences,Biological Sciences,78.6,68.1,2881.0,2900.0,3002.0,3000.0,2700.0,3250.0
-2013,Nanyang Technological University,College of Sciences,Chemistry & Biological Chemistry,79.8,68.9,2993.0,3000.0,3083.0,3100.0,2800.0,3400.0
+2013,Nanyang Technological University,College of Sciences,Biomedical Science (Traditional Chinese Medicine),90.7,88.4,2840.0,2800.0,2883.0,2807.0,2700.0,3000.0
+2013,Nanyang Technological University,College of Sciences,Biological Science,78.6,68.1,2881.0,2900.0,3002.0,3000.0,2700.0,3250.0
+2013,Nanyang Technological University,College of Sciences,Chemistry and Biological Chemistry,79.8,68.9,2993.0,3000.0,3083.0,3100.0,2800.0,3400.0
 2013,Nanyang Technological University,College of Sciences,Mathematical Science,86.0,83.7,3169.0,3000.0,3262.0,3000.0,2750.0,3500.0
 2013,Nanyang Technological University,College of Sciences,Physics / Applied Physics,80.8,69.2,3164.0,3000.0,3208.0,3300.0,2900.0,3400.0
 2013,Nanyang Technological University,College of Sciences,Sports Science and Management,68.2,59.1,2968.0,3000.0,2985.0,3000.0,2700.0,3400.0
-2013,Nanyang Technological University,National Institute of Education (NIE),Science (with Education),100.0,100.0,3377.0,3400.0,3478.0,3498.0,3300.0,3800.0
-2013,Nanyang Technological University,National Institute of Education (NIE),Arts (with Education),100.0,100.0,3413.0,3426.0,3506.0,3498.0,3400.0,3575.0
+2013,Nanyang Technological University,National Institute of Education (NIE),Science (With Education),100.0,100.0,3377.0,3400.0,3478.0,3498.0,3300.0,3800.0
+2013,Nanyang Technological University,National Institute of Education (NIE),Arts (With Education),100.0,100.0,3413.0,3426.0,3506.0,3498.0,3400.0,3575.0
 2013,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,84.8,70.1,2741.0,2730.0,2888.0,2800.0,2500.0,3080.0
 2013,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),86.6,74.6,3057.0,3200.0,3154.0,3200.0,2800.0,3500.0
-2013,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,88.1,76.8,3098.0,3100.0,3210.0,3200.0,2800.0,3500.0
+2013,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Science,88.1,76.8,3098.0,3100.0,3210.0,3200.0,2800.0,3500.0
 2013,National University of Singapore,NUS Business School,Bachelor of Business Administration,88.7,81.7,2960.0,2868.0,3062.0,3000.0,2700.0,3370.0
 2013,National University of Singapore,NUS Business School,Bachelor of Business Administration (Hons),94.6,90.3,3404.0,3050.0,3512.0,3200.0,2800.0,3800.0
 2013,National University of Singapore,NUS Business School,Bachelor of Business Administration (Accountancy),93.3,88.9,2740.0,2700.0,2922.0,2700.0,2700.0,3018.0
@@ -73,8 +73,8 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2013,Singapore Management University,School of Economics (4-year programme),Economics (Cum Laude and above),94.0,94.0,3731.0,3500.0,3820.0,3600.0,3250.0,4000.0
 2013,Singapore Management University,School of Information Systems (4-year programme),Information Systems Management,93.6,89.5,3389.0,3300.0,3468.0,3300.0,3000.0,3800.0
 2013,Singapore Management University,School of Information Systems (4-year programme),Information Systems Management (Cum Laude and above),100.0,90.9,3786.0,3725.0,3862.0,3800.0,3500.0,4000.0
-2013,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences,86.5,79.8,3122.0,3000.0,3150.0,3000.0,2600.0,3320.0
-2013,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences (Cum Laude and above),87.5,83.3,3251.0,3200.0,3267.0,3200.0,2800.0,3781.0
+2013,Singapore Management University,School of Social Sciences (4-year programme),Social Science,86.5,79.8,3122.0,3000.0,3150.0,3000.0,2600.0,3320.0
+2013,Singapore Management University,School of Social Sciences (4-year programme),Social Science (Cum Laude and above),87.5,83.3,3251.0,3200.0,3267.0,3200.0,2800.0,3781.0
 2013,Singapore Management University,School of Law (4-year programme),Law,100.0,100.0,5023.0,4800.0,5246.0,5000.0,4500.0,6000.0
 2013,Singapore Management University,School of Law (4-year programme),Law (Cum Laude and above),100.0,100.0,5329.0,5000.0,5617.0,5547.0,4750.0,6400.0
 2014,Nanyang Technological University,College of Business (Nanyang Business School),Accountancy and Business,98.2,95.6,3539.0,3300.0,3597.0,3300.0,2900.0,4000.0
@@ -92,7 +92,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2014,Nanyang Technological University,College of Engineering,Materials Engineering,82.5,77.7,3145.0,3000.0,3261.0,3150.0,3000.0,3410.0
 2014,Nanyang Technological University,College of Engineering,Mechanical Engineering,90.2,87.8,3161.0,3000.0,3289.0,3100.0,3000.0,3500.0
 2014,Nanyang Technological University,College of Engineering,Maritime Studies,92.5,92.5,3163.0,3050.0,3206.0,3050.0,3000.0,3500.0
-2014,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Art, Design & Media",80.0,68.0,2761.0,2600.0,2791.0,2700.0,2300.0,3000.0
+2014,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Arts, Design and Media",80.0,68.0,2761.0,2600.0,2791.0,2700.0,2300.0,3000.0
 2014,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Chinese,86.8,75.8,2927.0,3000.0,3006.0,3000.0,2700.0,3300.0
 2014,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Communication Studies,86.7,77.9,2891.0,2800.0,2976.0,3000.0,2600.0,3294.0
 2014,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Economics,88.7,78.4,3183.0,3075.0,3222.0,3200.0,3000.0,3500.0
@@ -101,17 +101,17 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2014,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Psychology,66.7,54.9,3197.0,3100.0,3228.0,3100.0,2800.0,3500.0
 2014,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Sociology,73.2,67.9,3002.0,3000.0,3143.0,3100.0,2800.0,3260.0
 2014,Nanyang Technological University,College of Sciences,Biomedical Science (Traditional Chinese Medicine),100.0,100.0,2974.0,2900.0,3018.0,2900.0,2786.0,3400.0
-2014,Nanyang Technological University,College of Sciences,Biological Sciences,75.1,60.8,3083.0,3000.0,3174.0,3000.0,2800.0,3400.0
-2014,Nanyang Technological University,College of Sciences,Chemistry & Biological Chemistry,80.5,68.3,3006.0,3000.0,3321.0,3100.0,2800.0,3400.0
-2014,Nanyang Technological University,College of Sciences,Mathematics & Economics,88.4,87.0,3155.0,3200.0,3142.0,3200.0,2800.0,3500.0
+2014,Nanyang Technological University,College of Sciences,Biological Science,75.1,60.8,3083.0,3000.0,3174.0,3000.0,2800.0,3400.0
+2014,Nanyang Technological University,College of Sciences,Chemistry and Biological Chemistry,80.5,68.3,3006.0,3000.0,3321.0,3100.0,2800.0,3400.0
+2014,Nanyang Technological University,College of Sciences,Mathematics and Economics,88.4,87.0,3155.0,3200.0,3142.0,3200.0,2800.0,3500.0
 2014,Nanyang Technological University,College of Sciences,Mathematical Science,91.3,79.7,3022.0,3000.0,3078.0,3200.0,2800.0,3300.0
 2014,Nanyang Technological University,College of Sciences,Physics / Applied Physics,73.7,63.2,3034.0,3000.0,3241.0,3100.0,2800.0,3560.0
 2014,Nanyang Technological University,College of Sciences,Sports Science and Management,87.9,69.7,3076.0,2800.0,3229.0,3000.0,2700.0,3590.0
-2014,Nanyang Technological University,National Institute of Education (NIE),Science (with Education),100.0,100.0,3358.0,3400.0,3475.0,3475.0,3400.0,3750.0
-2014,Nanyang Technological University,National Institute of Education (NIE),Arts (with Education),100.0,100.0,3388.0,3400.0,3536.0,3475.0,3400.0,3700.0
+2014,Nanyang Technological University,National Institute of Education (NIE),Science (With Education),100.0,100.0,3358.0,3400.0,3475.0,3475.0,3400.0,3750.0
+2014,Nanyang Technological University,National Institute of Education (NIE),Arts (With Education),100.0,100.0,3388.0,3400.0,3536.0,3475.0,3400.0,3700.0
 2014,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,81.9,65.3,2719.0,2750.0,2883.0,2800.0,2500.0,3010.0
 2014,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),83.1,76.6,3141.0,3210.0,3277.0,3300.0,3000.0,3600.0
-2014,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,88.7,80.1,3192.0,3200.0,3304.0,3250.0,3000.0,3600.0
+2014,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Science,88.7,80.1,3192.0,3200.0,3304.0,3250.0,3000.0,3600.0
 2014,National University of Singapore,NUS Business School,Bachelor of Business Administration,87.9,83.6,3234.0,3000.0,3367.0,3000.0,2800.0,3300.0
 2014,National University of Singapore,NUS Business School,Bachelor of Business Administration (Hons),94.4,90.6,3979.0,3500.0,4090.0,3520.0,3200.0,4300.0
 2014,National University of Singapore,NUS Business School,Bachelor of Business Administration (Accountancy),93.9,89.8,2836.0,2800.0,2989.0,2838.0,2700.0,3000.0
@@ -151,24 +151,24 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2014,Singapore Management University,School of Economics (4-year programme),Economics (Cum Laude and above),90.6,89.1,3815.0,3800.0,3824.0,3800.0,3300.0,4350.0
 2014,Singapore Management University,School of Information Systems (4-year programme),Information Systems Management,92.9,80.6,3431.0,3225.0,3530.0,3350.0,3000.0,4000.0
 2014,Singapore Management University,School of Information Systems (4-year programme),Information Systems Management (Cum Laude and above),97.4,84.2,4057.0,4000.0,4151.0,4050.0,3500.0,4540.0
-2014,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences,90.9,84.1,2981.0,3000.0,3166.0,3000.0,2800.0,3580.0
-2014,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences (Cum Laude and above),87.5,81.3,3331.0,3215.0,3545.0,3590.0,3000.0,3955.0
+2014,Singapore Management University,School of Social Sciences (4-year programme),Social Science,90.9,84.1,2981.0,3000.0,3166.0,3000.0,2800.0,3580.0
+2014,Singapore Management University,School of Social Sciences (4-year programme),Social Science (Cum Laude and above),87.5,81.3,3331.0,3215.0,3545.0,3590.0,3000.0,3955.0
 2014,Singapore Management University,School of Law (4-year programme),Law,97.8,95.6,4932.0,4800.0,5332.0,5025.0,4600.0,5950.0
 2014,Singapore Management University,School of Law (4-year programme),Law (Cum Laude and above),97.7,97.7,5089.0,4900.0,5571.0,5800.0,4800.0,6000.0
 2014,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Arts in Game Design,100.0,86.7,2490.0,2700.0,2490.0,2700.0,2575.0,2800.0
-2014,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts & Animation,90.6,84.4,2586.0,2600.0,2603.0,2600.0,2300.0,2885.0
-2014,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science & Game Design,100.0,100.0,2932.0,2875.0,2955.0,2975.0,2800.0,3075.0
+2014,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts and Animation,90.6,84.4,2586.0,2600.0,2603.0,2600.0,2300.0,2885.0
+2014,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science and Game Design,100.0,100.0,2932.0,2875.0,2955.0,2975.0,2800.0,3075.0
 2014,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time Interactive Simulation,100.0,100.0,2859.0,3000.0,2910.0,3000.0,2700.0,3300.0
 2014,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Communication Design,89.1,78.3,2547.0,2500.0,2595.0,2500.0,2400.0,2800.0
 2014,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Interior Design,93.9,90.9,2553.0,2500.0,2583.0,2500.0,2373.0,2800.0
 2014,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Chemical Engineering,90.1,84.5,3041.0,3000.0,3325.0,3300.0,3000.0,3650.0
 2014,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Marine Engineering,92.6,88.9,3208.0,3100.0,3334.0,3260.0,3003.0,3594.0
-2014,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Mechanical Design & Manufacturing Engineering,97.1,85.7,3196.0,3000.0,3273.0,3100.0,3000.0,3338.0
+2014,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Mechanical Design and Manufacturing Engineering,97.1,85.7,3196.0,3000.0,3273.0,3100.0,3000.0,3338.0
 2014,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Naval Architecture,100.0,94.1,3293.0,3355.0,3467.0,3500.0,3233.0,3675.0
 2014,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Offshore Engineering,91.3,91.3,3311.0,3200.0,3467.0,3300.0,3075.0,3625.0
-2014,Singapore Institute of Technology,Newcastle University,Bachelor of Science with Honours in Food & Human Nutrition,75.0,61.4,2806.0,2750.0,2854.0,2800.0,2500.0,3170.0
+2014,Singapore Institute of Technology,Newcastle University,Bachelor of Science with Honours in Food and Human Nutrition,75.0,61.4,2806.0,2750.0,2854.0,2800.0,2500.0,3170.0
 2014,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Chemical Engineering,86.7,86.7,2954.0,2900.0,3285.0,3200.0,2950.0,3755.0
-2014,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering & Information Technology,85.7,82.1,3072.0,2900.0,3141.0,3000.0,2800.0,3480.0
+2014,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering and Information Technology,85.7,82.1,3072.0,2900.0,3141.0,3000.0,2800.0,3480.0
 2014,Singapore Institute of Technology,The Culinary Institute of America,Bachelor of Professional Studies in Culinary Arts Management,89.3,89.3,2430.0,2400.0,2503.0,2500.0,2200.0,2600.0
 2014,Singapore Institute of Technology,Trinity College Dublin,Bachelor in Science (Occupational Therapy),100.0,100.0,3127.0,3100.0,3151.0,3100.0,3000.0,3338.0
 2014,Singapore Institute of Technology,Trinity College Dublin,Bachelor in Science (Physiotherapy),100.0,100.0,3204.0,3200.0,3229.0,3200.0,3000.0,3500.0
@@ -185,36 +185,36 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2015,Nanyang Technological University,College of Business (Nanyang Business School),Business and Computing,100.0,100.0,4036.0,4184.0,4395.0,4583.0,3800.0,4876.0
 2015,Nanyang Technological University,College of Engineering,Aerospace Engineering,86.0,86.0,3699.0,3650.0,3724.0,3700.0,3450.0,4000.0
 2015,Nanyang Technological University,College of Engineering,Bioengineering,92.6,76.5,3079.0,3000.0,3197.0,3113.0,2900.0,3450.0
-2015,Nanyang Technological University,College of Engineering,Chemical And Biomolecular Engineering,86.8,80.9,3156.0,3100.0,3373.0,3300.0,3000.0,3600.0
+2015,Nanyang Technological University,College of Engineering,Chemical and Biomolecular Engineering,86.8,80.9,3156.0,3100.0,3373.0,3300.0,3000.0,3600.0
 2015,Nanyang Technological University,College of Engineering,Computer Engineering,85.1,83.0,3489.0,3350.0,3577.0,3500.0,3200.0,4000.0
 2015,Nanyang Technological University,College of Engineering,Civil Engineering,95.3,93.0,3125.0,3100.0,3206.0,3200.0,3000.0,3300.0
 2015,Nanyang Technological University,College of Engineering,Computer Science,92.4,91.4,3489.0,3300.0,3535.0,3300.0,3150.0,3800.0
-2015,Nanyang Technological University,College of Engineering,Electrical And Electronic Engineering,88.6,86.2,3345.0,3200.0,3446.0,3300.0,3000.0,3690.0
+2015,Nanyang Technological University,College of Engineering,Electrical and Electronic Engineering,88.6,86.2,3345.0,3200.0,3446.0,3300.0,3000.0,3690.0
 2015,Nanyang Technological University,College of Engineering,Environmental Engineering,89.7,82.1,3472.0,3200.0,3673.0,3300.0,3000.0,3835.0
-2015,Nanyang Technological University,College of Engineering,Information Engineering And Media,87.3,80.0,3271.0,3200.0,3375.0,3275.0,3000.0,3500.0
+2015,Nanyang Technological University,College of Engineering,Information Engineering and Media,87.3,80.0,3271.0,3200.0,3375.0,3275.0,3000.0,3500.0
 2015,Nanyang Technological University,College of Engineering,Materials Engineering,82.9,76.8,3213.0,3100.0,3397.0,3200.0,3000.0,3600.0
 2015,Nanyang Technological University,College of Engineering,Mechanical Engineering,88.0,80.7,3248.0,3200.0,3388.0,3250.0,3000.0,3600.0
 2015,Nanyang Technological University,College of Engineering,Maritime Studies,95.0,95.0,3249.0,3200.0,3271.0,3200.0,3000.0,3300.0
-2015,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Art, Design & Media",79.3,56.9,3284.0,2800.0,3457.0,2800.0,2200.0,3000.0
+2015,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Arts, Design and Media",79.3,56.9,3284.0,2800.0,3457.0,2800.0,2200.0,3000.0
 2015,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Chinese,81.8,76.6,2978.0,3000.0,3045.0,3200.0,2800.0,3500.0
 2015,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Communication Studies,85.1,74.4,2921.0,2900.0,3008.0,3000.0,2600.0,3330.0
 2015,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Economics,87.4,75.9,3322.0,3200.0,3496.0,3300.0,3000.0,3800.0
 2015,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",English,88.0,74.0,3238.0,3000.0,3322.0,3314.0,2604.0,3743.0
-2015,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Linguistics And Multilingual Studies,88.4,55.8,3475.0,3000.0,3753.0,3000.0,2800.0,3600.0
+2015,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Linguistics and Multilingual Studies,88.4,55.8,3475.0,3000.0,3753.0,3000.0,2800.0,3600.0
 2015,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Psychology,73.3,52.0,3099.0,3121.0,3264.0,3200.0,2800.0,3562.0
 2015,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Sociology,85.7,79.4,3260.0,3000.0,3402.0,3125.0,2700.0,3600.0
 2015,Nanyang Technological University,College of Sciences,Biomedical Science (Traditional Chinese Medicine),100.0,100.0,2832.0,2800.0,2882.0,2800.0,2500.0,3105.0
-2015,Nanyang Technological University,College of Sciences,Biological Sciences,74.6,65.3,3117.0,3000.0,3229.0,3190.0,2875.0,3600.0
-2015,Nanyang Technological University,College of Sciences,Chemistry & Biological Chemistry,83.9,72.3,2960.0,2900.0,3139.0,3000.0,2800.0,3500.0
-2015,Nanyang Technological University,College of Sciences,Mathematics & Economics,95.3,84.4,3291.0,3000.0,3440.0,3205.0,2925.0,3500.0
+2015,Nanyang Technological University,College of Sciences,Biological Science,74.6,65.3,3117.0,3000.0,3229.0,3190.0,2875.0,3600.0
+2015,Nanyang Technological University,College of Sciences,Chemistry and Biological Chemistry,83.9,72.3,2960.0,2900.0,3139.0,3000.0,2800.0,3500.0
+2015,Nanyang Technological University,College of Sciences,Mathematics and Economics,95.3,84.4,3291.0,3000.0,3440.0,3205.0,2925.0,3500.0
 2015,Nanyang Technological University,College of Sciences,Mathematical Science,81.8,72.7,3254.0,3125.0,3402.0,3240.0,2950.0,3500.0
 2015,Nanyang Technological University,College of Sciences,Physics / Applied Physics,82.1,69.6,3098.0,3000.0,3186.0,3200.0,2900.0,3400.0
 2015,Nanyang Technological University,College of Sciences,Sports Science and Management,90.7,72.1,3232.0,3000.0,3307.0,3295.0,2900.0,3600.0
-2015,Nanyang Technological University,National Institute of Education (NIE),Science (with Education),100.0,100.0,3496.0,3500.0,3604.0,3504.0,3500.0,3855.0
-2015,Nanyang Technological University,National Institute of Education (NIE),Arts (with Education),100.0,100.0,3551.0,3500.0,3622.0,3500.0,3500.0,3605.0
+2015,Nanyang Technological University,National Institute of Education (NIE),Science (With Education),100.0,100.0,3496.0,3500.0,3604.0,3504.0,3500.0,3855.0
+2015,Nanyang Technological University,National Institute of Education (NIE),Arts (With Education),100.0,100.0,3551.0,3500.0,3622.0,3500.0,3500.0,3605.0
 2015,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,88.4,74.6,2839.0,2880.0,2999.0,3000.0,2700.0,3215.0
 2015,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),83.0,70.5,3266.0,3310.0,3310.0,3310.0,3000.0,3625.0
-2015,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,88.6,79.8,3317.0,3300.0,3442.0,3310.0,3000.0,3686.0
+2015,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Science,88.6,79.8,3317.0,3300.0,3442.0,3310.0,3000.0,3686.0
 2015,National University of Singapore,NUS Business School,Bachelor of Business Administration,88.2,80.3,3164.0,3000.0,3341.0,3000.0,2800.0,3700.0
 2015,National University of Singapore,NUS Business School,Bachelor of Business Administration (Hons),96.0,93.1,4173.0,3750.0,4326.0,3800.0,3300.0,4600.0
 2015,National University of Singapore,NUS Business School,Bachelor of Business Administration (Accountancy),97.6,97.6,2817.0,2850.0,2983.0,2850.0,2700.0,2960.0
@@ -238,7 +238,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2015,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Industrial and Systems Engineering),96.1,94.7,3624.0,3475.0,3724.0,3500.0,3300.0,4030.0
 2015,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Materials Science and Engineering),100.0,95.0,3121.0,3200.0,3391.0,3350.0,3050.0,3790.0
 2015,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Mechanical Engineering),83.3,80.0,3279.0,3200.0,3422.0,3300.0,3000.0,3600.0
-2015,National University of Singapore,Faculty of Law,Bachelor of Laws (L.L.B) (Hons),96.9,96.9,4866.0,4600.0,4910.0,4700.0,4200.0,5800.0
+2015,National University of Singapore,Faculty of Law,Bachelor of Laws (LLB) (Hons),96.9,96.9,4866.0,4600.0,4910.0,4700.0,4200.0,5800.0
 2015,National University of Singapore,YLL School of Medicine,Bachelor of Medicine and Bachelor of Surgery,100.0,100.0,4352.0,4500.0,4729.0,4900.0,4500.0,5000.0
 2015,National University of Singapore,YLL School of Medicine,Bachelor of Science (Nursing),97.3,97.3,3175.0,3200.0,3356.0,3400.0,3200.0,3445.0
 2015,National University of Singapore,YLL School of Medicine,Bachelor of Science (Nursing) (Hons),100.0,100.0,3219.0,3200.0,3466.0,3435.0,3300.0,3700.0
@@ -256,26 +256,26 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2015,Singapore Management University,School of Economics (4-year programme),Economics (Cum Laude and above),98.2,92.7,4249.0,3800.0,4380.0,3850.0,3500.0,4700.0
 2015,Singapore Management University,School of Information Systems (4-year programme),Information Systems Management,94.8,85.9,3491.0,3500.0,3660.0,3500.0,3200.0,4110.0
 2015,Singapore Management University,School of Information Systems (4-year programme),Information Systems Management (Cum Laude and above),97.4,92.1,3577.0,3800.0,3834.0,3800.0,3500.0,4166.0
-2015,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences,89.0,83.0,3306.0,3100.0,3550.0,3200.0,2980.0,3600.0
-2015,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences (Cum Laude and above),93.1,89.7,3887.0,3500.0,4012.0,3560.0,3300.0,4583.0
+2015,Singapore Management University,School of Social Sciences (4-year programme),Social Science,89.0,83.0,3306.0,3100.0,3550.0,3200.0,2980.0,3600.0
+2015,Singapore Management University,School of Social Sciences (4-year programme),Social Science (Cum Laude and above),93.1,89.7,3887.0,3500.0,4012.0,3560.0,3300.0,4583.0
 2015,Singapore Management University,School of Law (4-year programme),Law,99.0,99.0,4889.0,4600.0,4997.0,4731.0,4350.0,5800.0
 2015,Singapore Management University,School of Law (4-year programme),Law (Cum Laude and above),100.0,100.0,5160.0,4766.0,5313.0,5000.0,4500.0,5995.0
 2015,Singapore University of Technology and Design,Singapore University of Technology and Design,Bachelor of Engineering (Engineering Product Development),92.5,88.1,3595.0,3618.0,3565.0,3600.0,3400.0,3800.0
 2015,Singapore University of Technology and Design,Singapore University of Technology and Design,Bachelor of Engineering (Engineering Systems and Design),80.3,71.8,3699.0,3450.0,3763.0,3500.0,3190.0,4100.0
 2015,Singapore University of Technology and Design,Singapore University of Technology and Design,Bachelor of Engineering (Information Systems Technology and Design),86.0,83.7,3872.0,3700.0,3952.0,3950.0,3338.0,4450.0
-2015,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts & Animation,88.5,65.4,2643.0,2700.0,2682.0,2700.0,2500.0,2800.0
+2015,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts and Animation,88.5,65.4,2643.0,2700.0,2682.0,2700.0,2500.0,2800.0
 2015,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time Interactive Simulation,95.2,90.5,3332.0,3200.0,3346.0,3233.0,3000.0,3500.0
 2015,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Communication Design,76.1,54.3,2896.0,2750.0,2922.0,2750.0,2523.0,2975.0
 2015,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Interior Design,87.5,71.9,2520.0,2600.0,2893.0,2700.0,2500.0,3025.0
 2015,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Chemical Engineering,85.5,72.6,3097.0,3000.0,3405.0,3250.0,2900.0,3750.0
 2015,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Electrical Power Engineering,83.0,77.4,3334.0,3100.0,3452.0,3300.0,3000.0,3550.0
 2015,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Marine Engineering,91.7,91.7,3180.0,3025.0,3354.0,3225.0,3050.0,3500.0
-2015,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Mechanical Design & Manufacturing Engineering,90.5,83.3,3069.0,3050.0,3266.0,3200.0,3000.0,3500.0
+2015,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Mechanical Design and Manufacturing Engineering,90.5,83.3,3069.0,3050.0,3266.0,3200.0,3000.0,3500.0
 2015,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Naval Architecture,100.0,100.0,3211.0,3050.0,3266.0,3141.0,2900.0,3500.0
 2015,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Offshore Engineering,100.0,94.7,3166.0,3125.0,3469.0,3350.0,3238.0,3575.0
-2015,Singapore Institute of Technology,Newcastle University,Bachelor of Science with Honours in Food & Human Nutrition,89.2,81.1,2683.0,2700.0,2876.0,2700.0,2475.0,3050.0
+2015,Singapore Institute of Technology,Newcastle University,Bachelor of Science with Honours in Food and Human Nutrition,89.2,81.1,2683.0,2700.0,2876.0,2700.0,2475.0,3050.0
 2015,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Chemical Engineering,87.5,79.2,2759.0,2800.0,2970.0,2950.0,2800.0,3200.0
-2015,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering & Information Technology,100.0,90.0,3044.0,3100.0,3339.0,3250.0,3000.0,3488.0
+2015,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering and Information Technology,100.0,90.0,3044.0,3100.0,3339.0,3250.0,3000.0,3488.0
 2015,Singapore Institute of Technology,The Culinary Institute of America,Bachelor of Professional Studies in Culinary Arts Management,92.6,81.5,2482.0,2300.0,2586.0,2400.0,2000.0,2800.0
 2015,Singapore Institute of Technology,Singapore Institute of Technology -Trinity College Dublin,Bachelor in Science (Diagnostic Radiography),100.0,100.0,3322.0,3300.0,3486.0,3488.0,3313.0,3650.0
 2015,Singapore Institute of Technology,Trinity College Dublin,Bachelor in Science (Occupational Therapy),100.0,100.0,3126.0,3120.0,3149.0,3125.0,3000.0,3225.0
@@ -294,37 +294,37 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2016,Nanyang Technological University,College of Business (Nanyang Business School),Business and Computing,94.4,94.4,4232.0,4000.0,4407.0,4600.0,3800.0,5000.0
 2016,Nanyang Technological University,College of Engineering,Aerospace Engineering,82.4,77.9,3761.0,3625.0,3840.0,3675.0,3350.0,4435.0
 2016,Nanyang Technological University,College of Engineering,Bioengineering,77.8,63.9,3151.0,3200.0,3317.0,3237.0,3000.0,3510.0
-2016,Nanyang Technological University,College of Engineering,Chemical And Biomolecular Engineering,80.6,72.6,3336.0,3225.0,3476.0,3400.0,3200.0,3800.0
+2016,Nanyang Technological University,College of Engineering,Chemical and Biomolecular Engineering,80.6,72.6,3336.0,3225.0,3476.0,3400.0,3200.0,3800.0
 2016,Nanyang Technological University,College of Engineering,Civil Engineering,92.4,91.6,3407.0,3250.0,3505.0,3300.0,3200.0,3800.0
 2016,Nanyang Technological University,College of Engineering,Computer Engineering,83.3,75.9,3792.0,3500.0,3833.0,3500.0,3300.0,4420.0
 2016,Nanyang Technological University,College of Engineering,Computer Science,94.6,91.4,3784.0,3500.0,3848.0,3500.0,3300.0,4333.0
-2016,Nanyang Technological University,College of Engineering,Electrical And Electronic Engineering,89.1,83.6,3443.0,3300.0,3517.0,3400.0,3190.0,3800.0
+2016,Nanyang Technological University,College of Engineering,Electrical and Electronic Engineering,89.1,83.6,3443.0,3300.0,3517.0,3400.0,3190.0,3800.0
 2016,Nanyang Technological University,College of Engineering,Environmental Engineering,80.6,74.2,3156.0,3100.0,3216.0,3100.0,2800.0,3400.0
-2016,Nanyang Technological University,College of Engineering,Information Engineering And Media,94.6,87.5,3496.0,3350.0,3570.0,3350.0,3000.0,4000.0
+2016,Nanyang Technological University,College of Engineering,Information Engineering and Media,94.6,87.5,3496.0,3350.0,3570.0,3350.0,3000.0,4000.0
 2016,Nanyang Technological University,College of Engineering,Maritime Studies,94.2,88.5,3305.0,3300.0,3328.0,3398.0,3083.0,3500.0
 2016,Nanyang Technological University,College of Engineering,Materials Engineering,81.3,73.5,3197.0,3200.0,3317.0,3300.0,3000.0,3500.0
 2016,Nanyang Technological University,College of Engineering,Mechanical Engineering,86.0,79.9,3417.0,3300.0,3505.0,3350.0,3050.0,3959.0
-2016,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Art, Design & Media",79.7,46.6,2718.0,2700.0,2761.0,2700.0,2500.0,3000.0
+2016,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Arts, Design and Media",79.7,46.6,2718.0,2700.0,2761.0,2700.0,2500.0,3000.0
 2016,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Chinese,91.1,74.7,3239.0,3300.0,3345.0,3300.0,3050.0,3500.0
 2016,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Communication Studies,87.7,69.6,2938.0,2900.0,2996.0,3000.0,2575.0,3365.0
 2016,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Economics,91.3,79.3,3385.0,3300.0,3440.0,3300.0,3000.0,3850.0
 2016,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",English,75.0,54.2,2974.0,3000.0,2997.0,3000.0,2700.0,3400.0
 2016,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",History,87.2,76.6,3027.0,3000.0,3082.0,3000.0,2700.0,3500.0
-2016,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Linguistics And Multilingual Studies,81.8,61.8,3283.0,3315.0,3368.0,3365.0,2960.0,3500.0
+2016,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Linguistics and Multilingual Studies,81.8,61.8,3283.0,3315.0,3368.0,3365.0,2960.0,3500.0
 2016,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Psychology,82.1,66.7,3083.0,3100.0,3136.0,3200.0,2800.0,3500.0
 2016,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Sociology,86.1,63.9,3279.0,3300.0,3480.0,3500.0,3000.0,3850.0
-2016,Nanyang Technological University,College of Sciences,Biomedical Sciences & Chinese Medicine,94.4,88.9,2525.0,2400.0,2577.0,2500.0,2150.0,2800.0
-2016,Nanyang Technological University,College of Sciences,Biological Sciences,80.5,64.0,3132.0,3100.0,3222.0,3175.0,3000.0,3550.0
-2016,Nanyang Technological University,College of Sciences,Chemistry & Biological Chemistry,80.6,64.2,3119.0,3000.0,3234.0,3149.0,2925.0,3500.0
-2016,Nanyang Technological University,College of Sciences,Mathematical Sciences,88.5,76.9,3453.0,3400.0,3535.0,3500.0,3200.0,3750.0
-2016,Nanyang Technological University,College of Sciences,Mathematics & Economics,89.4,72.7,3346.0,3150.0,3458.0,3300.0,3000.0,3750.0
+2016,Nanyang Technological University,College of Sciences,Biomedical Science and Chinese Medicine,94.4,88.9,2525.0,2400.0,2577.0,2500.0,2150.0,2800.0
+2016,Nanyang Technological University,College of Sciences,Biological Science,80.5,64.0,3132.0,3100.0,3222.0,3175.0,3000.0,3550.0
+2016,Nanyang Technological University,College of Sciences,Chemistry and Biological Chemistry,80.6,64.2,3119.0,3000.0,3234.0,3149.0,2925.0,3500.0
+2016,Nanyang Technological University,College of Sciences,Mathematical Science,88.5,76.9,3453.0,3400.0,3535.0,3500.0,3200.0,3750.0
+2016,Nanyang Technological University,College of Sciences,Mathematics and Economics,89.4,72.7,3346.0,3150.0,3458.0,3300.0,3000.0,3750.0
 2016,Nanyang Technological University,College of Sciences,Physics / Applied Physics,85.7,77.1,3578.0,3350.0,3683.0,3450.0,3100.0,4000.0
 2016,Nanyang Technological University,Sports Science and Management,Sports Science and Management,83.1,66.1,3196.0,3100.0,3272.0,3200.0,2825.0,3500.0
-2016,Nanyang Technological University,National Institute of Education (NIE),Arts (with Education),100.0,100.0,3337.0,3500.0,3525.0,3525.0,3400.0,3615.0
-2016,Nanyang Technological University,National Institute of Education (NIE),Science (with Education),100.0,100.0,3438.0,3500.0,3546.0,3525.0,3500.0,3850.0
+2016,Nanyang Technological University,National Institute of Education (NIE),Arts (With Education),100.0,100.0,3337.0,3500.0,3525.0,3525.0,3400.0,3615.0
+2016,Nanyang Technological University,National Institute of Education (NIE),Science (With Education),100.0,100.0,3438.0,3500.0,3546.0,3525.0,3500.0,3850.0
 2016,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,86.1,62.5,2971.0,3000.0,3063.0,3000.0,2600.0,3200.0
 2016,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),90.7,74.1,3258.0,3300.0,3321.0,3500.0,3000.0,3600.0
-2016,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,89.5,73.3,3341.0,3300.0,3423.0,3300.0,3000.0,3650.0
+2016,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Science,89.5,73.3,3341.0,3300.0,3423.0,3300.0,3000.0,3650.0
 2016,National University of Singapore,Faculty Of Dentistry,Bachelor of Dental Surgery,100.0,100.0,4173.0,4050.0,4221.0,4050.0,4050.0,4450.0
 2016,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Biomedical Engineering),91.9,80.6,3314.0,3100.0,3366.0,3200.0,3000.0,3500.0
 2016,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Chemical Engineering),85.3,80.3,3414.0,3250.0,3562.0,3450.0,3150.0,4000.0
@@ -334,13 +334,13 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2016,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Engineering Science),85.2,74.1,3549.0,3400.0,3707.0,3740.0,3350.0,4026.0
 2016,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Environmental Engineering),79.3,65.5,3432.0,3300.0,3470.0,3350.0,3000.0,3832.0
 2016,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Industrial and Systems Engineering),80.3,78.9,3788.0,3450.0,3879.0,3500.0,3300.0,4250.0
-2016,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Materials Science And Engineering),90.2,78.4,3381.0,3300.0,3501.0,3540.0,3200.0,3900.0
+2016,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Materials Science and Engineering),90.2,78.4,3381.0,3300.0,3501.0,3540.0,3200.0,3900.0
 2016,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Mechanical Engineering),86.6,81.0,3470.0,3300.0,3560.0,3400.0,3150.0,3800.0
-2016,National University of Singapore,Faculty of Law,Bachelor of Laws (L.L.B) (Hons),97.7,95.9,4844.0,4775.0,4898.0,4900.0,4200.0,5600.0
+2016,National University of Singapore,Faculty of Law,Bachelor of Laws (LLB) (Hons),97.7,95.9,4844.0,4775.0,4898.0,4900.0,4200.0,5600.0
 2016,National University of Singapore,Faculty of Science,Bachelor of Applied Science (Hons),81.0,61.9,2905.0,2800.0,3058.0,3130.0,2800.0,3350.0
 2016,National University of Singapore,Faculty of Science,Bachelor of Science,84.3,59.4,2895.0,3000.0,2995.0,3000.0,2600.0,3225.0
 2016,National University of Singapore,Faculty of Science,Bachelor of Science (Hons),84.9,71.7,3331.0,3300.0,3386.0,3300.0,3000.0,3650.0
-2016,National University of Singapore,Faculty of Science,Bachelor of Science (Pharmacy)(Hons),99.1,97.2,3500.0,3500.0,3597.0,3600.0,3300.0,3950.0
+2016,National University of Singapore,Faculty of Science,Bachelor of Science (Pharmacy) (Hons),99.1,97.2,3500.0,3500.0,3597.0,3600.0,3300.0,3950.0
 2016,National University of Singapore,NUS Business School,Bachelor of Business Administration,93.6,80.7,3232.0,3000.0,3282.0,3000.0,2837.0,3500.0
 2016,National University of Singapore,NUS Business School,Bachelor of Business Administration (Hons),96.4,92.8,4126.0,3600.0,4207.0,3620.0,3258.0,4500.0
 2016,National University of Singapore,NUS Business School,Bachelor of Business Administration (Accountancy),88.6,86.4,2977.0,2900.0,3020.0,2963.0,2800.0,3100.0
@@ -364,24 +364,24 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2016,Singapore Management University,School of Economics (4-year programme),Economics (Cum Laude and above),97.0,92.5,4315.0,4000.0,4425.0,4107.0,3800.0,4750.0
 2016,Singapore Management University,School of Information Systems (4-year programme),Information Systems Management,95.7,91.5,3837.0,3500.0,3897.0,3600.0,3200.0,4167.0
 2016,Singapore Management University,School of Information Systems (4-year programme),Information Systems Management (Cum Laude and above),97.5,95.0,4504.0,4167.0,4603.0,4167.0,3800.0,4750.0
-2016,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences,91.5,80.4,3199.0,3100.0,3311.0,3145.0,3000.0,3500.0
-2016,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences (Cum Laude and above),94.9,87.2,3405.0,3300.0,3548.0,3400.0,3000.0,3668.0
+2016,Singapore Management University,School of Social Sciences (4-year programme),Social Science,91.5,80.4,3199.0,3100.0,3311.0,3145.0,3000.0,3500.0
+2016,Singapore Management University,School of Social Sciences (4-year programme),Social Science (Cum Laude and above),94.9,87.2,3405.0,3300.0,3548.0,3400.0,3000.0,3668.0
 2016,Singapore Management University,School of Law (4-year programme),Law,95.8,93.7,4810.0,4600.0,4915.0,4850.0,4200.0,5800.0
 2016,Singapore Management University,School of Law (4-year programme),Law (Cum Laude and above),96.7,96.7,4950.0,4950.0,5095.0,5300.0,4500.0,5800.0
-2016,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts & Animation,73.3,53.3,3045.0,3000.0,3052.0,3000.0,2700.0,3016.0
-2016,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science & Game Design,85.7,85.7,3312.0,3400.0,3329.0,3400.0,3100.0,3500.0
+2016,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts and Animation,73.3,53.3,3045.0,3000.0,3052.0,3000.0,2700.0,3016.0
+2016,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science and Game Design,85.7,85.7,3312.0,3400.0,3329.0,3400.0,3100.0,3500.0
 2016,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time Interactive Simulation,100.0,92.9,3729.0,3680.0,3803.0,4000.0,3500.0,4200.0
 2016,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Communication Design,91.1,58.9,2652.0,2600.0,2652.0,2600.0,2500.0,2700.0
 2016,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Interior Design,97.4,76.3,2467.0,2500.0,2485.0,2515.0,2200.0,2800.0
 2016,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Chemical Engineering,85.9,71.8,3201.0,3100.0,3463.0,3300.0,3080.0,3650.0
 2016,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Electrical Power Engineering,86.4,79.7,3239.0,3000.0,3440.0,3200.0,2800.0,3700.0
 2016,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Marine Engineering,95.2,81.0,3812.0,3425.0,3956.0,3840.0,3200.0,4530.0
-2016,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Mechanical Design & Manufacturing Engineering,87.0,77.8,3162.0,3000.0,3344.0,3200.0,2900.0,3575.0
+2016,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Mechanical Design and Manufacturing Engineering,87.0,77.8,3162.0,3000.0,3344.0,3200.0,2900.0,3575.0
 2016,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Naval Architecture,90.0,90.0,3172.0,3250.0,3239.0,3300.0,3000.0,3500.0
 2016,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Offshore Engineering,86.4,72.7,3172.0,3275.0,3286.0,3430.0,3000.0,3600.0
-2016,Singapore Institute of Technology,Newcastle University,Bachelor of Science with Honours in Food & Human Nutrition,86.7,62.2,2598.0,2600.0,2707.0,2600.0,2420.0,2800.0
+2016,Singapore Institute of Technology,Newcastle University,Bachelor of Science with Honours in Food and Human Nutrition,86.7,62.2,2598.0,2600.0,2707.0,2600.0,2420.0,2800.0
 2016,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Chemical Engineering,78.6,67.9,2776.0,2900.0,3149.0,3130.0,2500.0,3700.0
-2016,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering & Information Technology,90.9,86.4,2978.0,3000.0,3042.0,3000.0,2825.0,3350.0
+2016,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering and Information Technology,90.9,86.4,2978.0,3000.0,3042.0,3000.0,2825.0,3350.0
 2016,Singapore Institute of Technology,The Culinary Institute of America,Bachelor of Professional Studies in Culinary Arts Management,86.2,69.0,2231.0,2250.0,2344.0,2300.0,2000.0,2500.0
 2016,Singapore Institute of Technology,Trinity College Dublin / Singapore Institute of Technology-Trinity College Dublin,Bachelor in Science (Diagnostic Radiography),88.2,88.2,3406.0,3385.0,3628.0,3660.0,3400.0,3930.0
 2016,Singapore Institute of Technology,Trinity College Dublin / Singapore Institute of Technology-Trinity College Dublin,Bachelor in Science (Occupational Therapy),100.0,100.0,3297.0,3200.0,3301.0,3200.0,3100.0,3500.0
@@ -403,13 +403,13 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2017,Nanyang Technological University,College of Business (Nanyang Business School),Double Degree in Bachelor of Business (Hons) and Bachelor of Engineering (Hons) (Computer Science),100.0,95.0,5036.0,4750.0,5225.0,5000.0,4000.0,5362.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Aerospace Engineering),80.0,75.0,3645.0,3492.0,3702.0,3500.0,3250.0,4210.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Bioengineering),78.3,65.2,3326.0,3200.0,3486.0,3419.0,3000.0,3825.0
-2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering  (Hons) (Chemical And Biomolecular Engineering),82.3,75.3,3326.0,3200.0,3577.0,3500.0,3200.0,4000.0
+2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Chemical and Biomolecular Engineering),82.3,75.3,3326.0,3200.0,3577.0,3500.0,3200.0,4000.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Civil Engineering),98.5,96.9,3373.0,3300.0,3442.0,3400.0,3190.0,3675.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Computer Engineering),95.1,87.8,3667.0,3600.0,3743.0,3600.0,3450.0,3925.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Computer Science),92.4,86.7,4078.0,3750.0,4160.0,3850.0,3500.0,4500.0
-2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Electrical & Electronic Engineering),89.3,85.0,3532.0,3500.0,3657.0,3600.0,3200.0,4000.0
+2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Electrical and Electronic Engineering),89.3,85.0,3532.0,3500.0,3657.0,3600.0,3200.0,4000.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Environmental Engineering),71.8,64.1,3538.0,3475.0,3588.0,3635.0,3200.0,3950.0
-2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Information Engineering & Media),86.9,78.7,3685.0,3677.0,3790.0,3700.0,3350.0,4200.0
+2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Information Engineering and Media),86.9,78.7,3685.0,3677.0,3790.0,3700.0,3350.0,4200.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Science (Hons) (Maritime Studies),92.2,92.2,3279.0,3200.0,3333.0,3320.0,3000.0,3500.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Materials Engineering),84.9,75.6,3288.0,3200.0,3434.0,3375.0,3200.0,3700.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Engineering (Hons) (Mechanical Engineering),82.7,74.9,3422.0,3300.0,3579.0,3450.0,3100.0,4000.0
@@ -419,22 +419,22 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2017,Nanyang Technological University,College of Engineering,Bachelor of Arts (Hons) in Economics,84.7,75.5,3286.0,3200.0,3379.0,3240.0,3000.0,3720.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Arts (Hons) in English,77.8,50.8,3042.0,3000.0,3149.0,3000.0,2800.0,3300.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Arts (Hons) in History,86.0,68.4,3206.0,3100.0,3265.0,3200.0,3000.0,3600.0
-2017,Nanyang Technological University,College of Engineering,Bachelor of Arts (Hons) in Linguistics And Multilingual Studies,80.0,60.0,3042.0,3000.0,3117.0,3100.0,2600.0,3500.0
+2017,Nanyang Technological University,College of Engineering,Bachelor of Arts (Hons) in Linguistics and Multilingual Studies,80.0,60.0,3042.0,3000.0,3117.0,3100.0,2600.0,3500.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Arts (Hons) in Psychology,78.9,59.2,3107.0,3107.0,3151.0,3200.0,2890.0,3500.0
-2017,Nanyang Technological University,College of Engineering,Bachelor of Arts (Hons) in Public Policy And Global Affairs,74.1,66.7,3353.0,3300.0,3479.0,3395.0,3160.0,3750.0
+2017,Nanyang Technological University,College of Engineering,Bachelor of Arts (Hons) in Public Policy and Global Affairs,74.1,66.7,3353.0,3300.0,3479.0,3395.0,3160.0,3750.0
 2017,Nanyang Technological University,College of Engineering,Bachelor of Arts (Hons) in Sociology,77.6,62.1,3263.0,3200.0,3309.0,3228.0,2970.0,3500.0
-2017,Nanyang Technological University,College of Sciences,Double Degree in Bachelor of Science (Hons) in Biomedical Sciences and Bachelor of Medicine (Chinese Medicine),92.0,80.0,2722.0,2928.0,2792.0,2950.0,2500.0,3035.0
-2017,Nanyang Technological University,College of Sciences,Bachelor of Science (Hons) in Biological Sciences,80.4,62.6,3177.0,3100.0,3255.0,3200.0,3000.0,3500.0
-2017,Nanyang Technological University,College of Sciences,Bachelor of Science (Hons) in Chemistry & Biological Chemistry,70.1,51.1,3035.0,3000.0,3173.0,3100.0,2800.0,3488.0
-2017,Nanyang Technological University,College of Sciences,Bachelor of Science (Hons) in Mathematical Sciences,89.7,79.5,3517.0,3400.0,3580.0,3500.0,3100.0,3800.0
-2017,Nanyang Technological University,College of Sciences,Bachelor of Science (Hons) in Mathematics & Economics,89.8,83.1,3504.0,3290.0,3625.0,3400.0,3013.0,3775.0
+2017,Nanyang Technological University,College of Sciences,Double Degree in Bachelor of Science (Hons) in Biomedical Science and Bachelor of Medicine (Chinese Medicine),92.0,80.0,2722.0,2928.0,2792.0,2950.0,2500.0,3035.0
+2017,Nanyang Technological University,College of Sciences,Bachelor of Science (Hons) in Biological Science,80.4,62.6,3177.0,3100.0,3255.0,3200.0,3000.0,3500.0
+2017,Nanyang Technological University,College of Sciences,Bachelor of Science (Hons) in Chemistry and Biological Chemistry,70.1,51.1,3035.0,3000.0,3173.0,3100.0,2800.0,3488.0
+2017,Nanyang Technological University,College of Sciences,Bachelor of Science (Hons) in Mathematical Science,89.7,79.5,3517.0,3400.0,3580.0,3500.0,3100.0,3800.0
+2017,Nanyang Technological University,College of Sciences,Bachelor of Science (Hons) in Mathematics and Economics,89.8,83.1,3504.0,3290.0,3625.0,3400.0,3013.0,3775.0
 2017,Nanyang Technological University,College of Sciences,Bachelor of Science (Hons) in Physics/Applied Physics,81.6,61.8,3367.0,3300.0,3490.0,3300.0,3000.0,3819.0
-2017,Nanyang Technological University,Sports Science and Management,Bachelor of Science (Hons) (Sport Science & Management),81.1,48.6,3372.0,3285.0,3486.0,3450.0,2800.0,4000.0
+2017,Nanyang Technological University,Sports Science and Management,Bachelor of Science (Hons) (Sports Science and Management),81.1,48.6,3372.0,3285.0,3486.0,3450.0,2800.0,4000.0
 2017,Nanyang Technological University,National Institute of Education (NIE),Bachelor of Arts (Hons) (Education),100.0,100.0,3489.0,3600.0,3589.0,3600.0,3500.0,3800.0
 2017,Nanyang Technological University,National Institute of Education (NIE),Bachelor of Science (Hons) (Education),100.0,100.0,3610.0,3603.0,3701.0,3701.0,3500.0,3958.0
 2017,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,85.8,61.9,3005.0,3000.0,3107.0,3000.0,2700.0,3300.0
 2017,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),88.2,66.7,3309.0,3300.0,3391.0,3360.0,3000.0,3600.0
-2017,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,88.3,74.7,3365.0,3300.0,3443.0,3300.0,3000.0,3750.0
+2017,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Science,88.3,74.7,3365.0,3300.0,3443.0,3300.0,3000.0,3750.0
 2017,National University of Singapore,Faculty Of Dentistry,Bachelor of Dental Surgery,100.0,100.0,4124.0,4050.0,4143.0,4050.0,4000.0,4400.0
 2017,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Biomedical Engineering),90.6,81.3,3215.0,3200.0,3367.0,3300.0,3000.0,3700.0
 2017,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Chemical Engineering),87.8,81.3,3550.0,3500.0,3727.0,3600.0,3300.0,4000.0
@@ -443,7 +443,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2017,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Engineering Science),76.5,64.7,3783.0,3600.0,3827.0,3675.0,3440.0,4200.0
 2017,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Environmental Engineering),86.3,71.2,3425.0,3100.0,3546.0,3350.0,3000.0,3800.0
 2017,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Industrial and Systems Engineering),93.3,89.9,3905.0,3725.0,4035.0,3875.0,3450.0,4200.0
-2017,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Materials Science And Engineering),94.0,86.0,3269.0,3200.0,3570.0,3388.0,3200.0,3950.0
+2017,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Materials Science and Engineering),94.0,86.0,3269.0,3200.0,3570.0,3388.0,3200.0,3950.0
 2017,National University of Singapore,Faculty Of Engineering,Bachelor of Engineering (Mechanical Engineering),87.3,82.3,3537.0,3400.0,3657.0,3450.0,3100.0,4000.0
 2017,National University of Singapore,Faculty of Law,Bachelor of Laws,95.8,92.3,4958.0,5000.0,5121.0,5000.0,4500.0,5600.0
 2017,National University of Singapore,Faculty of Science,Bachelor of Applied Science (Hons),82.1,50.0,3186.0,3075.0,3187.0,3085.0,2800.0,3200.0
@@ -461,7 +461,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2017,National University of Singapore,School of Design & Environment,Bachelor of Arts (Industrial Design),93.3,60.0,3034.0,2890.0,3079.0,2920.0,2600.0,3200.0
 2017,National University of Singapore,School of Design & Environment,Bachelor of Science (Project and Facilities Management),90.8,81.7,3105.0,3000.0,3162.0,3000.0,2900.0,3300.0
 2017,National University of Singapore,School of Design & Environment,Bachelor of Science (Real Estate),93.8,88.7,3090.0,3000.0,3168.0,3000.0,2800.0,3300.0
-2017,National University of Singapore,Yong Loo Lin School (Medicine),Bachelor of Medicine And Bachelor Of Surgery,100.0,100.0,4367.0,4500.0,4882.0,5000.0,4500.0,5305.0
+2017,National University of Singapore,Yong Loo Lin School (Medicine),Bachelor of Medicine and Bachelor Of Surgery,100.0,100.0,4367.0,4500.0,4882.0,5000.0,4500.0,5305.0
 2017,National University of Singapore,Yong Loo Lin School (Medicine),Bachelor of Science (Nursing),97.4,97.4,3165.0,3200.0,3328.0,3400.0,3200.0,3450.0
 2017,National University of Singapore,Yong Loo Lin School (Medicine),Bachelor of Science (Nursing) (Hons),91.8,89.8,3280.0,3300.0,3462.0,3500.0,3300.0,3650.0
 2017,National University of Singapore,YST Conservatory Of Music,Bachelor of Music,73.3,26.7,2298.0,2025.0,2500.0,2225.0,2050.0,2950.0
@@ -477,25 +477,25 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2017,Singapore Management University,School of Economics (4-year programme),Economics (Cum Laude and above),93.2,90.5,4591.0,4000.0,4737.0,4100.0,3600.0,5113.0
 2017,Singapore Management University,School of Information Systems (4-year programme),Information Systems Management,95.1,91.3,3922.0,3905.0,4014.0,4000.0,3550.0,4500.0
 2017,Singapore Management University,School of Information Systems (4-year programme),Information Systems Management (Cum Laude and above),96.1,94.1,4211.0,4334.0,4305.0,4334.0,4000.0,4750.0
-2017,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences,91.3,78.0,3344.0,3250.0,3493.0,3300.0,3000.0,3750.0
-2017,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences (Cum Laude and above),87.9,81.8,3810.0,3600.0,3938.0,3630.0,3300.0,4000.0
+2017,Singapore Management University,School of Social Sciences (4-year programme),Social Science,91.3,78.0,3344.0,3250.0,3493.0,3300.0,3000.0,3750.0
+2017,Singapore Management University,School of Social Sciences (4-year programme),Social Science (Cum Laude and above),87.9,81.8,3810.0,3600.0,3938.0,3630.0,3300.0,4000.0
 2017,Singapore Management University,School of Law (4-year programme),Law,97.6,94.0,4778.0,4500.0,4941.0,5000.0,4000.0,5840.0
 2017,Singapore Management University,School of Law (4-year programme),Law (Cum Laude and above),97.9,97.9,5163.0,5450.0,5287.0,5600.0,4200.0,6000.0
 2017,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Arts in Game Design,96.2,92.3,3040.0,3000.0,3067.0,3000.0,2800.0,3200.0
-2017,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts & Animation,88.5,69.2,2859.0,2825.0,2876.0,2875.0,2700.0,3000.0
-2017,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science & Game Design,100.0,100.0,3232.0,3250.0,3291.0,3250.0,2900.0,3600.0
+2017,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts and Animation,88.5,69.2,2859.0,2825.0,2876.0,2875.0,2700.0,3000.0
+2017,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science and Game Design,100.0,100.0,3232.0,3250.0,3291.0,3250.0,2900.0,3600.0
 2017,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time Interactive Simulation,96.9,90.6,3898.0,3800.0,3904.0,3800.0,3558.0,4140.0
 2017,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Communication Design,90.7,68.5,2819.0,2600.0,2949.0,2700.0,2500.0,3200.0
 2017,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Interior Design,92.3,87.2,2818.0,2700.0,2841.0,2700.0,2500.0,3000.0
 2017,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Chemical Engineering,77.3,62.1,3061.0,3100.0,3290.0,3255.0,2975.0,3600.0
 2017,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Electrical Power Engineering,94.4,88.9,3191.0,3200.0,3269.0,3200.0,3000.0,3450.0
 2017,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Marine Engineering,96.2,88.5,3461.0,3300.0,3541.0,3500.0,3000.0,4000.0
-2017,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Mechanical Design & Manufacturing Engineering,90.5,85.7,3063.0,3000.0,3145.0,3000.0,2800.0,3350.0
+2017,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Mechanical Design and Manufacturing Engineering,90.5,85.7,3063.0,3000.0,3145.0,3000.0,2800.0,3350.0
 2017,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Naval Architecture,95.5,95.5,3451.0,3300.0,3537.0,3300.0,3200.0,3500.0
 2017,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Offshore Engineering,100.0,86.7,3792.0,3300.0,3866.0,3300.0,3300.0,3950.0
-2017,Singapore Institute of Technology,Newcastle University,Bachelor of Science with Honours in Food & Human Nutrition,97.7,79.1,2784.0,2600.0,2980.0,2700.0,2475.0,3200.0
+2017,Singapore Institute of Technology,Newcastle University,Bachelor of Science with Honours in Food and Human Nutrition,97.7,79.1,2784.0,2600.0,2980.0,2700.0,2475.0,3200.0
 2017,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Chemical Engineering,84.5,74.1,3061.0,3000.0,3301.0,3200.0,3000.0,3375.0
-2017,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering & Information Technology,82.8,82.8,3504.0,3175.0,3591.0,3400.0,3000.0,4000.0
+2017,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering and Information Technology,82.8,82.8,3504.0,3175.0,3591.0,3400.0,3000.0,4000.0
 2017,Singapore Institute of Technology,The Culinary Institute of America,Bachelor of Professional Studies in Culinary Arts Management,87.9,54.5,2357.0,2300.0,2598.0,2300.0,2200.0,3259.0
 2017,Singapore Institute of Technology,Singapore Institute of Technology -Trinity College Dublin / Trinity College Dublin,Bachelor in Science (Occupational Therapy),100.0,97.1,3217.0,3250.0,3258.0,3300.0,3020.0,3450.0
 2017,Singapore Institute of Technology,Singapore Institute of Technology -Trinity College Dublin / Trinity College Dublin,Bachelor in Science (Physiotherapy),100.0,96.8,3483.0,3350.0,3489.0,3400.0,3300.0,3500.0
@@ -518,41 +518,41 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2018,Nanyang Technological University,College of Business (Nanyang Business School),Business and Computing,100.0,100.0,4536.0,4450.0,4572.0,4575.0,4200.0,4900.0
 2018,Nanyang Technological University,College of Engineering,Aerospace Engineering,95.3,88.4,3710.0,3625.0,3873.0,3800.0,3365.0,4280.0
 2018,Nanyang Technological University,College of Engineering,Bioengineering,77.5,66.2,3457.0,3500.0,3660.0,3500.0,3200.0,4000.0
-2018,Nanyang Technological University,College of Engineering,Chemical & Biomolecular Engineering,91.6,86.0,3461.0,3500.0,3782.0,3600.0,3300.0,4200.0
+2018,Nanyang Technological University,College of Engineering,Chemical and Biomolecular Engineering,91.6,86.0,3461.0,3500.0,3782.0,3600.0,3300.0,4200.0
 2018,Nanyang Technological University,College of Engineering,Civil Engineering,96.5,96.5,3521.0,3400.0,3597.0,3500.0,3200.0,3816.0
 2018,Nanyang Technological University,College of Engineering,Computer Engineering,95.8,95.8,3749.0,3700.0,3865.0,3775.0,3400.0,4200.0
 2018,Nanyang Technological University,College of Engineering,Computer Science,94.4,93.0,3970.0,3800.0,4062.0,4000.0,3500.0,4500.0
-2018,Nanyang Technological University,College of Engineering,Electrical & Electronic Engineering,92.7,91.0,3625.0,3500.0,3772.0,3600.0,3323.0,4000.0
+2018,Nanyang Technological University,College of Engineering,Electrical and Electronic Engineering,92.7,91.0,3625.0,3500.0,3772.0,3600.0,3323.0,4000.0
 2018,Nanyang Technological University,College of Engineering,Environmental Engineering,92.1,81.6,3388.0,3360.0,3485.0,3400.0,3000.0,3500.0
-2018,Nanyang Technological University,College of Engineering,Information Engineering & Media,93.2,89.0,3724.0,3725.0,3800.0,3750.0,3500.0,4140.0
+2018,Nanyang Technological University,College of Engineering,Information Engineering and Media,93.2,89.0,3724.0,3725.0,3800.0,3750.0,3500.0,4140.0
 2018,Nanyang Technological University,College of Engineering,Maritime Studies,93.3,90.0,3351.0,3300.0,3409.0,3350.0,3000.0,3640.0
 2018,Nanyang Technological University,College of Engineering,Materials Engineering,86.5,81.9,3457.0,3400.0,3650.0,3500.0,3200.0,4000.0
 2018,Nanyang Technological University,College of Engineering,Mechanical Engineering,85.6,81.1,3448.0,3500.0,3653.0,3500.0,3200.0,4000.0
-2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Art, Design & Media",85.7,53.8,2930.0,2800.0,2986.0,3000.0,2600.0,3300.0
+2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Arts, Design and Media",85.7,53.8,2930.0,2800.0,2986.0,3000.0,2600.0,3300.0
 2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Chinese,86.4,76.3,3149.0,3150.0,3260.0,3500.0,3000.0,3518.0
 2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Communication Studies,95.0,84.2,3085.0,3000.0,3166.0,3000.0,2750.0,3500.0
 2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Economics,90.1,84.0,3604.0,3500.0,3755.0,3536.0,3200.0,3959.0
 2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",English,81.6,59.2,3051.0,3000.0,3124.0,3000.0,2600.0,3500.0
 2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",History,74.4,56.4,3593.0,3500.0,3719.0,3500.0,3260.0,4150.0
-2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Linguistics & Multilingual Studies,79.2,45.8,3074.0,3200.0,3091.0,3200.0,2900.0,3500.0
+2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Linguistics and Multilingual Studies,79.2,45.8,3074.0,3200.0,3091.0,3200.0,2900.0,3500.0
 2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Philosophy,80.0,76.0,3031.0,3000.0,3126.0,3000.0,2550.0,3500.0
 2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Psychology,90.1,78.0,3316.0,3300.0,3355.0,3370.0,3000.0,3684.0
 2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Public Policy and Global Affairs,80.6,71.0,3501.0,3350.0,3619.0,3350.0,3050.0,4018.0
 2018,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Sociology,80.2,60.4,3275.0,3175.0,3374.0,3220.0,3000.0,3841.0
-2018,Nanyang Technological University,College of Sciences,Biological Sciences,80.1,67.0,3232.0,3200.0,3319.0,3250.0,3035.0,3650.0
-2018,Nanyang Technological University,College of Sciences,Biomedical Sciences & Chinese Medicine,90.9,81.8,2941.0,3000.0,2953.0,3000.0,2700.0,3100.0
-2018,Nanyang Technological University,College of Sciences,Chemistry & Biological Chemistry,77.6,63.9,3205.0,3167.0,3427.0,3200.0,3000.0,3725.0
-2018,Nanyang Technological University,College of Sciences,Environmental Earth Systems Sciences,76.2,57.1,3347.0,3440.0,3389.0,3440.0,3150.0,3900.0
-2018,Nanyang Technological University,College of Sciences,Mathematical Sciences,87.1,75.9,3661.0,3600.0,3744.0,3650.0,3360.0,4000.0
-2018,Nanyang Technological University,College of Sciences,Mathematics & Economics,96.3,83.3,3481.0,3500.0,3569.0,3600.0,3200.0,4000.0
-2018,Nanyang Technological University,College of Sciences,Physics & Applied Physics,80.2,74.1,3468.0,3300.0,3576.0,3400.0,3025.0,3800.0
+2018,Nanyang Technological University,College of Sciences,Biological Science,80.1,67.0,3232.0,3200.0,3319.0,3250.0,3035.0,3650.0
+2018,Nanyang Technological University,College of Sciences,Biomedical Science and Chinese Medicine,90.9,81.8,2941.0,3000.0,2953.0,3000.0,2700.0,3100.0
+2018,Nanyang Technological University,College of Sciences,Chemistry and Biological Chemistry,77.6,63.9,3205.0,3167.0,3427.0,3200.0,3000.0,3725.0
+2018,Nanyang Technological University,College of Sciences,Environmental Earth Systems Science,76.2,57.1,3347.0,3440.0,3389.0,3440.0,3150.0,3900.0
+2018,Nanyang Technological University,College of Sciences,Mathematical Science,87.1,75.9,3661.0,3600.0,3744.0,3650.0,3360.0,4000.0
+2018,Nanyang Technological University,College of Sciences,Mathematics and Economics,96.3,83.3,3481.0,3500.0,3569.0,3600.0,3200.0,4000.0
+2018,Nanyang Technological University,College of Sciences,Physics and Applied Physics,80.2,74.1,3468.0,3300.0,3576.0,3400.0,3025.0,3800.0
 2018,Nanyang Technological University,National Institute of Education (NIE),Arts (With Education),100.0,99.2,3618.0,3750.0,3751.0,3800.0,3600.0,3806.0
 2018,Nanyang Technological University,National Institute of Education (NIE),Science (With Education),100.0,100.0,3600.0,3800.0,3738.0,3800.0,3600.0,4000.0
-2018,Nanyang Technological University,Sports Science and Management,Sport Science and Management,87.0,61.1,3172.0,3200.0,3382.0,3300.0,3000.0,3600.0
+2018,Nanyang Technological University,Sports Science and Management,Sports Science and Management,87.0,61.1,3172.0,3200.0,3382.0,3300.0,3000.0,3600.0
 2018,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,83.7,56.6,3169.0,3070.0,3322.0,3200.0,2800.0,3600.0
 2018,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),87.5,60.8,3290.0,3300.0,3377.0,3300.0,3000.0,3600.0
 2018,Singapore University of Social Sciences,School of Business,Bachelor of Accountancy,98.7,97.5,2858.0,2850.0,2879.0,3000.0,2700.0,3000.0
-2018,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,88.2,74.5,3459.0,3400.0,3526.0,3400.0,3200.0,3800.0
+2018,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Science,88.2,74.5,3459.0,3400.0,3526.0,3400.0,3200.0,3800.0
 2018,National University of Singapore,Faculty of Dentistry,Bachelor of Dental Surgery,100.0,100.0,4148.0,4050.0,4228.0,4050.0,4000.0,4450.0
 2018,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Biomedical Engineering),79.4,69.8,3357.0,3300.0,3444.0,3389.0,3280.0,3650.0
 2018,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Chemical Engineering),89.9,84.1,3768.0,3700.0,4050.0,4000.0,3500.0,4300.0
@@ -584,7 +584,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2018,National University of Singapore,Multidisciplinary Programmes,Bachelor of Engineering (Computer Engineering),88.6,84.3,4105.0,3800.0,4188.0,3975.0,3500.0,4900.0
 2018,National University of Singapore,Multidisciplinary Programmes,Bachelor of Environmental Studies,84.2,55.3,3371.0,3414.0,3385.0,3414.0,3000.0,3600.0
 2018,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Arts in Game Design,86.7,86.7,3277.0,3300.0,3324.0,3300.0,3196.0,3500.0
-2018,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Art and Animation,91.2,52.9,2854.0,2800.0,2861.0,2800.0,2600.0,3000.0
+2018,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts and Animation,91.2,52.9,2854.0,2800.0,2861.0,2800.0,2600.0,3000.0
 2018,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science and Game Design,94.7,89.5,3570.0,3600.0,3576.0,3600.0,3300.0,4000.0
 2018,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time Interactive Simulation,96.8,96.8,4031.0,4000.0,4088.0,4016.0,3830.0,4200.0
 2018,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Chemical Engineering,84.6,76.9,3193.0,3100.0,3451.0,3300.0,3000.0,3600.0
@@ -596,8 +596,8 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2018,Singapore Institute of Technology,Newcastle University,Bachelor of Engineering with Honours in Offshore Engineering,92.3,84.6,3245.0,3100.0,3545.0,3510.0,3100.0,3850.0
 2018,Singapore Institute of Technology,Newcastle University,Bachelor of Science with Honours in Food and Human Nutrition,90.4,69.2,2837.0,2800.0,2895.0,2900.0,2625.0,3200.0
 2018,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Accountancy with Honours,96.3,91.5,3188.0,3050.0,3216.0,3075.0,3000.0,3250.0
-2018,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Information Security),100.0,100.0,4111.0,4000.0,4116.0,4045.0,4000.0,4400.0
-2018,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Software Engineering),95.7,95.7,3838.0,4000.0,3914.0,4000.0,3600.0,4300.0
+2018,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Information Security),100.0,100.0,4111.0,4000.0,4116.0,4045.0,4000.0,4400.0
+2018,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Software Engineering),95.7,95.7,3838.0,4000.0,3914.0,4000.0,3600.0,4300.0
 2018,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable Infrastructure Engineering (Land),98.3,96.6,3618.0,3456.0,3688.0,3550.0,3400.0,3800.0
 2018,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Hospitality Business with Honours,92.1,81.6,2898.0,2800.0,2991.0,2825.0,2600.0,3175.0
 2018,Singapore Institute of Technology,SIT-University of Glasgow,Bachelor of Science with Honours in Nursing,95.3,90.7,3260.0,3350.0,3536.0,3500.0,3350.0,3800.0
@@ -605,7 +605,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2018,Singapore Institute of Technology,SIT-Trinity College Dublin / Trinity College Dublin,Bachelor in Science (Occupational Therapy),96.6,96.6,3409.0,3450.0,3431.0,3460.0,3300.0,3610.0
 2018,Singapore Institute of Technology,SIT-Trinity College Dublin / Trinity College Dublin,Bachelor in Science (Physiotherapy),100.0,100.0,3258.0,3300.0,3276.0,3300.0,3000.0,3600.0
 2018,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Chemical Engineering,83.7,75.5,3048.0,3000.0,3298.0,3200.0,3000.0,3550.0
-2018,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering & Information Technology,83.3,69.4,3506.0,3500.0,3609.0,3500.0,3300.0,4000.0
+2018,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering and Information Technology,83.3,69.4,3506.0,3500.0,3609.0,3500.0,3300.0,4000.0
 2018,Singapore Institute of Technology,The Culinary Institute of America,Bachelor of Business Administration in Food Business Management,86.5,64.9,2643.0,2530.0,2929.0,2663.0,2415.0,3300.0
 2018,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Communication Design,84.9,54.7,2818.0,2850.0,3055.0,2950.0,2550.0,3000.0
 2018,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Interior Design,92.3,76.9,2710.0,2700.0,2796.0,2775.0,2500.0,3000.0
@@ -624,8 +624,8 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2018,Singapore Management University,School of Economics (4-year programme),Economics (Cum Laude and above),93.4,89.5,4599.0,4000.0,4721.0,4000.0,3500.0,5200.0
 2018,Singapore Management University,School of Information Systems (4-year programme),Information Systems,93.6,89.5,4058.0,4000.0,4160.0,4000.0,3600.0,4600.0
 2018,Singapore Management University,School of Information Systems (4-year programme),Information Systems (Cum Laude and above),100.0,97.2,4584.0,4650.0,4659.0,4685.0,4200.0,5000.0
-2018,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences,85.6,74.4,3336.0,3200.0,3409.0,3210.0,3000.0,3710.0
-2018,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences (Cum Laude and above),84.2,78.9,3818.0,3550.0,3880.0,3600.0,3200.0,4100.0
+2018,Singapore Management University,School of Social Sciences (4-year programme),Social Science,85.6,74.4,3336.0,3200.0,3409.0,3210.0,3000.0,3710.0
+2018,Singapore Management University,School of Social Sciences (4-year programme),Social Science (Cum Laude and above),84.2,78.9,3818.0,3550.0,3880.0,3600.0,3200.0,4100.0
 2018,Singapore Management University,School of Law (4-year programme),Law,92.7,90.8,4704.0,4500.0,4856.0,4500.0,4050.0,5600.0
 2018,Singapore Management University,School of Law (4-year programme),Law (Cum Laude and above),94.4,92.6,4986.0,4750.0,5256.0,5513.0,4500.0,6000.0
 2018,Singapore University of Social Sciences,School of Business,Bachelor of Science in Finance,88.0,84.0,3364.0,3400.0,3393.0,3400.0,3200.0,3500.0
@@ -650,31 +650,31 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2019,Nanyang Technological University,College of Engineering,Maritime Studies,98.3,93.2,3512.0,3400.0,3669.0,3500.0,3300.0,3700.0
 2019,Nanyang Technological University,College of Engineering,Materials Engineering,82.0,76.0,3601.0,3500.0,3817.0,3600.0,3300.0,4175.0
 2019,Nanyang Technological University,College of Engineering,Mechanical Engineering,84.5,82.1,3608.0,3500.0,3728.0,3600.0,3380.0,4005.0
-2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Art, Design & Media",83.6,50.9,3031.0,3000.0,3068.0,3000.0,2800.0,3500.0
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Arts, Design and Media",83.6,50.9,3031.0,3000.0,3068.0,3000.0,2800.0,3500.0
 2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Chinese,90.1,79.0,3158.0,3150.0,3260.0,3210.0,2980.0,3500.0
 2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Communication Studies,90.4,69.4,3220.0,3200.0,3264.0,3200.0,2800.0,3500.0
 2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Economics,88.2,79.8,3385.0,3300.0,3453.0,3400.0,3050.0,3600.0
 2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",English,83.8,64.9,2987.0,3000.0,2997.0,3000.0,2565.0,3500.0
 2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",History,73.0,56.8,3449.0,3500.0,3498.0,3500.0,3200.0,3800.0
-2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Linguistics And Multilingual Studies,81.7,65.0,3265.0,3160.0,3365.0,3200.0,3000.0,3740.0
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Linguistics and Multilingual Studies,81.7,65.0,3265.0,3160.0,3365.0,3200.0,3000.0,3740.0
 2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Philosophy,82.6,69.6,3288.0,3300.0,3369.0,3500.0,3300.0,3584.0
 2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Psychology,89.2,73.1,3463.0,3350.0,3506.0,3400.0,3100.0,3800.0
-2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Public Policy And Global Affairs,90.2,87.8,3756.0,3691.0,3868.0,3850.0,3500.0,4345.0
+2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Public Policy and Global Affairs,90.2,87.8,3756.0,3691.0,3868.0,3850.0,3500.0,4345.0
 2019,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Sociology,86.9,70.5,3305.0,3200.0,3441.0,3300.0,3040.0,3600.0
-2019,Nanyang Technological University,College of Sciences,Biological Sciences,81.6,66.3,3315.0,3300.0,3450.0,3300.0,3100.0,3600.0
-2019,Nanyang Technological University,College of Sciences,Biomedical Sciences & Chinese Medicine,95.2,85.7,2964.0,3000.0,2979.0,3000.0,2780.0,3200.0
-2019,Nanyang Technological University,College of Sciences,Chemistry & Biological Chemistry,80.9,66.2,3246.0,3200.0,3338.0,3400.0,3000.0,3600.0
-2019,Nanyang Technological University,College of Sciences,Environmental Earth Systems Sciences,87.5,79.2,3401.0,3500.0,3416.0,3500.0,3200.0,3500.0
-2019,Nanyang Technological University,College of Sciences,Mathematical Sciences,91.2,79.6,3741.0,3549.0,3848.0,3599.0,3215.0,4070.0
-2019,Nanyang Technological University,College of Sciences,Mathematics & Economics,93.5,84.8,3838.0,3570.0,3996.0,3700.0,3400.0,4167.0
-2019,Nanyang Technological University,College of Sciences,Physics & Applied Physics,90.0,78.6,3782.0,3500.0,3849.0,3500.0,3300.0,4200.0
+2019,Nanyang Technological University,College of Sciences,Biological Science,81.6,66.3,3315.0,3300.0,3450.0,3300.0,3100.0,3600.0
+2019,Nanyang Technological University,College of Sciences,Biomedical Science and Chinese Medicine,95.2,85.7,2964.0,3000.0,2979.0,3000.0,2780.0,3200.0
+2019,Nanyang Technological University,College of Sciences,Chemistry and Biological Chemistry,80.9,66.2,3246.0,3200.0,3338.0,3400.0,3000.0,3600.0
+2019,Nanyang Technological University,College of Sciences,Environmental Earth Systems Science,87.5,79.2,3401.0,3500.0,3416.0,3500.0,3200.0,3500.0
+2019,Nanyang Technological University,College of Sciences,Mathematical Science,91.2,79.6,3741.0,3549.0,3848.0,3599.0,3215.0,4070.0
+2019,Nanyang Technological University,College of Sciences,Mathematics and Economics,93.5,84.8,3838.0,3570.0,3996.0,3700.0,3400.0,4167.0
+2019,Nanyang Technological University,College of Sciences,Physics and Applied Physics,90.0,78.6,3782.0,3500.0,3849.0,3500.0,3300.0,4200.0
 2019,Nanyang Technological University,Sports Science and Management,Sports Science and Management,87.0,55.6,3289.0,3200.0,3438.0,3350.0,3000.0,3660.0
-2019,Nanyang Technological University,National Institute of Education (NIE),Arts (with Education),100.0,100.0,3629.0,3800.0,3710.0,3800.0,3600.0,3806.0
-2019,Nanyang Technological University,National Institute of Education (NIE),Science (with Education),100.0,100.0,3719.0,3800.0,3758.0,3800.0,3660.0,3840.0
+2019,Nanyang Technological University,National Institute of Education (NIE),Arts (With Education),100.0,100.0,3629.0,3800.0,3710.0,3800.0,3600.0,3806.0
+2019,Nanyang Technological University,National Institute of Education (NIE),Science (With Education),100.0,100.0,3719.0,3800.0,3758.0,3800.0,3660.0,3840.0
 2019,Nanyang Technological University,Lee Kong Chian School of Medicine,Medicine,100.0,100.0,4932.0,4700.0,5661.0,5700.0,5200.0,6092.0
 2019,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,84.9,64.5,3225.0,3000.0,3456.0,3200.0,2800.0,3700.0
 2019,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),92.7,68.2,3421.0,3500.0,3537.0,3500.0,3250.0,3800.0
-2019,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,88.0,75.9,3590.0,3500.0,3674.0,3500.0,3212.0,3850.0
+2019,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Science,88.0,75.9,3590.0,3500.0,3674.0,3500.0,3212.0,3850.0
 2019,National University of Singapore,Faculty of Dentistry,Bachelor of Dental Surgery,100.0,97.3,4057.0,4200.0,4068.0,4200.0,4000.0,4500.0
 2019,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Biomedical Engineering),80.4,68.6,3480.0,3500.0,3535.0,3500.0,3200.0,3800.0
 2019,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Chemical Engineering),92.4,86.7,3802.0,3700.0,3959.0,3950.0,3500.0,4300.0
@@ -709,18 +709,18 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2019,National University of Singapore,Multi-Disciplinary Programmes,Bachelor of Engineering (Computer Engineering),92.9,91.7,4653.0,4000.0,4732.0,4000.0,3750.0,4900.0
 2019,National University of Singapore,Multi-Disciplinary Programmes,Bachelor of Environmental Studies,88.4,67.4,3329.0,3300.0,3332.0,3325.0,3000.0,3600.0
 2019,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Arts in Game Design,83.3,79.2,3122.0,3120.0,3167.0,3220.0,3000.0,3500.0
-2019,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Art and Animation,81.3,50.0,3036.0,3150.0,3051.0,3150.0,2750.0,3275.0
+2019,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts and Animation,81.3,50.0,3036.0,3150.0,3051.0,3150.0,2750.0,3275.0
 2019,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science and Game Design,91.3,87.0,3760.0,3800.0,3791.0,3800.0,3550.0,4000.0
 2019,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time Interactive Simulation,100.0,94.9,4447.0,4400.0,4474.0,4400.0,4000.0,5200.0
 2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Accountancy with Honours,93.7,89.2,3181.0,3100.0,3239.0,3100.0,3000.0,3250.0
-2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Information Security),97.5,95.0,4171.0,4000.0,4319.0,4100.0,3900.0,5000.0
-2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Software Engineering),100.0,97.4,4090.0,4034.0,4188.0,4190.0,3600.0,4550.0
+2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Information Security),97.5,95.0,4171.0,4000.0,4319.0,4100.0,3900.0,5000.0
+2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Software Engineering),100.0,97.4,4090.0,4034.0,4188.0,4190.0,3600.0,4550.0
 2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Pharmaceutical Engineering,92.2,90.6,3237.0,3162.0,3748.0,3660.0,3500.0,4044.0
 2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable Infrastructure Engineering (Building Services),92.5,92.5,3433.0,3360.0,3484.0,3500.0,3200.0,3700.0
 2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable Infrastructure Engineering (Land),93.8,90.6,3856.0,3800.0,3976.0,3842.0,3700.0,4210.0
 2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Telematics (Intelligent Transportation Systems Engineering),100.0,97.0,3777.0,3750.0,3811.0,3750.0,3500.0,4000.0
 2019,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Hospitality Business with Honours,89.1,74.6,2972.0,2800.0,3102.0,3000.0,2800.0,3270.0
-2019,Singapore Institute of Technology,SIT-DigiPen Institute of Technology,Bachelor of Engineering in Systems Engineering (ElectroMechanical Systems),95.2,90.5,3931.0,3921.0,4024.0,3975.0,3500.0,4470.0
+2019,Singapore Institute of Technology,SIT-DigiPen Institute of Technology,Bachelor of Engineering in Systems Engineering (Electro Mechanical Systems),95.2,90.5,3931.0,3921.0,4024.0,3975.0,3500.0,4470.0
 2019,Singapore Institute of Technology,SIT-Massey University,Bachelor of Food Technology with Honours,93.0,88.4,2962.0,2975.0,2978.0,2975.0,2750.0,3250.0
 2019,Singapore Institute of Technology,SIT-Newcastle University,Bachelor of Engineering with Honours in Chemical Engineering,82.2,73.3,3217.0,3200.0,3463.0,3500.0,3200.0,3600.0
 2019,Singapore Institute of Technology,SIT-Newcastle University,Bachelor of Engineering with Honours in Electrical Power Engineering,91.3,82.6,3489.0,3400.0,3542.0,3500.0,3250.0,3600.0
@@ -747,8 +747,8 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2019,Singapore Management University,School of Economics (4-year programme),Economics (Cum Laude and above),94.2,89.9,4401.0,4000.0,4520.0,4038.0,3600.0,4600.0
 2019,Singapore Management University,School of Information Systems (4-year programme),Information Systems,95.1,90.2,4413.0,4166.0,4549.0,4300.0,4000.0,5000.0
 2019,Singapore Management University,School of Information Systems (4-year programme),Information Systems (Cum Laude and above),98.0,96.0,5029.0,5000.0,5212.0,5000.0,4300.0,5550.0
-2019,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences,92.2,82.8,3523.0,3400.0,3629.0,3500.0,3065.0,4000.0
-2019,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences (Cum Laude and above),92.7,90.2,3599.0,3500.0,3742.0,3500.0,3100.0,4070.0
+2019,Singapore Management University,School of Social Sciences (4-year programme),Social Science,92.2,82.8,3523.0,3400.0,3629.0,3500.0,3065.0,4000.0
+2019,Singapore Management University,School of Social Sciences (4-year programme),Social Science (Cum Laude and above),92.7,90.2,3599.0,3500.0,3742.0,3500.0,3100.0,4070.0
 2019,Singapore Management University,School of Law (4-year programme),Law,99.1,98.2,4942.0,4600.0,5064.0,4900.0,4200.0,5800.0
 2019,Singapore Management University,School of Law (4-year programme),Law (Cum Laude and above),98.6,97.1,5136.0,5000.0,5324.0,5550.0,4500.0,6000.0
 2019,Singapore University of Social Sciences,S R Nathan School of Human Development,Bachelor of Human Resource Management,87.1,74.2,2942.0,3000.0,2975.0,3000.0,2800.0,3300.0
@@ -776,7 +776,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2020,Nanyang Technological University,College of Engineering,Maritime Studies,90.8,78.5,3608.0,3500.0,3646.0,3500.0,3300.0,3875.0
 2020,Nanyang Technological University,College of Engineering,Materials Engineering,91.5,69.0,3613.0,3600.0,3755.0,3700.0,3500.0,4000.0
 2020,Nanyang Technological University,College of Engineering,Mechanical Engineering,91.7,67.5,3861.0,3700.0,3977.0,3850.0,3500.0,4432.0
-2020,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Art, Design and Media",90.4,35.7,2858.0,2800.0,2925.0,2800.0,2500.0,3300.0
+2020,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Arts, Design and Media",90.4,35.7,2858.0,2800.0,2925.0,2800.0,2500.0,3300.0
 2020,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Chinese,83.8,63.5,3251.0,3350.0,3310.0,3500.0,3000.0,3500.0
 2020,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Communication Studies,94.9,66.7,3378.0,3300.0,3440.0,3340.0,3000.0,3800.0
 2020,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Economics,91.8,63.5,3756.0,3700.0,3926.0,3797.0,3400.0,4050.0
@@ -788,20 +788,20 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2020,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Psychology,83.8,53.5,3315.0,3200.0,3433.0,3300.0,3100.0,3650.0
 2020,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Public Policy and Global Affairs,92.5,67.5,3989.0,3710.0,4043.0,3800.0,3500.0,4583.0
 2020,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Sociology,95.4,66.2,3529.0,3500.0,3598.0,3600.0,3300.0,3800.0
-2020,Nanyang Technological University,College of Science,Biological Sciences,88.9,56.7,3319.0,3300.0,3401.0,3325.0,3200.0,3650.0
-2020,Nanyang Technological University,College of Science,Biomedical Sciences and Chinese Medicine,94.7,84.2,2950.0,3000.0,2969.0,3000.0,2800.0,3150.0
+2020,Nanyang Technological University,College of Science,Biological Science,88.9,56.7,3319.0,3300.0,3401.0,3325.0,3200.0,3650.0
+2020,Nanyang Technological University,College of Science,Biomedical Science and Chinese Medicine,94.7,84.2,2950.0,3000.0,2969.0,3000.0,2800.0,3150.0
 2020,Nanyang Technological University,College of Science,Chemistry and Biological Chemistry,91.9,45.6,3230.0,3200.0,3345.0,3245.0,3000.0,3635.0
-2020,Nanyang Technological University,College of Science,Environmental Earth Systems Sciences,95.5,63.6,3637.0,3550.0,3657.0,3550.0,3400.0,3764.0
-2020,Nanyang Technological University,College of Science,Mathematical Sciences,92.4,68.9,3746.0,3600.0,3823.0,3656.0,3300.0,4250.0
+2020,Nanyang Technological University,College of Science,Environmental Earth Systems Science,95.5,63.6,3637.0,3550.0,3657.0,3550.0,3400.0,3764.0
+2020,Nanyang Technological University,College of Science,Mathematical Science,92.4,68.9,3746.0,3600.0,3823.0,3656.0,3300.0,4250.0
 2020,Nanyang Technological University,College of Science,Mathematics and Economics,87.1,55.7,3849.0,3832.0,3949.0,3832.0,3500.0,4300.0
 2020,Nanyang Technological University,College of Science,Physics and Applied Physics,92.6,48.5,3643.0,3600.0,3719.0,3700.0,3500.0,3850.0
 2020,Nanyang Technological University,Sports Science and Management,Sports Science and Management,91.5,52.5,3494.0,3240.0,3661.0,3300.0,3000.0,4200.0
-2020,Nanyang Technological University,National Institute of Education (NIE),Arts (with Education),100.0,98.4,3582.0,3798.0,3682.0,3799.0,3600.0,3806.0
-2020,Nanyang Technological University,National Institute of Education (NIE),Science (with Education),100.0,100.0,3660.0,3799.0,3744.0,3800.0,3700.0,4000.0
+2020,Nanyang Technological University,National Institute of Education (NIE),Arts (With Education),100.0,98.4,3582.0,3798.0,3682.0,3799.0,3600.0,3806.0
+2020,Nanyang Technological University,National Institute of Education (NIE),Science (With Education),100.0,100.0,3660.0,3799.0,3744.0,3800.0,3700.0,4000.0
 2020,Nanyang Technological University,Lee Kong Chian School of Medicine,Medicine,100.0,100.0,4775.0,4700.0,5387.0,5250.0,5000.0,5900.0
 2020,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,90.4,39.8,3639.0,3100.0,3868.0,3300.0,2700.0,3600.0
 2020,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),93.1,54.2,3529.0,3500.0,3586.0,3500.0,3300.0,3854.0
-2020,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,93.5,65.3,3597.0,3500.0,3666.0,3500.0,3345.0,3875.0
+2020,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Science,93.5,65.3,3597.0,3500.0,3666.0,3500.0,3345.0,3875.0
 2020,National University of Singapore,Faculty of Dentistry,Bachelor of Dental Surgery,100.0,100.0,4202.0,4200.0,4280.0,4200.0,4200.0,4600.0
 2020,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Biomedical Engineering),95.8,53.1,3500.0,3500.0,3577.0,3500.0,3300.0,3740.0
 2020,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Chemical Engineering),97.0,78.2,3955.0,4000.0,4155.0,4000.0,3700.0,4500.0
@@ -838,18 +838,18 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2020,National University of Singapore,Multi-Disciplinary Programmes,Bachelor of Engineering (Computer Engineering),93.7,81.1,4904.0,5000.0,4977.0,5000.0,4080.0,5500.0
 2020,National University of Singapore,Multi-Disciplinary Programmes,Bachelor of Environmental Studies,92.9,47.6,3251.0,3250.0,3409.0,3250.0,3010.0,3750.0
 2020,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Arts in Game Design,100.0,78.6,3486.0,3500.0,3575.0,3500.0,3100.0,3600.0
-2020,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Art and Animation,97.1,70.6,2845.0,2835.0,2862.0,2887.0,2675.0,3000.0
+2020,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts and Animation,97.1,70.6,2845.0,2835.0,2862.0,2887.0,2675.0,3000.0
 2020,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science and Game Design,97.7,81.8,3960.0,4000.0,3974.0,4000.0,3500.0,4200.0
 2020,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time Interactive Simulation,97.6,90.5,4390.0,4200.0,4399.0,4200.0,3880.0,4500.0
 2020,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Accountancy with Honours,97.4,69.8,3107.0,3000.0,3120.0,3000.0,3000.0,3200.0
-2020,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Information Security),100.0,95.9,4023.0,4000.0,4237.0,4300.0,3600.0,4630.0
-2020,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Software Engineering),96.2,83.0,4275.0,4000.0,4366.0,4000.0,3600.0,4750.0
+2020,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Information Security),100.0,95.9,4023.0,4000.0,4237.0,4300.0,3600.0,4630.0
+2020,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Software Engineering),96.2,83.0,4275.0,4000.0,4366.0,4000.0,3600.0,4750.0
 2020,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Pharmaceutical Engineering,94.2,73.9,3329.0,3375.0,3749.0,3740.0,3400.0,4000.0
 2020,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable Infrastructure Engineering (Building Services),98.1,84.6,3585.0,3500.0,3702.0,3500.0,3375.0,3800.0
 2020,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable Infrastructure Engineering (Land),97.1,77.1,3823.0,3925.0,4203.0,4105.0,3650.0,4370.0
 2020,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Telematics (Intelligent Transportation Systems Engineering),92.9,55.4,4083.0,4200.0,4135.0,4200.0,3380.0,4800.0
 2020,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Hospitality Business with Honours,89.9,47.9,3041.0,3000.0,3148.0,3000.0,2800.0,3400.0
-2020,Singapore Institute of Technology,SIT- DigiPen Institute of Technology,Bachelor of Engineering with Honours in Systems Engineering (ElectroMechanical Systems),95.7,82.6,4044.0,4090.0,4114.0,4185.0,3750.0,4250.0
+2020,Singapore Institute of Technology,SIT- DigiPen Institute of Technology,Bachelor of Engineering with Honours in Systems Engineering (Electro Mechanical Systems),95.7,82.6,4044.0,4090.0,4114.0,4185.0,3750.0,4250.0
 2020,Singapore Institute of Technology,SIT- Massey University,Bachelor of Food Technology with Honours,95.2,52.4,3060.0,3000.0,3084.0,3000.0,2770.0,3400.0
 2020,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Chemical Engineering,95.7,47.8,3095.0,3000.0,3242.0,3200.0,3000.0,3500.0
 2020,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Electrical Power Engineering,97.9,68.8,3501.0,3500.0,3603.0,3500.0,3400.0,3850.0
@@ -864,7 +864,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2020,Singapore Institute of Technology,SIT-University of Glasgow,Bachelor of Engineering with Honours in Civil Engineering,97.9,78.7,3444.0,3400.0,3518.0,3500.0,3200.0,3700.0
 2020,Singapore Institute of Technology,SIT-University of Glasgow,Bachelor of Science with Honours in Nursing,96.2,94.2,3436.0,3270.0,3725.0,3650.0,3405.0,4000.0
 2020,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Chemical Engineering,93.3,48.9,3147.0,3100.0,3387.0,3175.0,2815.0,3650.0
-2020,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering & Information Technology,94.7,39.5,3760.0,3600.0,3773.0,3600.0,3350.0,4000.0
+2020,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering and Information Technology,94.7,39.5,3760.0,3600.0,3773.0,3600.0,3350.0,4000.0
 2020,Singapore Institute of Technology,The Culinary Institute of America,Bachelor of Business Administration in Food Business Management,86.0,66.7,2497.0,2475.0,2675.0,2550.0,2300.0,2820.0
 2020,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Communication Design,85.7,38.1,2773.0,2800.0,2876.0,2800.0,2500.0,3000.0
 2020,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Interior Design,83.9,45.2,2958.0,2500.0,2992.0,2600.0,2500.0,3500.0
@@ -882,8 +882,8 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2020,Singapore Management University,School of Economics (4-year programme),Economics (Cum Laude and above),94.7,82.9,4670.0,4000.0,4749.0,4000.0,3660.0,5275.0
 2020,Singapore Management University,School of Information Systems (4-year programme),Information Systems,93.1,83.9,4548.0,4500.0,4683.0,4542.0,4000.0,5400.0
 2020,Singapore Management University,School of Information Systems (4-year programme),Information Systems (Cum Laude and above),93.3,93.3,4903.0,5000.0,5064.0,5000.0,4500.0,5416.0
-2020,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences,89.9,52.8,3540.0,3360.0,3626.0,3500.0,3200.0,4000.0
-2020,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences (Cum Laude and above),90.6,65.6,3711.0,3510.0,3784.0,3510.0,3230.0,4200.0
+2020,Singapore Management University,School of Social Sciences (4-year programme),Social Science,89.9,52.8,3540.0,3360.0,3626.0,3500.0,3200.0,4000.0
+2020,Singapore Management University,School of Social Sciences (4-year programme),Social Science (Cum Laude and above),90.6,65.6,3711.0,3510.0,3784.0,3510.0,3230.0,4200.0
 2020,Singapore Management University,School of Law (4-year programme),Law,95.5,91.1,4729.0,4500.0,4804.0,4588.0,4000.0,5600.0
 2020,Singapore Management University,School of Law (4-year programme),Law (Cum Laude and above),97.0,95.5,5053.0,5000.0,5141.0,5000.0,4500.0,5735.0
 2020,Singapore University of Social Sciences,S R Nathan School of Human Development,Bachelor of Early Childhood Education,100.0,88.2,2879.0,3000.0,2879.0,3000.0,2700.0,3016.0
@@ -914,7 +914,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2021,Nanyang Technological University,College of Engineering,Maritime Studies,98.4,95.2,3697.0,3500.0,3763.0,3500.0,3500.0,4000.0
 2021,Nanyang Technological University,College of Engineering,Materials Engineering,96.3,83.0,3701.0,3600.0,3801.0,3650.0,3500.0,4000.0
 2021,Nanyang Technological University,College of Engineering,Mechanical Engineering,94.0,86.1,3845.0,3700.0,4006.0,3800.0,3570.0,4400.0
-2021,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Art, Design and Media",86.2,46.6,3146.0,3000.0,3182.0,3000.0,2650.0,3675.0
+2021,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Arts, Design and Media",86.2,46.6,3146.0,3000.0,3182.0,3000.0,2650.0,3675.0
 2021,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Chinese,87.0,72.5,3376.0,3250.0,3483.0,3300.0,3053.0,3650.0
 2021,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Communication Studies,96.9,80.8,3463.0,3375.0,3548.0,3500.0,3000.0,3943.0
 2021,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Economics,93.5,88.3,3658.0,3500.0,3720.0,3650.0,3300.0,4000.0
@@ -926,19 +926,19 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2021,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Psychology,91.8,71.8,3342.0,3300.0,3362.0,3350.0,3000.0,3500.0
 2021,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Public Policy and Global Affairs,83.3,77.1,4024.0,3778.0,4105.0,3804.0,3500.0,4524.0
 2021,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Sociology,91.3,69.6,3509.0,3475.0,3567.0,3500.0,3200.0,3940.0
-2021,Nanyang Technological University,College of Science,Biological Sciences / Biomedical Sciences,96.8,81.7,3470.0,3400.0,3569.0,3500.0,3260.0,3800.0
-2021,Nanyang Technological University,College of Science,Biomedical Sciences and Chinese Medicine,90.9,77.3,3023.0,3100.0,3119.0,3100.0,2890.0,3300.0
+2021,Nanyang Technological University,College of Science,Biological Science / Biomedical Science,96.8,81.7,3470.0,3400.0,3569.0,3500.0,3260.0,3800.0
+2021,Nanyang Technological University,College of Science,Biomedical Science and Chinese Medicine,90.9,77.3,3023.0,3100.0,3119.0,3100.0,2890.0,3300.0
 2021,Nanyang Technological University,College of Science,Chemistry and Biological Chemistry,90.2,74.4,3367.0,3400.0,3501.0,3400.0,3100.0,3700.0
-2021,Nanyang Technological University,College of Science,Environmental Earth Systems Sciences,100.0,91.3,3810.0,3892.0,3888.0,3950.0,3500.0,4300.0
-2021,Nanyang Technological University,College of Science,Mathematical Sciences / Mathematical Sciences and Economics,91.0,75.6,3939.0,3750.0,4039.0,3806.0,3500.0,4500.0
+2021,Nanyang Technological University,College of Science,Environmental Earth Systems Science,100.0,91.3,3810.0,3892.0,3888.0,3950.0,3500.0,4300.0
+2021,Nanyang Technological University,College of Science,Mathematical Science / Mathematical Science and Economics,91.0,75.6,3939.0,3750.0,4039.0,3806.0,3500.0,4500.0
 2021,Nanyang Technological University,College of Science,Physics and Applied Physics,84.5,69.0,3710.0,3570.0,3793.0,3600.0,3384.0,4000.0
 2021,Nanyang Technological University,Sports Science and Management,Sports Science and Management,86.2,55.4,3292.0,3300.0,3438.0,3300.0,3100.0,3620.0
-2021,Nanyang Technological University,National Institute of Education (NIE),Arts (with Education),100.0,100.0,3563.0,3754.0,3718.0,3780.0,3700.0,3900.0
-2021,Nanyang Technological University,National Institute of Education (NIE),Science (with Education),100.0,100.0,3578.0,3776.0,3796.0,3904.0,3727.0,4000.0
+2021,Nanyang Technological University,National Institute of Education (NIE),Arts (With Education),100.0,100.0,3563.0,3754.0,3718.0,3780.0,3700.0,3900.0
+2021,Nanyang Technological University,National Institute of Education (NIE),Science (With Education),100.0,100.0,3578.0,3776.0,3796.0,3904.0,3727.0,4000.0
 2021,Nanyang Technological University,Lee Kong Chian School of Medicine,Medicine,100.0,100.0,4702.0,4700.0,5404.0,5500.0,5200.0,5800.0
 2021,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,91.4,70.0,3405.0,3200.0,3600.0,3200.0,2850.0,4100.0
 2021,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),88.8,68.3,3619.0,3500.0,3731.0,3650.0,3400.0,3983.0
-2021,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,92.5,78.2,3757.0,3531.0,3850.0,3600.0,3400.0,4100.0
+2021,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Science,92.5,78.2,3757.0,3531.0,3850.0,3600.0,3400.0,4100.0
 2021,National University of Singapore,Faculty of Dentistry,Bachelor of Dental Surgery,100.0,100.0,4256.0,4200.0,4286.0,4200.0,4200.0,4600.0
 2021,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Biomedical Engineering),94.4,83.3,3610.0,3500.0,3732.0,3600.0,3300.0,4000.0
 2021,National University of Singapore,Faculty of Engineering,Bachelor of Engineering (Chemical Engineering),91.4,84.8,3793.0,3700.0,4023.0,3800.0,3600.0,4300.0
@@ -975,12 +975,12 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2021,National University of Singapore,Multi-Disciplinary Programmes,Bachelor of Engineering (Computer Engineering),97.4,91.2,5345.0,5000.0,5473.0,5400.0,4500.0,6200.0
 2021,National University of Singapore,Multi-Disciplinary Programmes,Bachelor of Environmental Studies,97.4,81.6,3544.0,3500.0,3658.0,3650.0,3100.0,3996.0
 2021,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Arts in Game Design,100.0,81.5,3457.0,3200.0,3490.0,3300.0,3200.0,3500.0
-2021,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Art and Animation,80.0,63.3,3081.0,3200.0,3125.0,3200.0,2835.0,3500.0
+2021,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts and Animation,80.0,63.3,3081.0,3200.0,3125.0,3200.0,2835.0,3500.0
 2021,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science and Game Design,88.2,85.3,4229.0,4000.0,4324.0,4000.0,3700.0,4968.0
 2021,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time Interactive Simulation,95.1,92.7,4962.0,4600.0,4984.0,4600.0,4300.0,5175.0
 2021,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Accountancy with Honours,97.7,86.8,3363.0,3400.0,3431.0,3400.0,3200.0,3460.0
-2021,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Information Security),100.0,98.2,4934.0,4800.0,5251.0,4950.0,4605.0,5552.0
-2021,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Software Engineering),100.0,98.0,5126.0,5000.0,5215.0,5000.0,4590.0,5500.0
+2021,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Information Security),100.0,98.2,4934.0,4800.0,5251.0,4950.0,4605.0,5552.0
+2021,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Software Engineering),100.0,98.0,5126.0,5000.0,5215.0,5000.0,4590.0,5500.0
 2021,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Aircraft Systems Engineering,100.0,91.7,3297.0,3200.0,3394.0,3300.0,2500.0,4000.0
 2021,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Pharmaceutical Engineering,98.3,87.9,3423.0,3500.0,3736.0,3600.0,3300.0,4000.0
 2021,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable Infrastructure Engineering (Building Services),98.0,96.1,3707.0,3600.0,3773.0,3680.0,3500.0,3950.0
@@ -990,7 +990,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2021,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science (Diagnostic Radiography),100.0,100.0,3670.0,3500.0,3880.0,3700.0,3500.0,4025.0
 2021,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science (Occupational Therapy),100.0,98.3,3521.0,3500.0,3546.0,3500.0,3400.0,3690.0
 2021,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science (Radiation Therapy),100.0,100.0,3310.0,3500.0,3328.0,3500.0,3000.0,3500.0
-2021,Singapore Institute of Technology,SIT- DigiPen Institute of Technology,Bachelor of Engineering with Honours in Systems Engineering (ElectroMechanical Systems),100.0,95.1,4086.0,4000.0,4402.0,4370.0,3700.0,4900.0
+2021,Singapore Institute of Technology,SIT- DigiPen Institute of Technology,Bachelor of Engineering with Honours in Systems Engineering (Electro Mechanical Systems),100.0,95.1,4086.0,4000.0,4402.0,4370.0,3700.0,4900.0
 2021,Singapore Institute of Technology,SIT- Massey University,Bachelor of Food Technology with Honours,96.4,89.1,3221.0,3300.0,3322.0,3300.0,3000.0,3500.0
 2021,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Chemical Engineering,79.2,64.2,3466.0,3500.0,3836.0,3700.0,3350.0,4200.0
 2021,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Electrical Power Engineering,98.3,84.5,3583.0,3500.0,3691.0,3600.0,3500.0,3850.0
@@ -1002,7 +1002,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2021,Singapore Institute of Technology,SIT-University of Glasgow,Bachelor of Engineering with Honours in Civil Engineering,92.8,92.8,3650.0,3600.0,3719.0,3675.0,3500.0,3933.0
 2021,Singapore Institute of Technology,SIT-University of Glasgow,Bachelor of Science with Honours in Nursing,98.3,86.4,3403.0,3350.0,3697.0,3700.0,3350.0,3990.0
 2021,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Chemical Engineering,95.7,87.0,3495.0,3500.0,3645.0,3557.0,3400.0,3865.0
-2021,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering & Information Technology,81.5,74.1,3649.0,3600.0,3806.0,3700.0,3250.0,4265.0
+2021,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering and Information Technology,81.5,74.1,3649.0,3600.0,3806.0,3700.0,3250.0,4265.0
 2021,Singapore Institute of Technology,The Culinary Institute of America,Bachelor of Business Administration in Food Business Management,91.9,67.7,2647.0,2500.0,2817.0,2700.0,2500.0,3100.0
 2021,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Communication Design,94.4,59.3,2951.0,3000.0,2989.0,3000.0,2700.0,3200.0
 2021,Singapore Institute of Technology,The Glasgow School of Art,Bachelor of Arts with Honours in Interior Design,94.3,65.7,2761.0,3000.0,2807.0,3000.0,2500.0,3100.0
@@ -1015,8 +1015,8 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2021,Singapore Management University,School of Economics (4-year programme),Economics (Cum Laude and above),94.1,91.2,5209.0,4750.0,5310.0,4900.0,4191.0,5810.0
 2021,Singapore Management University,School of Information Systems (4-year programme),Information Systems,98.2,94.6,4774.0,4860.0,4906.0,5000.0,4200.0,5350.0
 2021,Singapore Management University,School of Information Systems (4-year programme),Information Systems (Cum Laude and above),97.4,93.6,5317.0,5050.0,5499.0,5350.0,5000.0,5833.0
-2021,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences,94.1,77.1,3656.0,3465.0,3836.0,3600.0,3200.0,4010.0
-2021,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences (Cum Laude and above),96.9,86.2,3856.0,3500.0,4063.0,3763.0,3350.0,4500.0
+2021,Singapore Management University,School of Social Sciences (4-year programme),Social Science,94.1,77.1,3656.0,3465.0,3836.0,3600.0,3200.0,4010.0
+2021,Singapore Management University,School of Social Sciences (4-year programme),Social Science (Cum Laude and above),96.9,86.2,3856.0,3500.0,4063.0,3763.0,3350.0,4500.0
 2021,Singapore Management University,School of Law (4-year programme),Law,100.0,98.3,5319.0,5500.0,5433.0,5600.0,4500.0,6000.0
 2021,Singapore Management University,School of Law (4-year programme),Law (Cum Laude and above),100.0,98.8,5613.0,5600.0,5754.0,5800.0,5025.0,6000.0
 2021,Singapore University of Social Sciences,S R Nathan School of Human Development,Bachelor of Early Childhood Education,93.0,88.4,2949.0,3000.0,2963.0,3000.0,2800.0,3100.0
@@ -1033,7 +1033,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2021,Singapore University of Technology and Design,Singapore University of Technology and Design,Bachelor of Science (Architecture and Sustainable Design),96.6,89.7,3800.0,3801.0,3842.0,3875.0,3430.0,4200.0
 2022,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,88.5,76.9,3808.0,3670.0,3928.0,3700.0,3500.0,4000.0
 2022,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),87.5,74.4,3889.0,3850.0,4034.0,4000.0,3500.0,4390.0
-2022,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,92.3,81.1,3935.0,3650.0,4056.0,3795.0,3500.0,4350.0
+2022,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Science,92.3,81.1,3935.0,3650.0,4056.0,3795.0,3500.0,4350.0
 2022,National University of Singapore,Faculty of Dentistry,Bachelor of Dental Surgery,100.0,100.0,4331.0,4200.0,4331.0,4200.0,4200.0,4600.0
 2022,National University of Singapore,Faculty of Law,Bachelor of Laws,97.3,94.6,5935.0,6000.0,6182.0,6400.0,5500.0,6800.0
 2022,National University of Singapore,Faculty of Science,Bachelor of Science,85.2,63.0,3630.0,3500.0,3823.0,3600.0,3500.0,4000.0
@@ -1087,27 +1087,27 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2022,Nanyang Technological University,College of Engineering,Maritime Studies,96.7,95.1,3842.0,3740.0,3860.0,3740.0,3500.0,4060.0
 2022,Nanyang Technological University,College of Engineering,Materials Engineering,94.9,92.6,4300.0,4300.0,4522.0,4500.0,3800.0,5000.0
 2022,Nanyang Technological University,College of Engineering,Mechanical Engineering,95.0,91.3,4381.0,4200.0,4537.0,4500.0,3944.0,5000.0
-2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Art, Design and Media",89.5,63.2,3303.0,3200.0,3372.0,3200.0,3000.0,3600.0
+2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Arts, Design and Media",89.5,63.2,3303.0,3200.0,3372.0,3200.0,3000.0,3600.0
 2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Chinese,91.8,70.5,3408.0,3300.0,3566.0,3600.0,3060.0,4015.0
 2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Communication Studies,94.2,79.7,3674.0,3500.0,3739.0,3500.0,3200.0,4200.0
 2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Economics,88.7,81.7,4187.0,4000.0,4270.0,4000.0,3600.0,4550.0
 2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",English,94.9,77.2,3574.0,3500.0,3699.0,3748.0,3200.0,4200.0
 2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",History,86.5,80.8,3819.0,3800.0,3966.0,4000.0,3500.0,4250.0
-2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Inter-Disciplinary Double Major8,87.9,66.7,4135.0,4200.0,4258.0,4271.0,3650.0,4750.0
+2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Inter-Disciplinary Double Major,87.9,66.7,4135.0,4200.0,4258.0,4271.0,3650.0,4750.0
 2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Linguistics and Multilingual Studies,94.1,72.5,3452.0,3400.0,3513.0,3500.0,3150.0,3810.0
 2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Philosophy,78.3,69.6,3476.0,3300.0,3515.0,3450.0,3000.0,3700.0
 2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Psychology,79.8,69.7,3688.0,3635.0,3743.0,3668.0,3300.0,4015.0
 2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Public Policy and Global Affairs,97.9,95.7,4122.0,4088.0,4167.0,4123.0,3650.0,4500.0
 2022,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Sociology,92.9,87.1,3816.0,3789.0,3904.0,3800.0,3450.0,4200.0
-2022,Nanyang Technological University,College of Science,Biological and Biomedical Sciences,93.9,83.2,3688.0,3600.0,3808.0,3600.0,3400.0,4100.0
-2022,Nanyang Technological University,College of Science,Biological Sciences and Psychology,71.4,50.0,4057.0,3800.0,4264.0,4050.0,3700.0,4300.0
-2022,Nanyang Technological University,College of Science,Biomedical Sciences and Chinese Medicine,100.0,90.0,3300.0,3100.0,3415.0,3175.0,3080.0,3300.0
+2022,Nanyang Technological University,College of Science,Biological and Biomedical Science,93.9,83.2,3688.0,3600.0,3808.0,3600.0,3400.0,4100.0
+2022,Nanyang Technological University,College of Science,Biological Science and Psychology,71.4,50.0,4057.0,3800.0,4264.0,4050.0,3700.0,4300.0
+2022,Nanyang Technological University,College of Science,Biomedical Science and Chinese Medicine,100.0,90.0,3300.0,3100.0,3415.0,3175.0,3080.0,3300.0
 2022,Nanyang Technological University,College of Science,Chemistry and Biological Chemistry,90.8,84.0,3759.0,3600.0,3863.0,3700.0,3400.0,4200.0
-2022,Nanyang Technological University,College of Science,Environmental Earth Systems Sciences,100.0,88.0,4406.0,4008.0,4545.0,4023.0,3600.0,4959.0
-2022,Nanyang Technological University,College of Science,Mathematical Sciences / Mathematical Sciences and Economics,86.5,79.4,4352.0,4250.0,4436.0,4300.0,3799.0,4800.0
+2022,Nanyang Technological University,College of Science,Environmental Earth Systems Science,100.0,88.0,4406.0,4008.0,4545.0,4023.0,3600.0,4959.0
+2022,Nanyang Technological University,College of Science,Mathematical Science / Mathematical Science and Economics,86.5,79.4,4352.0,4250.0,4436.0,4300.0,3799.0,4800.0
 2022,Nanyang Technological University,College of Science,Physics and Applied Physics,91.5,84.7,3917.0,4000.0,4067.0,4000.0,3683.0,4575.0
-2022,Nanyang Technological University,National Institute of Education (NIE),Arts (with Education),100.0,100.0,3684.0,4000.0,4025.0,4129.0,3750.0,4300.0
-2022,Nanyang Technological University,National Institute of Education (NIE),Science (with Education),100.0,100.0,4106.0,4275.0,4211.0,4300.0,4000.0,4470.0
+2022,Nanyang Technological University,National Institute of Education (NIE),Arts (With Education),100.0,100.0,3684.0,4000.0,4025.0,4129.0,3750.0,4300.0
+2022,Nanyang Technological University,National Institute of Education (NIE),Science (With Education),100.0,100.0,4106.0,4275.0,4211.0,4300.0,4000.0,4470.0
 2022,Nanyang Technological University,National Institute of Education (NIE),Sports Science and Management,100.0,74.4,3657.0,3350.0,3762.0,3350.0,3200.0,4266.0
 2022,Nanyang Technological University,Lee Kong Chian School of Medicine,Medicine,100.0,100.0,4779.0,4700.0,5532.0,5600.0,5199.0,6000.0
 2022,Singapore Management University,School of Accountancy (4-year programme),Accountancy,98.1,96.1,4432.0,3800.0,4497.0,3825.0,3600.0,4600.0
@@ -1118,8 +1118,8 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2022,Singapore Management University,School of Economics (4-year programme),Economics (Cum Laude and above),100.0,98.6,5021.0,4500.0,5169.0,4500.0,4091.0,5700.0
 2022,Singapore Management University,School of Information Systems (4-year programme),Information Systems,95.1,93.4,5333.0,5235.0,5472.0,5400.0,4700.0,6166.0
 2022,Singapore Management University,School of Information Systems (4-year programme),Information Systems (Cum Laude and above),96.0,94.4,5702.0,5500.0,5799.0,5638.0,4900.0,6500.0
-2022,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences,91.4,83.3,4076.0,3843.0,4265.0,4000.0,3500.0,4600.0
-2022,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences (Cum Laude and above),94.3,88.6,4351.0,4008.0,4576.0,4316.0,3795.0,4900.0
+2022,Singapore Management University,School of Social Sciences (4-year programme),Social Science,91.4,83.3,4076.0,3843.0,4265.0,4000.0,3500.0,4600.0
+2022,Singapore Management University,School of Social Sciences (4-year programme),Social Science (Cum Laude and above),94.3,88.6,4351.0,4008.0,4576.0,4316.0,3795.0,4900.0
 2022,Singapore Management University,School of Law (4-year programme),Law,94.1,91.1,6063.0,6000.0,6221.0,6375.0,5500.0,6800.0
 2022,Singapore Management University,School of Law (4-year programme),Law (Cum Laude and above),92.4,92.4,6226.0,6338.0,6429.0,6400.0,6000.0,7000.0
 2022,Singapore University of Technology and Design,Singapore University of Technology and Design,Bachelor of Engineering (Computer Science and Design),91.2,86.8,5539.0,5000.0,5725.0,5190.0,4600.0,6600.0
@@ -1135,12 +1135,12 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2022,Singapore University of Social Sciences,School of Business,Bachelor of Science in Marketing,87.2,75.6,3664.0,3500.0,3827.0,3600.0,3220.0,4100.0
 2022,Singapore University of Social Sciences,School of Business,Bachelor of Science in Supply Chain Management,98.4,90.6,3629.0,3500.0,3702.0,3500.0,3300.0,3900.0
 2022,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Arts in Game Design,67.9,60.7,3847.0,3500.0,3884.0,3600.0,3400.0,4250.0
-2022,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Art and Animation,77.1,54.3,3606.0,3500.0,3628.0,3500.0,3000.0,3825.0
+2022,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts and Animation,77.1,54.3,3606.0,3500.0,3628.0,3500.0,3000.0,3825.0
 2022,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science and Game Design,90.6,84.4,4593.0,4375.0,4681.0,4490.0,4250.0,5200.0
 2022,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time Interactive Simulation,100.0,95.6,5576.0,5500.0,5679.0,5500.0,4700.0,6656.0
 2022,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Accountancy with Honours,91.8,91.8,3812.0,3600.0,3841.0,3600.0,3600.0,4000.0
-2022,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Information Security),98.0,96.0,4798.0,4800.0,4927.0,4800.0,4216.0,5563.0
-2022,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Software Engineering),98.1,98.1,5169.0,5000.0,5313.0,5200.0,4798.0,5900.0
+2022,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Information Security),98.0,96.0,4798.0,4800.0,4927.0,4800.0,4216.0,5563.0
+2022,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Software Engineering),98.1,98.1,5169.0,5000.0,5313.0,5200.0,4798.0,5900.0
 2022,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Aircraft Systems Engineering,91.2,85.3,4102.0,4400.0,4168.0,4400.0,3000.0,4900.0
 2022,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Pharmaceutical Engineering,96.6,91.5,3791.0,3755.0,4085.0,3955.0,3503.0,4300.0
 2022,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable Infrastructure Engineering (Building Services),100.0,97.6,3819.0,3725.0,3879.0,3775.0,3585.0,4050.0
@@ -1151,7 +1151,7 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2022,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science (Diagnostic Radiography),100.0,100.0,3558.0,3500.0,3836.0,3800.0,3650.0,3990.0
 2022,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science (Occupational Therapy),97.1,95.7,3605.0,3600.0,3630.0,3669.0,3500.0,3800.0
 2022,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science (Radiation Therapy),90.9,90.9,3615.0,3600.0,3768.0,3775.0,3500.0,4060.0
-2022,Singapore Institute of Technology,SIT- DigiPen Institute of Technology,Bachelor of Engineering with Honours in Systems Engineering (ElectroMechanical Systems),92.7,92.7,4843.0,4800.0,4913.0,4800.0,4574.0,5500.0
+2022,Singapore Institute of Technology,SIT- DigiPen Institute of Technology,Bachelor of Engineering with Honours in Systems Engineering (Electro Mechanical Systems),92.7,92.7,4843.0,4800.0,4913.0,4800.0,4574.0,5500.0
 2022,Singapore Institute of Technology,SIT- Massey University,Bachelor of Food Technology with Honours,93.2,81.8,3272.0,3300.0,3380.0,3300.0,3050.0,3600.0
 2022,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Chemical Engineering,79.7,70.3,3936.0,3900.0,4216.0,4100.0,3785.0,4650.0
 2022,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Electrical Power Engineering,86.4,84.7,4104.0,4000.0,4180.0,4100.0,3700.0,4510.0
@@ -1166,50 +1166,50 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2022,Singapore Institute of Technology,SIT-University of Glasgow,Bachelor of Science with Honours in Computing Science,91.2,86.8,4980.0,5000.0,5113.0,5000.0,4800.0,5500.0
 2022,Singapore Institute of Technology,SIT-University of Glasgow,Bachelor of Science with Honours in Nursing,98.6,88.4,3511.0,3458.0,3797.0,3800.0,3500.0,4100.0
 2022,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Chemical Engineering,94.1,85.3,3704.0,3600.0,4002.0,3950.0,3600.0,4300.0
-2022,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering & Information Technology,95.0,85.0,4522.0,4200.0,4606.0,4280.0,4000.0,4800.0
+2022,Singapore Institute of Technology,Technische Universität München,Bachelor of Science in Electrical Engineering and Information Technology,95.0,85.0,4522.0,4200.0,4606.0,4280.0,4000.0,4800.0
 2022,Singapore Institute of Technology,The Culinary Institute of America,Bachelor of Business Administration in Food Business Management,89.5,78.9,2609.0,2450.0,2969.0,3050.0,2300.0,3500.0
 2022,Singapore Institute of Technology,University of Liverpool,Bachelor of Arts with Honours in Criminology and Security,90.5,85.7,4278.0,4050.0,4533.0,4561.0,4000.0,5293.0
 2023,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts,80.0,66.0,3942.0,3700.0,4291.0,3745.0,3400.0,5000.0
 2023,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Arts (Hons),87.0,74.0,3926.0,3930.0,4083.0,4008.0,3500.0,4500.0
-2023,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Sciences,89.0,81.0,4173.0,4000.0,4304.0,4015.0,3720.0,4500.0
+2023,National University of Singapore,Faculty of Arts & Social Sciences,Bachelor of Social Science,89.0,81.0,4173.0,4000.0,4304.0,4015.0,3720.0,4500.0
 2023,National University of Singapore,Faculty of Dentistry,Bachelor of Dental Surgery,100.0,100.0,4586.0,4550.0,4589.0,4550.0,4500.0,4950.0
 2023,National University of Singapore,Faculty of Law,Bachelor of Laws,97.0,97.0,7051.0,7000.0,7244.0,7000.0,6000.0,7100.0
 2023,National University of Singapore,Faculty of Science,Bachelor of Science,88.0,71.0,4492.0,4100.0,4642.0,4250.0,3650.0,4800.0
 2023,National University of Singapore,Faculty of Science,Bachelor of Science (Hons),90.0,82.0,4180.0,3985.0,4290.0,4000.0,3600.0,4500.0
-2023,National University of Singapore,Faculty of Science,Bachelor of Science (PharmaceuticalScience) (Hons),97.0,93.0,3892.0,3700.0,3999.0,3900.0,3625.0,4200.0
-2023,National University of Singapore,Faculty of Science,Bachelor of Science (Data Scienceand Analytics),83.0,80.0,4999.0,5000.0,5166.0,5000.0,4500.0,5500.0
+2023,National University of Singapore,Faculty of Science,Bachelor of Science (Pharmaceutical Science) (Hons),97.0,93.0,3892.0,3700.0,3999.0,3900.0,3625.0,4200.0
+2023,National University of Singapore,Faculty of Science,Bachelor of Science (Data Science and Analytics),83.0,80.0,4999.0,5000.0,5166.0,5000.0,4500.0,5500.0
 2023,National University of Singapore,NUS Business School,Bachelor of Business Administration,88.0,78.0,5707.0,5000.0,6002.0,5167.0,4077.0,7500.0
-2023,National University of Singapore,NUS Business School,Bachelor of Business Administration(Hons),95.0,91.0,5256.0,4600.0,5413.0,4800.0,4000.0,5800.0
-2023,National University of Singapore,NUS Business School,Bachelor of Business Administration(Accountancy),92.0,77.0,3813.0,3600.0,4199.0,3600.0,3520.0,3820.0
-2023,National University of Singapore,NUS Business School,Bachelor of Business Administration(Accountancy) (Hons),97.0,94.0,4769.0,4000.0,4850.0,4200.0,3600.0,5450.0
+2023,National University of Singapore,NUS Business School,Bachelor of Business Administration (Hons),95.0,91.0,5256.0,4600.0,5413.0,4800.0,4000.0,5800.0
+2023,National University of Singapore,NUS Business School,Bachelor of Business Administration (Accountancy),92.0,77.0,3813.0,3600.0,4199.0,3600.0,3520.0,3820.0
+2023,National University of Singapore,NUS Business School,Bachelor of Business Administration (Accountancy) (Hons),97.0,94.0,4769.0,4000.0,4850.0,4200.0,3600.0,5450.0
 2023,National University of Singapore,NUS Business School,Bachelor of Science (Real Estate),92.0,87.0,4097.0,4000.0,4239.0,4000.0,3800.0,4500.0
-2023,National University of Singapore,School of Computing,Bachelor of Computing (ComputerScience),92.0,92.0,6673.0,6181.0,6877.0,6333.0,5500.0,7700.0
-2023,National University of Singapore,School of Computing,Bachelor of Computing (InformationSecurity),90.0,90.0,5433.0,5451.0,5707.0,5500.0,5000.0,6210.0
-2023,National University of Singapore,School of Computing,Bachelor of Computing (InformationSystems),91.0,91.0,5707.0,5500.0,5937.0,5500.0,5000.0,6000.0
-2023,National University of Singapore,School of Computing,Bachelor of Science (BusinessAnalytics),94.0,93.0,5895.0,5500.0,6030.0,5500.0,5000.0,6600.0
-2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (BiomedicalEngineering),88.0,81.0,4123.0,4000.0,4243.0,4100.0,3740.0,4600.0
-2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (ChemicalEngineering),86.0,81.0,4374.0,4200.0,4602.0,4405.0,4000.0,4760.0
-2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (CivilEngineering),94.0,88.0,3966.0,3900.0,4139.0,4000.0,3800.0,4500.0
-2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (ElectricalEngineering),92.0,90.0,4790.0,4675.0,4918.0,4800.0,4340.0,5350.0
-2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (EngineeringScience),78.0,78.0,4504.0,4200.0,4605.0,4500.0,4000.0,5200.0
-2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering(Environmental Engineering),77.0,74.0,4199.0,4200.0,4299.0,4243.0,3900.0,4588.0
-2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (Industrialand Systems Engineering),95.0,95.0,4483.0,4500.0,4744.0,4600.0,4280.0,4990.0
-2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (MaterialsScience and Engineering),83.0,76.0,4253.0,4200.0,4371.0,4346.0,4000.0,4700.0
-2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (MechanicalEngineering),89.0,88.0,4578.0,4320.0,4722.0,4490.0,4030.0,5046.0
+2023,National University of Singapore,School of Computing,Bachelor of Computing (Computer Science),92.0,92.0,6673.0,6181.0,6877.0,6333.0,5500.0,7700.0
+2023,National University of Singapore,School of Computing,Bachelor of Computing (Information Security),90.0,90.0,5433.0,5451.0,5707.0,5500.0,5000.0,6210.0
+2023,National University of Singapore,School of Computing,Bachelor of Computing (Information Systems),91.0,91.0,5707.0,5500.0,5937.0,5500.0,5000.0,6000.0
+2023,National University of Singapore,School of Computing,Bachelor of Science (Business Analytics),94.0,93.0,5895.0,5500.0,6030.0,5500.0,5000.0,6600.0
+2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (Biomedical Engineering),88.0,81.0,4123.0,4000.0,4243.0,4100.0,3740.0,4600.0
+2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (Chemical Engineering),86.0,81.0,4374.0,4200.0,4602.0,4405.0,4000.0,4760.0
+2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (Civil Engineering),94.0,88.0,3966.0,3900.0,4139.0,4000.0,3800.0,4500.0
+2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (Electrical Engineering),92.0,90.0,4790.0,4675.0,4918.0,4800.0,4340.0,5350.0
+2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (Engineering Science),78.0,78.0,4504.0,4200.0,4605.0,4500.0,4000.0,5200.0
+2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (Environmental Engineering),77.0,74.0,4199.0,4200.0,4299.0,4243.0,3900.0,4588.0
+2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (Industrial and Systems Engineering),95.0,95.0,4483.0,4500.0,4744.0,4600.0,4280.0,4990.0
+2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (Materials Science and Engineering),83.0,76.0,4253.0,4200.0,4371.0,4346.0,4000.0,4700.0
+2023,National University of Singapore,College of Design and Engineering,Bachelor of Engineering (Mechanical Engineering),89.0,88.0,4578.0,4320.0,4722.0,4490.0,4030.0,5046.0
 2023,National University of Singapore,College of Design and Engineering,Bachelor of Landscape Architecture,94.0,94.0,3438.0,3450.0,3506.0,3450.0,3350.0,3500.0
 2023,National University of Singapore,College of Design and Engineering,Bachelor of Arts (Industrial Design),86.0,71.0,4104.0,4000.0,4139.0,4000.0,3600.0,4500.0
-2023,National University of Singapore,College of Design and Engineering,Bachelor of Science (Project andFacilities Management),87.0,84.0,3907.0,3800.0,4000.0,3855.0,3650.0,4299.0
+2023,National University of Singapore,College of Design and Engineering,Bachelor of Science (Project and Facilities Management),87.0,84.0,3907.0,3800.0,4000.0,3855.0,3650.0,4299.0
 2023,National University of Singapore,Yong Loo Lin School (Medicine),Bachelor of Science (Nursing),98.0,95.0,3627.0,3550.0,3923.0,3850.0,3500.0,4200.0
 2023,National University of Singapore,Yong Loo Lin School (Medicine),Bachelor of Science (Nursing) (Hons),98.0,97.0,3690.0,3750.0,3981.0,4000.0,3700.0,4250.0
 2023,National University of Singapore,YST Conservatory of Music,Bachelor of Music,71.0,50.0,3766.0,3800.0,4053.0,4000.0,3400.0,4500.0
 2023,National University of Singapore,Yale-NUS College,Bachelor of Arts with Honours,91.0,85.0,4785.0,4200.0,4908.0,4250.0,3850.0,5500.0
 2023,National University of Singapore,Yale-NUS College,Bachelor of Science with Honours,83.0,83.0,5381.0,4500.0,5490.0,4600.0,4100.0,6372.0
-2023,National University of Singapore,Multi-Disciplinary Programmes,Bachelor of Engineering (ComputerEngineering),90.0,86.0,5529.0,5450.0,5737.0,5595.0,4900.0,6355.0
+2023,National University of Singapore,Multi-Disciplinary Programmes,Bachelor of Engineering (Computer Engineering),90.0,86.0,5529.0,5450.0,5737.0,5595.0,4900.0,6355.0
 2023,National University of Singapore,Multi-Disciplinary Programmes,Bachelor of Environmental Studies,97.0,94.0,4002.0,4000.0,4142.0,4000.0,3600.0,4400.0
 2023,Nanyang Technological University,College of Business (Nanyang Business School),Accountancy,96.6,95.5,4067.0,3600.0,4119.0,3600.0,3600.0,4000.0
 2023,Nanyang Technological University,College of Business (Nanyang Business School),Accountancy and Business,97.2,95.4,4957.0,4500.0,5030.0,4650.0,4000.0,5344.0
 2023,Nanyang Technological University,College of Business (Nanyang Business School),Business,91.8,85.2,4472.0,4100.0,4609.0,4255.0,3800.0,5000.0
-2023,Nanyang Technological University,College of Business (Nanyang Business School),Double Degree in Business and ComputerEngineering/Computing,94.7,89.5,6616.0,6200.0,6799.0,6210.0,5500.0,7000.0
+2023,Nanyang Technological University,College of Business (Nanyang Business School),Double Degree in Business and Computer Engineering/Computing,94.7,89.5,6616.0,6200.0,6799.0,6210.0,5500.0,7000.0
 2023,Nanyang Technological University,College of Engineering,Aerospace Engineering,87.5,83.8,4715.0,4500.0,4845.0,4763.0,4150.0,5700.0
 2023,Nanyang Technological University,College of Engineering,Bioengineering,86.7,80.0,3945.0,4000.0,4077.0,4043.0,3775.0,4450.0
 2023,Nanyang Technological University,College of Engineering,Chemical and Biomolecular Engineering,92.0,87.0,4019.0,4000.0,4299.0,4200.0,3950.0,4550.0
@@ -1217,14 +1217,14 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2023,Nanyang Technological University,College of Engineering,Computer Engineering,89.3,87.5,5512.0,5400.0,5631.0,5400.0,4700.0,6200.0
 2023,Nanyang Technological University,College of Engineering,Computer Science,88.3,86.5,5334.0,5200.0,5440.0,5200.0,4800.0,6000.0
 2023,Nanyang Technological University,College of Engineering,Data Science and Artificial Intelligence,83.3,83.3,5319.0,5250.0,5352.0,5250.0,4600.0,6250.0
-2023,Nanyang Technological University,College of Engineering,Double Degree in Engineering andEconomics,100.0,100.0,5517.0,5285.0,5812.0,5405.0,4900.0,6500.0
+2023,Nanyang Technological University,College of Engineering,Double Degree in Engineering and Economics,100.0,100.0,5517.0,5285.0,5812.0,5405.0,4900.0,6500.0
 2023,Nanyang Technological University,College of Engineering,Electrical and Electronic Engineering,87.1,85.6,4713.0,4650.0,4803.0,4800.0,4200.0,5100.0
 2023,Nanyang Technological University,College of Engineering,Environmental Engineering,60.6,54.5,3967.0,3850.0,4099.0,4115.0,3800.0,4337.0
 2023,Nanyang Technological University,College of Engineering,Information Engineering and Media,75.0,69.1,4761.0,4800.0,4857.0,4800.0,4400.0,5100.0
 2023,Nanyang Technological University,College of Engineering,Maritime Studies,93.8,92.3,4223.0,4200.0,4302.0,4200.0,4000.0,4500.0
 2023,Nanyang Technological University,College of Engineering,Materials Engineering,83.1,77.9,4216.0,4200.0,4351.0,4200.0,3900.0,4645.0
 2023,Nanyang Technological University,College of Engineering,Mechanical Engineering,85.0,82.5,4379.0,4250.0,4481.0,4400.0,4000.0,4864.0
-2023,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Art, Design and Media",80.6,52.4,3471.0,3498.0,3515.0,3498.0,3000.0,3755.0
+2023,Nanyang Technological University,"College of Humanities, Arts & Social Sciences","Arts, Design and Media",80.6,52.4,3471.0,3498.0,3515.0,3498.0,3000.0,3755.0
 2023,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Chinese,83.6,70.9,3927.0,4015.0,4007.0,4090.0,3450.0,4530.0
 2023,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Communication Studies,88.7,77.4,3625.0,3600.0,3719.0,3675.0,3350.0,4000.0
 2023,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Economics,80.6,70.9,4411.0,4150.0,4561.0,4314.0,4000.0,4975.0
@@ -1236,14 +1236,14 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2023,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Psychology,83.2,68.4,3882.0,3800.0,3913.0,4000.0,3550.0,4268.0
 2023,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Public Policy and Global Affairs,85.1,83.0,4317.0,4200.0,4401.0,4202.0,3800.0,5124.0
 2023,Nanyang Technological University,"College of Humanities, Arts & Social Sciences",Sociology,86.4,74.1,3849.0,3800.0,3994.0,4008.0,3540.0,4400.0
-2023,Nanyang Technological University,College of Science,Biological and Biomedical Sciences,88.1,83.9,3963.0,3850.0,4116.0,3980.0,3575.0,4300.0
-2023,Nanyang Technological University,College of Science,Biomedical Sciences and ChineseMedicine,96.3,85.2,3297.0,3350.0,3358.0,3350.0,3200.0,3600.0
+2023,Nanyang Technological University,College of Science,Biological and Biomedical Science,88.1,83.9,3963.0,3850.0,4116.0,3980.0,3575.0,4300.0
+2023,Nanyang Technological University,College of Science,Biomedical Science and Chinese Medicine,96.3,85.2,3297.0,3350.0,3358.0,3350.0,3200.0,3600.0
 2023,Nanyang Technological University,College of Science,Chemistry and Biological Chemistry,80.4,66.4,3822.0,3725.0,3941.0,3800.0,3500.0,4200.0
 2023,Nanyang Technological University,College of Science,Environmental Earth Systems Science,96.3,96.3,4171.0,4038.0,4202.0,4138.0,3750.0,4650.0
-2023,Nanyang Technological University,College of Science,Mathematics and Mathematical Sciences,80.2,73.3,4545.0,4200.0,4574.0,4250.0,3800.0,4800.0
+2023,Nanyang Technological University,College of Science,Mathematics and Mathematical Science,80.2,73.3,4545.0,4200.0,4574.0,4250.0,3800.0,4800.0
 2023,Nanyang Technological University,College of Science,Physics and Applied Physics,80.9,72.3,3904.0,4000.0,4076.0,4000.0,3905.0,4400.0
-2023,Nanyang Technological University,National Institute of Education (NIE),Arts (and Education),100.0,100.0,4023.0,4000.0,4185.0,4200.0,3948.0,4600.0
-2023,Nanyang Technological University,National Institute of Education (NIE),Science (and Education),100.0,100.0,3907.0,4000.0,4370.0,4300.0,4000.0,4651.0
+2023,Nanyang Technological University,National Institute of Education (NIE),Arts (With Education),100.0,100.0,4023.0,4000.0,4185.0,4200.0,3948.0,4600.0
+2023,Nanyang Technological University,National Institute of Education (NIE),Science (With Education),100.0,100.0,3907.0,4000.0,4370.0,4300.0,4000.0,4651.0
 2023,Nanyang Technological University,National Institute of Education (NIE),Sports Science and Management,92.5,71.7,3692.0,3623.0,3837.0,3850.0,3250.0,4319.0
 2023,Singapore Management University,School of Accountancy (4-year programme),Accountancy,95.5,94.7,4404.0,3800.0,4463.0,3900.0,3600.0,4700.0
 2023,Singapore Management University,School of Accountancy (4-year programme),Accountancy (Cum Laude and above),96.0,94.9,5017.0,4500.0,5069.0,4500.0,3850.0,5400.0
@@ -1255,47 +1255,47 @@ year,university,school,degree,employment_rate_overall,employment_rate_ft_perm,ba
 2023,Singapore Management University,School of Computing & Information Systems (4-year programme) � Information Systems,Information Systems (Cum Laude and above),95.0,93.5,5710.0,5500.0,5866.0,5625.0,5000.0,6666.0
 2023,Singapore Management University,School of Computing & Information Systems (4-year programme) � Computer Science,Computer Science,92.7,92.7,5762.0,5513.0,6120.0,5800.0,5100.0,6500.0
 2023,Singapore Management University,School of Computing & Information Systems (4-year programme) � Computer Science,Computer Science (Cum Laude and above),94.1,94.1,6470.0,6250.0,6902.0,6250.0,5500.0,7752.0
-2023,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences,87.0,81.5,4185.0,3900.0,4330.0,4000.0,3600.0,4780.0
-2023,Singapore Management University,School of Social Sciences (4-year programme),Social Sciences (Cum Laude and above),86.8,81.3,4398.0,4150.0,4547.0,4312.0,3700.0,5000.0
+2023,Singapore Management University,School of Social Sciences (4-year programme),Social Science,87.0,81.5,4185.0,3900.0,4330.0,4000.0,3600.0,4780.0
+2023,Singapore Management University,School of Social Sciences (4-year programme),Social Science (Cum Laude and above),86.8,81.3,4398.0,4150.0,4547.0,4312.0,3700.0,5000.0
 2023,Singapore Management University,School of Law (4-year programme),Law,99.2,99.2,6375.0,6500.0,6509.0,7000.0,5800.0,7000.0
 2023,Singapore Management University,School of Law (4-year programme),Law (Cum Laude and above),98.9,98.9,6553.0,7000.0,6690.0,7000.0,6200.0,7000.0
 2023,Singapore University of Social Sciences,S R Nathan School of Human Development,Bachelor of Early Childhood Education,83.9,73.2,3270.0,3300.0,3328.0,3400.0,3097.0,3525.0
-2023,Singapore University of Social Sciences,S R Nathan School of Human Development,Bachelor of Human ResourceManagement,88.6,75.9,3530.0,3500.0,3650.0,3500.0,3310.0,3904.0
+2023,Singapore University of Social Sciences,S R Nathan School of Human Development,Bachelor of Human Resource Management,88.6,75.9,3530.0,3500.0,3650.0,3500.0,3310.0,3904.0
 2023,Singapore University of Social Sciences,School of Business,Bachelor of Accountancy,94.1,94.1,3560.0,3600.0,3601.0,3600.0,3500.0,3600.0
-2023,Singapore University of Social Sciences,School of Business,Bachelor of Science in BusinessAnalytics,83.3,83.3,4670.0,4500.0,4840.0,4800.0,4300.0,5200.0
+2023,Singapore University of Social Sciences,School of Business,Bachelor of Science in Business Analytics,83.3,83.3,4670.0,4500.0,4840.0,4800.0,4300.0,5200.0
 2023,Singapore University of Social Sciences,School of Business,Bachelor of Science in Finance,86.0,81.4,4674.0,4500.0,4965.0,4500.0,4000.0,5200.0
 2023,Singapore University of Social Sciences,School of Business,Bachelor of Science in Marketing,85.4,67.5,3670.0,3500.0,3896.0,3600.0,3400.0,4040.0
-2023,Singapore University of Social Sciences,School of Business,Bachelor of Science in Supply ChainManagement,94.2,91.3,3883.0,3900.0,4038.0,4000.0,3600.0,4363.0
+2023,Singapore University of Social Sciences,School of Business,Bachelor of Science in Supply Chain Management,94.2,91.3,3883.0,3900.0,4038.0,4000.0,3600.0,4363.0
 2023,Singapore University of Social Sciences,School of Humanities and Behavioural Sciences,Bachelor of Public Safety and Security,100.0,100.0,4383.0,4330.0,4709.0,4691.0,3875.0,5300.0
-2023,Singapore Institute of Technology,Culinary Institute of America,Bachelor of Business Administration inFood Business Management,90.5,66.7,3078.0,2900.0,3344.0,3100.0,2800.0,4000.0
+2023,Singapore Institute of Technology,Culinary Institute of America,Bachelor of Business Administration in Food Business Management,90.5,66.7,3078.0,2900.0,3344.0,3100.0,2800.0,4000.0
 2023,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Arts in Game Design,86.4,81.8,3718.0,3600.0,3721.0,3600.0,3300.0,4000.0
-2023,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Art andAnimation,84.0,44.0,3330.0,3200.0,3330.0,3200.0,3000.0,3300.0
-2023,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in ComputerScience and Game Design,88.2,86.3,4890.0,4900.0,4912.0,4900.0,4400.0,5500.0
-2023,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time InteractiveSimulation,79.5,79.5,5204.0,5000.0,5260.0,5000.0,4700.0,5700.0
+2023,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Fine Arts in Digital Arts and Animation,84.0,44.0,3330.0,3200.0,3330.0,3200.0,3000.0,3300.0
+2023,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science and Game Design,88.2,86.3,4890.0,4900.0,4912.0,4900.0,4400.0,5500.0
+2023,Singapore Institute of Technology,DigiPen Institute of Technology,Bachelor of Science in Computer Science in Real-Time Interactive Simulation,79.5,79.5,5204.0,5000.0,5260.0,5000.0,4700.0,5700.0
 2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Accountancy with Honours,92.7,87.8,3745.0,3600.0,3797.0,3620.0,3600.0,4000.0
 2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Aircraft Systems Engineering,85.2,66.7,4109.0,4400.0,4117.0,4400.0,3650.0,4800.0
-2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & CommunicationsTechnology (Information Security),94.4,93.0,5157.0,5000.0,5392.0,5200.0,4750.0,6050.0
-2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information & Communications Technology (Software Engineering),88.7,82.3,5000.0,4900.0,5131.0,5000.0,4800.0,5500.0
-2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in PharmaceuticalEngineering,91.2,87.7,3756.0,3700.0,4208.0,4150.0,3640.0,4700.0
-2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable InfrastructureEngineering (Building Services),92.5,90.0,3727.0,3700.0,3842.0,3800.0,3600.0,4200.0
-2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable InfrastructureEngineering (Land),88.5,80.8,4007.0,3800.0,4220.0,4200.0,3850.0,4300.0
-2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering withHonours in Telematics (IntelligentTransportation Systems Engineering),85.7,81.0,4437.0,4500.0,4642.0,4725.0,4200.0,4900.0
+2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Information Security),94.4,93.0,5157.0,5000.0,5392.0,5200.0,4750.0,6050.0
+2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Information and Communications Technology (Software Engineering),88.7,82.3,5000.0,4900.0,5131.0,5000.0,4800.0,5500.0
+2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Pharmaceutical Engineering,91.2,87.7,3756.0,3700.0,4208.0,4150.0,3640.0,4700.0
+2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable Infrastructure Engineering (Building Services),92.5,90.0,3727.0,3700.0,3842.0,3800.0,3600.0,4200.0
+2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Sustainable Infrastructure Engineering (Land),88.5,80.8,4007.0,3800.0,4220.0,4200.0,3850.0,4300.0
+2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Engineering with Honours in Telematics (Intelligent Transportation Systems Engineering),85.7,81.0,4437.0,4500.0,4642.0,4725.0,4200.0,4900.0
 2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Hospitality Business with Honours,93.5,77.8,3405.0,3400.0,3595.0,3500.0,3089.0,3900.0
 2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science with Honours in Air Transport Management,85.7,83.7,3675.0,3700.0,3830.0,3720.0,3472.0,4100.0
 2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science with Honours in Diagnostic Radiography,100.0,100.0,3884.0,3850.0,4126.0,4050.0,3900.0,4300.0
 2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science with Honours in Dietetics and Nutrition,100.0,100.0,3629.0,3550.0,3637.0,3575.0,3500.0,3850.0
-2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science with Honours in Digital Communications andIntegrated Media,93.2,61.4,3824.0,3750.0,3912.0,3780.0,3500.0,4126.0
+2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science with Honours in Digital Communications and Integrated Media,93.2,61.4,3824.0,3750.0,3912.0,3780.0,3500.0,4126.0
 2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science with Honours in Occupational Therapy,100.0,98.6,3786.0,3800.0,3824.0,3800.0,3700.0,3900.0
 2023,Singapore Institute of Technology,Singapore Institute of Technology (SIT),Bachelor of Science with Honours in Radiation Therapy,90.9,90.9,4030.0,3850.0,4030.0,3850.0,3850.0,4235.0
-2023,Singapore Institute of Technology,SIT- DigiPen Institute of Technology,Bachelor of Engineering with Honours in Systems Engineering(ElectroMechanical Systems),89.2,81.1,4743.0,4500.0,4848.0,4705.0,4400.0,5000.0
+2023,Singapore Institute of Technology,SIT- DigiPen Institute of Technology,Bachelor of Engineering with Honours in Systems Engineering (Electro Mechanical Systems),89.2,81.1,4743.0,4500.0,4848.0,4705.0,4400.0,5000.0
 2023,Singapore Institute of Technology,SIT- Massey University,Bachelor of Food Technology with Honours,87.5,72.9,3514.0,3500.0,3587.0,3500.0,3200.0,4000.0
-2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honoursin Chemical Engineering,75.9,74.1,3930.0,3925.0,4082.0,4000.0,3700.0,4250.0
-2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honoursin Electrical Power Engineering,81.2,76.8,4131.0,3950.0,4229.0,4000.0,3725.0,4500.0
-2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honoursin Marine Engineering,90.6,90.6,4475.0,4200.0,4634.0,4400.0,4000.0,5000.0
-2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Mechanical Design andManufacturing Engineering,79.2,69.4,4151.0,4200.0,4304.0,4200.0,4000.0,4600.0
-2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honoursin Naval Architecture,94.4,77.8,4332.0,4450.0,4349.0,4450.0,3700.0,4700.0
-2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honoursin Offshore Engineering,86.4,81.8,4400.0,4200.0,4418.0,4200.0,3800.0,4900.0
-2023,Singapore Institute of Technology,SIT-Trinity College Dublin,Bachelor of Science with Honours inPhysiotherapy,98.5,95.4,3823.0,3800.0,3874.0,3850.0,3660.0,4050.0
+2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Chemical Engineering,75.9,74.1,3930.0,3925.0,4082.0,4000.0,3700.0,4250.0
+2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Electrical Power Engineering,81.2,76.8,4131.0,3950.0,4229.0,4000.0,3725.0,4500.0
+2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Marine Engineering,90.6,90.6,4475.0,4200.0,4634.0,4400.0,4000.0,5000.0
+2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Mechanical Design and Manufacturing Engineering,79.2,69.4,4151.0,4200.0,4304.0,4200.0,4000.0,4600.0
+2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Naval Architecture,94.4,77.8,4332.0,4450.0,4349.0,4450.0,3700.0,4700.0
+2023,Singapore Institute of Technology,SIT- Newcastle University,Bachelor of Engineering with Honours in Offshore Engineering,86.4,81.8,4400.0,4200.0,4418.0,4200.0,3800.0,4900.0
+2023,Singapore Institute of Technology,SIT-Trinity College Dublin,Bachelor of Science with Honours in Physiotherapy,98.5,95.4,3823.0,3800.0,3874.0,3850.0,3660.0,4050.0
 2023,Singapore Institute of Technology,SIT-University of Glasgow,Bachelor of Engineering with Honours in Aerospace Engineering,77.5,67.5,4128.0,4000.0,4218.0,4100.0,3800.0,4500.0
 2023,Singapore Institute of Technology,SIT-University of Glasgow,Bachelor of Engineering with Honours in Civil Engineering,89.4,84.7,4010.0,4000.0,4185.0,4050.0,3800.0,4500.0
 2023,Singapore Institute of Technology,SIT-University of Glasgow,Bachelor of Engineering with Honours in Mechanical Engineering,72.9,68.8,4369.0,4400.0,4462.0,4400.0,4000.0,4800.0

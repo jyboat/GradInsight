@@ -51,68 +51,99 @@ def years():
 # ----------------------------
 @app.route("/analytics/employment")
 def employment_analytics():
-    university = request.args.get("university")
-    degree = request.args.get("degree")
+    universities = request.args.getlist("universities")
+    degrees = request.args.getlist("degrees")
     start_year = request.args.get("start_year", type=int)
     end_year = request.args.get("end_year", type=int)
 
-    data = df
+    if start_year is None or end_year is None:
+        return jsonify({"error": "start_year and end_year are required"}), 400
+    if start_year > end_year:
+        return jsonify({"error": "start_year cannot be greater than end_year"}), 400
+    if not universities:
+        return jsonify({"error": "At least one university is required"}), 400
+    if not degrees:
+        return jsonify({"error": "At least one degree is required"}), 400
 
-    # Apply filters
-    if university:
-        data = data[data["university"] == university]
-    if degree:
-        data = data[data["degree"] == degree]
-    if start_year:
-        data = data[data["year"] >= start_year]
-    if end_year:
-        data = data[data["year"] <= end_year]
+    data = df.copy()
+
+    # Apply filters (multi-select)
+    data = data[data["university"].isin(universities)]
+    data = data[data["degree"].isin(degrees)]
+    data = data[(data["year"] >= start_year) & (data["year"] <= end_year)]
 
     if data.empty:
         return jsonify({"error": "No data found for the selected filters."}), 404
 
-    # ---- Summary statistics ----
-    overall_mean = data["employment_rate_overall"].mean()
-    ft_mean = data["employment_rate_ft_perm"].mean()
+    full_years = list(range(start_year, end_year + 1))
 
-    summary = {
-        "overall_employment_rate": round(overall_mean, 2) if pd.notnull(overall_mean) else None,
-        "full_time_employment_rate": round(ft_mean, 2) if pd.notnull(ft_mean) else None
-    }
+    # Build complete grid: (university, degree) x year
+    course_keys = data[["university", "degree"]].drop_duplicates()
 
-    # ---- Trend analysis ----
-    trend_df = (
-        data.groupby("year")[["employment_rate_overall", "employment_rate_ft_perm"]]
+    grid_rows = []
+    for _, row in course_keys.iterrows():
+        for y in full_years:
+            grid_rows.append({"university": row["university"], "degree": row["degree"], "year": y})
+    grid_df = pd.DataFrame(grid_rows)
+
+    # Aggregate actual data
+    agg_df = (
+        data.groupby(["university", "degree", "year"], as_index=False)[
+            ["employment_rate_overall", "employment_rate_ft_perm"]
+        ]
         .mean()
-        .reset_index()
-        .sort_values("year")
     )
 
-    # Drop years with no usable employment data (e.g. incomplete 2023)
-    trend_df = trend_df.dropna(
-        subset=["employment_rate_overall", "employment_rate_ft_perm"],
-        how="all"
+    merged = pd.merge(
+        grid_df,
+        agg_df,
+        on=["university", "degree", "year"],
+        how="left"
     )
 
-    # Convert NaN → None (JSON-safe)
-    trend_df = trend_df.where(pd.notnull(trend_df), None)
+    # ---- CRITICAL: convert NaN -> None safely ----
+    def nan_to_none(x):
+        # pandas/numpy NaN check
+        return None if pd.isna(x) else float(x)
 
-    trend = {
-        "years": trend_df["year"].tolist(),
-        "overall": trend_df["employment_rate_overall"].tolist(),
-        "full_time": trend_df["employment_rate_ft_perm"].tolist()
-    }
+    merged["employment_rate_overall"] = merged["employment_rate_overall"].apply(nan_to_none)
+    merged["employment_rate_ft_perm"] = merged["employment_rate_ft_perm"].apply(nan_to_none)
 
-    return jsonify({
+    # Build response series
+    series = []
+    for (uni, deg), group in merged.groupby(["university", "degree"], sort=True):
+        group = group.sort_values("year")
+        series.append({
+            "university": uni,
+            "degree": deg,
+            "years": group["year"].astype(int).tolist(),
+            "overall_employment_rate": group["employment_rate_overall"].tolist(),
+            "full_time_employment_rate": group["employment_rate_ft_perm"].tolist()
+        })
+
+        response = {
         "filters": {
-            "university": university,
-            "degree": degree,
+            "universities": universities,
+            "degrees": degrees,
             "start_year": start_year,
             "end_year": end_year
         },
-        "summary": summary,
-        "trend": trend
-    })
+        "year_range": full_years,
+        "series": series
+    }
+
+    return jsonify(sanitize_for_json(response))
+
+
+    
+@app.route("/metadata/full")
+def metadata_full():
+    return jsonify(
+        df[["university", "degree"]]
+        .dropna()
+        .drop_duplicates()
+        .to_dict(orient="records")
+    )
 
 # ----------------------------
 # Analytics Function 2: Salary Distribution & Comparison
@@ -171,6 +202,19 @@ def salary_comparison():
         "p25": grouped["gross_mthly_25_percentile"].tolist(),
         "p75": grouped["gross_mthly_75_percentile"].tolist()
     })
+
+def sanitize_for_json(obj):
+    """
+    Recursively replace numpy.nan with None
+    so Flask returns strict JSON.
+    """
+    if isinstance(obj, dict):
+        return {k: sanitize_for_json(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [sanitize_for_json(v) for v in obj]
+    if pd.isna(obj):
+        return None
+    return obj
 
 # ----------------------------
 # Analytics Function 3: Trend Analysis Over Time

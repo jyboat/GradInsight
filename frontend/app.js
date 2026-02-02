@@ -4,8 +4,6 @@ const API_BASE = "http://127.0.0.1:5000";
 let chart;
 let minYear, maxYear;
 
-const universitySelect = document.getElementById("universitySelect");
-const degreeSelect = document.getElementById("degreeSelect");
 const startYear = document.getElementById("startYear");
 const endYear = document.getElementById("endYear");
 const result = document.getElementById("result");
@@ -16,48 +14,86 @@ const salaryItemsBox = document.getElementById("salaryItemsBox");
 const salarySearch = document.getElementById("salarySearch");
 const salaryResult = document.getElementById("salaryResult");
 
+const universityBox = document.getElementById("universityBox");
+const degreeBox = document.getElementById("degreeBox");
+
+let allData = [];   // raw dataset metadata
+let uniToDegrees = {};
+
 // ----------------------------
 // Load metadata
 // ----------------------------
 async function loadMetadata() {
-    const universities = await fetch(`${API_BASE}/metadata/universities`).then(r => r.json());
-    const degrees = await fetch(`${API_BASE}/metadata/degrees`).then(r => r.json());
-    const years = await fetch(`${API_BASE}/metadata/years`).then(r => r.json());
+  const res = await fetch(`${API_BASE}/metadata/full`);
+  allData = await res.json();
 
-    universities.forEach(u => {
-        const opt = document.createElement("option");
-        opt.value = u;
-        opt.text = u;
-        universitySelect.appendChild(opt);
-    });
+  // Build university → degree mapping
+  uniToDegrees = {};
+  allData.forEach(row => {
+    if (!uniToDegrees[row.university]) {
+      uniToDegrees[row.university] = new Set();
+    }
+    uniToDegrees[row.university].add(row.degree);
+  });
 
-    degrees.forEach(d => {
-        const opt = document.createElement("option");
-        opt.value = d;
-        opt.text = d;
-        degreeSelect.appendChild(opt);
-    });
+  // Render university checkboxes
+  renderUniversities();
 
-    minYear = years.min;
-    maxYear = years.max;
+  // Year inputs (unchanged)
+  const years = await fetch(`${API_BASE}/metadata/years`).then(r => r.json());
+  minYear = years.min;
+  maxYear = years.max;
 
-    startYear.min = minYear;
-    startYear.max = maxYear;
-    startYear.value = minYear;
+  startYear.min = minYear;
+  startYear.max = maxYear;
+  startYear.value = minYear;
 
-    endYear.min = minYear;
-    endYear.max = maxYear;
-    endYear.value = maxYear;
+  endYear.min = minYear;
+  endYear.max = maxYear;
+  endYear.value = maxYear;
+}
 
-    const salaryYear = document.getElementById("salaryYear");
-    salaryYear.min = minYear;
-    salaryYear.max = maxYear;
-    salaryYear.value = maxYear;
+function renderUniversities() {
+  const universities = Object.keys(uniToDegrees).sort();
+  universityBox.innerHTML = universities.map(u => `
+    <label style="display:block">
+      <input type="checkbox" value="${u}" onchange="onUniversityChange()">
+      ${u}
+    </label>
+  `).join("");
+}
 
-    fillSalaryItems("university", universities, degrees);
-    salaryCompareType.addEventListener("change", () => {
-        fillSalaryItems(salaryCompareType.value, universities, degrees);
-    });
+function onUniversityChange() {
+  const selectedUnis = getCheckedValues(universityBox);
+
+  if (!selectedUnis.length) {
+    degreeBox.innerHTML = "";
+    return;
+  }
+
+  renderDegrees(selectedUnis);
+}
+
+
+function renderDegrees(selectedUnis) {
+  const degrees = new Set();
+
+  selectedUnis.forEach(u => {
+    uniToDegrees[u]?.forEach(d => degrees.add(d));
+  });
+
+  degreeBox.innerHTML = Array.from(degrees).sort().map(d => `
+    <label style="display:block">
+      <input type="checkbox" value="${d}">
+      ${d}
+    </label>
+  `).join("");
+}
+
+function getCheckedValues(container) {
+  return Array.from(
+    container.querySelectorAll("input[type=checkbox]:checked")
+  ).map(cb => cb.value);
 }
 
 function fillSalaryItems(type, universities, degrees) {
@@ -84,104 +120,103 @@ function fillSalaryItems(type, universities, degrees) {
 // Run analytics
 // ----------------------------
 async function runAnalytics() {
-    const university = universitySelect.value;
-    const degree = degreeSelect.value;
-    const start = startYear.value;
-    const end = endYear.value;
+  const universities = getCheckedValues(universityBox);
+  const degrees = getCheckedValues(degreeBox);
+  const start = startYear.value;
+  const end = endYear.value;
 
-    if (start && end && parseInt(start) > parseInt(end)) {
-        result.innerText = "Start year cannot be later than end year.";
-        return;
-    }
+  if (!universities.length) {
+    result.innerText = "Please select at least one university.";
+    return;
+  }
 
-    const params = new URLSearchParams();
-    if (university) params.append("university", university);
-    if (degree) params.append("degree", degree);
-    if (start) params.append("start_year", start);
-    if (end) params.append("end_year", end);
+  if (!degrees.length) {
+    result.innerText = "Please select at least one course.";
+    return;
+  }
 
-    const res = await fetch(`${API_BASE}/analytics/employment?${params}`);
-    const data = await res.json();
+  if (parseInt(start) > parseInt(end)) {
+    result.innerText = "Start year cannot be later than end year.";
+    return;
+  }
 
-    if (data.error) {
-        result.innerText = data.error;
-        return;
-    }
+  const params = new URLSearchParams();
+  universities.forEach(u => params.append("universities", u));
+  degrees.forEach(d => params.append("degrees", d));
+  params.append("start_year", start);
+  params.append("end_year", end);
 
-    result.innerHTML = `
-    <p><strong>Filters Applied</strong></p>
-    <ul>
-        <li>University: ${university || "All"}</li>
-        <li>Degree: ${degree || "All"}</li>
-        <li>Years: ${start} - ${end}</li>
-    </ul>
-    <p><strong>Overall Employment Rate:</strong> ${data.summary.overall_employment_rate ?? "N/A"}%</p>
-    <p><strong>Full-Time Employment Rate:</strong> ${data.summary.full_time_employment_rate ?? "N/A"}%</p>
-    `;
+  const res = await fetch(`${API_BASE}/analytics/employment?${params}`);
+  const data = await res.json();
 
-    renderChart(data.trend);
+  if (data.error) {
+    result.innerText = data.error;
+    return;
+  }
+
+  result.innerHTML = `
+    <p><strong>Universities:</strong> ${universities.join(", ")}</p>
+    <p><strong>Courses:</strong> ${degrees.join(", ")}</p>
+    <p><strong>Years:</strong> ${start} – ${end}</p>
+  `;
+
+  renderEmploymentChart(data.series);
 }
 
 function resetFilters() {
-    // Reset dropdowns
-    universitySelect.value = "";
-    degreeSelect.value = "";
+  // Clear checkboxes
+  Array.from(universityBox.querySelectorAll("input[type=checkbox]"))
+    .forEach(cb => cb.checked = false);
 
-    // Reset year inputs
-    startYear.value = minYear;
-    endYear.value = maxYear;
-    startYear.max = maxYear;
-    endYear.min = minYear;
+  degreeBox.innerHTML = "";
 
-    // Clear results
-    result.innerHTML = "";
+  // Reset year inputs
+  startYear.value = minYear;
+  endYear.value = maxYear;
+  startYear.max = maxYear;
+  endYear.min = minYear;
 
-    // Clear chart
-    if (chart) {
-        chart.destroy();
-        chart = null;
-    }
+  // Clear results
+  result.innerHTML = "";
+
+  // Clear chart
+  if (chart) {
+    chart.destroy();
+    chart = null;
+  }
 }
+
 
 
 // ----------------------------
 // Render Chart
 // ----------------------------
-function renderChart(trend) {
-    const ctx = document.getElementById("employmentChart").getContext("2d");
+function renderEmploymentChart(series) {
+  const ctx = document.getElementById("employmentChart").getContext("2d");
+  if (chart) chart.destroy();
 
-    if (chart) chart.destroy();
+  const datasets = series.map(s => ({
+    label: `${s.degree} (${s.university})`,
+    data: s.overall_employment_rate,
+    spanGaps: false,
+    borderWidth: 2
+  }));
 
-    chart = new Chart(ctx, {
-        type: "line",
-        data: {
-            labels: trend.years,
-            datasets: [
-                {
-                    label: "Overall Employment Rate",
-                    data: trend.overall,
-                    borderWidth: 2,
-                    spanGaps: true
-                },
-                {
-                    label: "Full-Time Employment Rate",
-                    data: trend.full_time,
-                    borderWidth: 2,
-                    spanGaps: true
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 100
-                }
-            }
-        }
-    });
+  chart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: series[0].years,
+      datasets
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true, max: 100 }
+      }
+    }
+  });
 }
+
 
 function showSection(name) {
   document.getElementById("section-employment").style.display = (name === "employment") ? "block" : "none";

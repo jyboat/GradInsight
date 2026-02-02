@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>GradInsight</title>
 
     <style>
@@ -36,33 +37,29 @@
     </div>
 
     <div id="section-employment">
-    <h2>Employment Rate Analysis</h2>
+        <h2>Employment Rate Analysis</h2>
 
-    <label>University:</label>
-    <select id="universitySelect">
-        <option value="">All</option>
-    </select>
+        <h3>Step 1: Select University(s)</h3>
+        <div id="universityBox"></div>
 
-    <label>Degree:</label>
-    <select id="degreeSelect">
-        <option value="">All</option>
-    </select>
+        <h3>Step 2: Select Course(s)</h3>
+        <div id="degreeBox"></div>
 
-    <br><br>
+        <br><br>
 
-    <label>Start Year:</label>
-    <input type="number" id="startYear">
+        <label>Start Year:</label>
+        <input type="number" id="startYear">
 
-    <label>End Year:</label>
-    <input type="number" id="endYear">
+        <label>End Year:</label>
+        <input type="number" id="endYear">
 
-    <br><br>
+        <br><br>
 
-    <button onclick="runAnalytics()">Run Analysis</button>
-    <button onclick="resetFilters()">Reset Filters</button>
+        <button onclick="runAnalytics()">Run Analysis</button>
+        <button onclick="resetFilters()">Reset Filters</button>
 
-    <div class="result" id="result"></div>
-    <canvas id="employmentChart" width="700" height="350"></canvas>
+        <div class="result" id="result"></div>
+        <canvas id="employmentChart" width="700" height="350"></canvas>
     </div>
 
     <div id="section-salary" style="display:none;">
@@ -81,9 +78,12 @@
 
         <label>Select Items:</label><br>
         <br>
-        <input type="text" id="salarySearch" placeholder="Search..." style="width: 520px; margin:0; padding:6px; box-sizing:border-box;">
+        <input type="text" id="salarySearch" placeholder="Search..."
+            style="width: 520px; margin:0; padding:6px; box-sizing:border-box;">
         <br><br>
-        <div id="salaryItemsBox" style="width: 520px; height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 8px; box-sizing:border-box;"></div>
+        <div id="salaryItemsBox"
+            style="width: 520px; height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 8px; box-sizing:border-box;">
+        </div>
         <br>
         <button type="button" onclick="selectAllSalary()">Select All</button>
         <button type="button" onclick="clearSalary()">Clear</button>

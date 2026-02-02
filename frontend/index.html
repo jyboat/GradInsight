@@ -36,31 +36,32 @@
         <button onclick="showSection('trends')">Trends</button>
     </div>
 
-    <div id="section-employment">
-        <h2>Employment Rate Analysis</h2>
+    <h2>Employment Rate Analysis</h2>
 
-        <h3>Step 1: Select University(s)</h3>
-        <div id="universityBox"></div>
+    <h3>Step 1: Select University(s)</h3>
+    <div id="universityBox"></div>
 
-        <h3>Step 2: Select Course(s)</h3>
+    <h3>Step 2: Select Course(s)</h3>
+    <div id="step2Content" style="display:none;">
         <div id="degreeBox"></div>
+    </div>
 
-        <br><br>
-
+    <h3>Step 3: Select Year Range</h3>
+    <div id="step3Content" style="display:none;">
         <label>Start Year:</label>
         <input type="number" id="startYear">
 
         <label>End Year:</label>
         <input type="number" id="endYear">
-
-        <br><br>
-
-        <button onclick="runAnalytics()">Run Analysis</button>
-        <button onclick="resetFilters()">Reset Filters</button>
-
-        <div class="result" id="result"></div>
-        <canvas id="employmentChart" width="700" height="350"></canvas>
     </div>
+
+    <br><br>
+
+    <button onclick="runAnalytics()">Run Analysis</button>
+    <button onclick="resetFilters()">Reset Filters</button>
+
+    <div class="result" id="result"></div>
+    <canvas id="employmentChart" width="700" height="350"></canvas>
 
     <div id="section-salary" style="display:none;">
         <h2>Salary Distribution & Comparison</h2>

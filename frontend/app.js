@@ -17,6 +17,9 @@ const salaryResult = document.getElementById("salaryResult");
 const universityBox = document.getElementById("universityBox");
 const degreeBox = document.getElementById("degreeBox");
 
+const step2Content = document.getElementById("step2Content");
+const step3Content = document.getElementById("step3Content");
+
 let allData = [];   // raw dataset metadata
 let uniToDegrees = {};
 
@@ -41,6 +44,7 @@ async function loadMetadata() {
 
   // Year inputs (unchanged)
   const years = await fetch(`${API_BASE}/metadata/years`).then(r => r.json());
+
   minYear = years.min;
   maxYear = years.max;
 
@@ -67,13 +71,29 @@ function onUniversityChange() {
   const selectedUnis = getCheckedValues(universityBox);
 
   if (!selectedUnis.length) {
+    // Reset downstream steps
+    step2Content.style.display = "none";
+    step3Content.style.display = "none";
     degreeBox.innerHTML = "";
     return;
   }
 
+  // Show Step 2
+  step2Content.style.display = "block";
   renderDegrees(selectedUnis);
 }
 
+function onDegreeChange() {
+  const selectedDegrees = getCheckedValues(degreeBox);
+
+  if (!selectedDegrees.length) {
+    step3Content.style.display = "none";
+    return;
+  }
+
+  // Show Step 3
+  step3Content.style.display = "block";
+}
 
 function renderDegrees(selectedUnis) {
   const degrees = new Set();
@@ -84,7 +104,7 @@ function renderDegrees(selectedUnis) {
 
   degreeBox.innerHTML = Array.from(degrees).sort().map(d => `
     <label style="display:block">
-      <input type="checkbox" value="${d}">
+      <input type="checkbox" value="${d}" onchange="onDegreeChange()">
       ${d}
     </label>
   `).join("");
@@ -164,17 +184,20 @@ async function runAnalytics() {
 }
 
 function resetFilters() {
-  // Clear checkboxes
+  // Clear universities
   Array.from(universityBox.querySelectorAll("input[type=checkbox]"))
     .forEach(cb => cb.checked = false);
 
+  // Hide steps 2 & 3
+  step2Content.style.display = "none";
+  step3Content.style.display = "none";
+
+  // Clear degrees
   degreeBox.innerHTML = "";
 
-  // Reset year inputs
+  // Reset years
   startYear.value = minYear;
   endYear.value = maxYear;
-  startYear.max = maxYear;
-  endYear.min = minYear;
 
   // Clear results
   result.innerHTML = "";
@@ -185,8 +208,6 @@ function resetFilters() {
     chart = null;
   }
 }
-
-
 
 // ----------------------------
 // Render Chart
@@ -254,10 +275,10 @@ async function runSalaryComparison() {
     return;
   }
 
-   const prettyType = (type === "university") ? "Universities" : "Degrees";
-   const itemsText = selected.length ? selected.join(", ") : "Top 5";
+  const prettyType = (type === "university") ? "Universities" : "Degrees";
+  const itemsText = selected.length ? selected.join(", ") : "Top 5";
 
-   salaryResult.innerHTML = `
+  salaryResult.innerHTML = `
     <p><strong>Filters Applied</strong></p>
     <ul>
         <li>Year: ${year}</li>
@@ -266,10 +287,10 @@ async function runSalaryComparison() {
     </ul>
     `;
 
-    const avgMedian = average(data.median);
-    const avgMean = average(data.mean);
+  const avgMedian = average(data.median);
+  const avgMean = average(data.mean);
 
-    salaryResult.innerHTML += `
+  salaryResult.innerHTML += `
     <p><strong>Average Median Salary:</strong> ${avgMedian ? formatCurrency(avgMedian) : "N/A"}</p>
     <p><strong>Average Mean Salary:</strong> ${avgMean ? formatCurrency(avgMean) : "N/A"}</p>
     `;

@@ -119,6 +119,60 @@ function App() {
     setRunning(false)
   }
 
+  function SelectionSummary({
+    label,
+    items,
+    max = 3,
+  }: {
+    label: string
+    items: string[]
+    max?: number
+  }) {
+    const [expanded, setExpanded] = useState(false)
+
+    if (items.length === 0) {
+      return (
+        <div>
+          <strong>{label}:</strong> None
+        </div>
+      )
+    }
+
+    const visible = expanded ? items : items.slice(0, max)
+    const remaining = items.length - max
+
+    return (
+      <div className="text-sm">
+        <strong>{label}:</strong>{" "}
+        {visible.join(", ")}
+
+        {remaining > 0 && !expanded && (
+          <>
+            {" "}
+            <button
+              onClick={() => setExpanded(true)}
+              className="text-blue-600 underline"
+            >
+              +{remaining} more
+            </button>
+          </>
+        )}
+
+        {expanded && (
+          <>
+            {" "}
+            <button
+              onClick={() => setExpanded(false)}
+              className="text-blue-600 underline"
+            >
+              Show less
+            </button>
+          </>
+        )}
+      </div>
+    )
+  }
+
 
   return (
     <div className="min-h-screen bg-slate-50 p-6">
@@ -170,17 +224,15 @@ function App() {
               </div>
             )}
 
-            {/* DEBUG (temporary, helpful) */}
-            <div className="text-sm text-slate-600">
-              <div>
-                <strong>Universities:</strong>{" "}
-                {selectedUniversities.join(", ") || "None"}
-              </div>
-              <div>
-                <strong>Courses:</strong>{" "}
-                {selectedCourses.join(", ") || "None"}
-              </div>
-            </div>
+            <SelectionSummary
+              label="Universities"
+              items={selectedUniversities}
+            />
+
+            <SelectionSummary
+              label="Courses"
+              items={selectedCourses}
+            />
 
             {/* STEP 3 */}
             {selectedCourses.length > 0 && (
@@ -222,7 +274,7 @@ function App() {
           </>
         )}
       </div>
-    </div>
+    </div >
   )
 }
 

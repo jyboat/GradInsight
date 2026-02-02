@@ -1,5 +1,7 @@
 import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { useMemo, useState } from "react"
 
 type Props = {
   coursesByUniversity: Record<string, string[]>
@@ -14,14 +16,26 @@ export function Step2Courses({
   selectedCourses,
   onChange,
 }: Props) {
-  // Collect courses based on selected universities
-  const availableCourses = Array.from(
-    new Set(
-      selectedUniversities.flatMap(
-        uni => coursesByUniversity[uni] ?? []
+  const [query, setQuery] = useState("")
+
+  // Build grouped + filtered structure
+  const groupedCourses = useMemo(() => {
+    const result: Record<string, string[]> = {}
+
+    selectedUniversities.forEach(uni => {
+      const courses = coursesByUniversity[uni] ?? []
+      const filtered = courses.filter(c =>
+        c.toLowerCase().includes(query.toLowerCase())
       )
-    )
-  )
+      if (filtered.length > 0) {
+        result[uni] = filtered
+      }
+    })
+
+    return result
+  }, [coursesByUniversity, selectedUniversities, query])
+
+  const allVisibleCourses = Object.values(groupedCourses).flat()
 
   function toggle(course: string) {
     onChange(
@@ -32,7 +46,7 @@ export function Step2Courses({
   }
 
   function selectAll() {
-    onChange(availableCourses)
+    onChange(allVisibleCourses)
   }
 
   function clearAll() {
@@ -42,50 +56,73 @@ export function Step2Courses({
   return (
     <div className="space-y-3">
       {/* Header actions */}
-      <div className="flex justify-end gap-2">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={selectAll}
-          disabled={
-            availableCourses.length === 0 ||
-            selectedCourses.length === availableCourses.length
-          }
-        >
-          Select All
-        </Button>
+      <div className="flex items-center justify-between">
+        <div className="text-sm text-slate-600">
+          {selectedCourses.length} / {allVisibleCourses.length} selected
+        </div>
 
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={clearAll}
-          disabled={selectedCourses.length === 0}
-        >
-          Clear All
-        </Button>
-      </div>
-
-      {/* Checkbox list */}
-      <div className="space-y-1">
-        {availableCourses.map(course => (
-          <label
-            key={course}
-            className="flex items-center gap-2 cursor-pointer"
+        <div className="flex gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={selectAll}
+            disabled={
+              allVisibleCourses.length === 0 ||
+              selectedCourses.length === allVisibleCourses.length
+            }
           >
-            <Checkbox
-              checked={selectedCourses.includes(course)}
-              onCheckedChange={() => toggle(course)}
-            />
-            <span>{course}</span>
-          </label>
-        ))}
+            Select All
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={clearAll}
+            disabled={selectedCourses.length === 0}
+          >
+            Clear All
+          </Button>
+        </div>
       </div>
 
-      {availableCourses.length === 0 && (
-        <p className="text-sm text-slate-500">
-          No courses available for the selected universities.
-        </p>
-      )}
+      {/* Search */}
+      <Input
+        placeholder="Search courses…"
+        value={query}
+        onChange={e => setQuery(e.target.value)}
+      />
+
+      {/* Scrollable grouped list */}
+      <div className="max-h-80 overflow-y-auto border rounded-md p-2 space-y-3">
+        {Object.entries(groupedCourses).map(([uni, courses]) => (
+          <div key={uni}>
+            <div className="sticky top-0 z-10 bg-white text-xs font-semibold text-slate-500 py-1">
+              {uni}
+            </div>
+
+            <div className="space-y-1">
+              {courses.map(course => (
+                <label
+                  key={course}
+                  className="flex items-center gap-2 cursor-pointer"
+                >
+                  <Checkbox
+                    checked={selectedCourses.includes(course)}
+                    onCheckedChange={() => toggle(course)}
+                  />
+                  <span className="text-sm">{course}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {allVisibleCourses.length === 0 && (
+          <p className="text-sm text-slate-500">
+            No courses match your search.
+          </p>
+        )}
+      </div>
     </div>
   )
 }

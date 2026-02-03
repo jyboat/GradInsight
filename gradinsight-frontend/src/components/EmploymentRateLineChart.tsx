@@ -23,6 +23,7 @@ type Series = {
   degree: string
   years: number[]
   overall_employment_rate: (number | null)[]
+  data_source: string[]
 }
 
 type Props = {

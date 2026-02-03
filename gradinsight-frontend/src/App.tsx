@@ -4,6 +4,9 @@ import { EmploymentYearRangeSelector } from "@/components/EmploymentYearRangeSel
 import { EmploymentRateLineChart } from "@/components/EmploymentRateLineChart"
 import { useEffect, useMemo, useState } from "react"
 import { fetchMetadataFull, fetchYears, type MetadataRow } from "@/utils/api"
+import { SalaryComparisonPage } from "./pages/SalaryComparisonPage"
+
+type Section = "employment" | "salary" | "trends";
 
 function App() {
   const [metadata, setMetadata] = useState<MetadataRow[]>([])
@@ -17,6 +20,8 @@ function App() {
   const [running, setRunning] = useState(false)
 
   const [years, setYears] = useState({ start: 2013, end: 2023 })
+
+  const [section, setSection] = useState<Section>("employment")
 
   // ----------------------------
   // Load metadata
@@ -124,20 +129,42 @@ function App() {
           <h1 className="text-3xl font-bold">GradInsight</h1>
         </div>
 
+        <div className="flex gap-2">
+          <button
+            onClick={() => setSection("employment")}
+            className={`px-3 py-1 rounded ${section === "employment" ? "bg-slate-900 text-white" : "bg-white border"}`}
+          >
+            Employment
+          </button>
+          <button
+            onClick={() => setSection("salary")}
+            className={`px-3 py-1 rounded ${section === "salary" ? "bg-slate-900 text-white" : "bg-white border"}`}
+          >
+            Salary Comparison
+          </button>
+          <button
+            onClick={() => setSection("trends")}
+            className={`px-3 py-1 rounded ${section === "trends" ? "bg-slate-900 text-white" : "bg-white border"}`}
+          >
+            Trends
+          </button>
+        </div>
+
         {loading && <p className="text-slate-600">Loading metadata…</p>}
         {error && <p className="text-red-600">{error}</p>}
 
-        <div className="border-b pb-3">
-          <h2 className="text-xl font-semibold">
-            Employment Rate Analysis
-          </h2>
-          <p className="text-sm text-slate-600">
-            Explore overall graduate employment outcomes by university, course, and year.
-          </p>
-        </div>
-
         {!loading && !error && (
-          <>
+        <>
+          {section === "employment" && (
+            <>
+              <div className="border-b pb-3">
+              <h2 className="text-xl font-semibold">
+                Employment Rate Analysis
+              </h2>
+              <p className="text-sm text-slate-600">
+                Explore overall graduate employment outcomes by university, course, and year.
+              </p>
+            </div>
             {/* STEP 1 */}
             <div>
               <h3 className="text-base font-semibold">
@@ -224,6 +251,14 @@ function App() {
               </div>
             )}
           </>
+          )}
+          {section === "salary" && (
+            <SalaryComparisonPage
+              metadata={metadata}
+              yearsRange={yearsRange}
+            />
+          )}
+        </>
         )}
       </div>
     </div>

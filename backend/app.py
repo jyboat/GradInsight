@@ -165,19 +165,34 @@ def metadata_full():
 @app.route("/analytics/salary-comparison")
 def salary_comparison():
     year = request.args.get("year", type=int)
-    group_by = request.args.get("group_by", default="university")  # university or degree
+    start_year = request.args.get("start_year", type=int)
+    end_year = request.args.get("end_year", type=int)
 
-    selected_universities = request.args.getlist("universities") 
-    selected_degrees = request.args.getlist("degrees")            
+    group_by = request.args.get("group_by", default="university")
+    selected_universities = request.args.getlist("universities")
+    selected_degrees = request.args.getlist("degrees")
 
-    if year is None:
-        return jsonify({"error": "Missing required parameter: year"}), 400
     if group_by not in ["university", "degree"]:
         return jsonify({"error": "group_by must be 'university' or 'degree'"}), 400
 
-    data = df.copy()
-    data = data[data["year"] == year]
+    if start_year is None and end_year is None:
+        if year is None:
+            return jsonify({"error": "Missing required parameter: year OR start_year & end_year"}), 400
+        start_year = year
+        end_year = year
 
+    if start_year is None or end_year is None:
+        return jsonify({"error": "Both start_year and end_year are required for a range"}), 400
+
+    if start_year > end_year:
+        return jsonify({"error": "start_year cannot be later than end_year"}), 400
+
+    data = df.copy()
+
+    # Filter by year range
+    data = data[(data["year"] >= start_year) & (data["year"] <= end_year)]
+
+    # Apply selection filters
     if group_by == "university" and selected_universities:
         data = data[data["university"].isin(selected_universities)]
 
@@ -189,32 +204,73 @@ def salary_comparison():
     if data.empty:
         return jsonify({"error": "No salary data found for the selected filters."}), 404
 
-    grouped = (
-        data.groupby(group_by)[
-            ["gross_monthly_mean", "gross_monthly_median", "gross_mthly_25_percentile", "gross_mthly_75_percentile"]
-        ]
-        .mean()
-        .reset_index()
-        .sort_values("gross_monthly_median", ascending=False)
+    # Decide which items to include (Top 5 default)
+    selection_was_empty = (
+        (group_by == "university" and not selected_universities) or
+        (group_by == "degree" and not selected_degrees)
     )
 
-    if (group_by == "university" and not selected_universities) or (group_by == "degree" and not selected_degrees):
-        grouped = grouped.head(5)
+    # Compute Top 5
+    items = None
+    if selection_was_empty:
+        snapshot = data[data["year"] == end_year]
+        if snapshot.empty:
+            # fallback: use overall across range if end_year has no rows
+            snapshot = data
 
-    grouped = grouped.where(pd.notnull(grouped), None)
+        top = (
+            snapshot.groupby(group_by)[["gross_monthly_median"]]
+            .mean()
+            .reset_index()
+            .sort_values("gross_monthly_median", ascending=False)
+            .head(5)
+        )
+        items = top[group_by].tolist()
+        data = data[data[group_by].isin(items)]
+    else:
+        # Use selected items
+        if group_by == "university":
+            items = selected_universities
+        else:
+            items = selected_degrees
+
+    years = list(range(start_year, end_year + 1))
+
+    # Aggregate per (item, year)
+    grouped = (
+        data.groupby([group_by, "year"])[["gross_monthly_mean", "gross_monthly_median"]]
+        .mean()
+        .reset_index()
+    )
+
+    series = []
+    for item in items:
+        item_df = grouped[grouped[group_by] == item]
+
+        # map year to value
+        mean_map = dict(zip(item_df["year"], item_df["gross_monthly_mean"]))
+        median_map = dict(zip(item_df["year"], item_df["gross_monthly_median"]))
+
+        mean_vals = [None if pd.isna(mean_map.get(y, None)) else float(mean_map.get(y)) for y in years]
+        median_vals = [None if pd.isna(median_map.get(y, None)) else float(median_map.get(y)) for y in years]
+
+        series.append({
+            "label": item,
+            "mean": mean_vals,
+            "median": median_vals
+        })
 
     return jsonify({
         "filters": {
-            "year": year,
             "group_by": group_by,
             "universities": selected_universities,
-            "degrees": selected_degrees
+            "degrees": selected_degrees,
+            "start_year": start_year,
+            "end_year": end_year,
+            "top5_default": selection_was_empty
         },
-        "labels": grouped[group_by].tolist(),
-        "mean": grouped["gross_monthly_mean"].tolist(),
-        "median": grouped["gross_monthly_median"].tolist(),
-        "p25": grouped["gross_mthly_25_percentile"].tolist(),
-        "p75": grouped["gross_mthly_75_percentile"].tolist()
+        "years": years,
+        "series": series
     })
 
 def sanitize_for_json(obj):

@@ -105,7 +105,7 @@ async function runSalary() {
 
       {/* Items selector (checkbox + search UI) */}
       <div className="space-y-2">
-        <h3 className="text-base font-semibold">Step 2: Select Course(s)</h3>
+        <h3 className="text-base font-semibold">Step 2: Select Item(s)</h3>
         <SalaryCompareSelector
           items={items}
           selected={selectedItems}

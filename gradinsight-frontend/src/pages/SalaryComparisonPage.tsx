@@ -3,6 +3,7 @@ import type { MetadataRow } from "@/utils/api";
 import { EmploymentYearRangeSelector } from "@/components/EmploymentYearRangeSelector";
 import { SalaryCompareSelector } from "@/components/SalaryCompareSelector";
 import { SalaryLineChart } from "@/components/SalaryLineChart";
+import { PredictionToggle } from "@/components/PredictionToggle";
 
 type YearsRange = { min: number; max: number };
 
@@ -22,6 +23,8 @@ export function SalaryComparisonPage({ metadata, yearsRange }: Props) {
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const [enablePrediction, setEnablePrediction] = useState(false)
+
   // Build the selectable list from metadata
   const allUniversities = useMemo(() => {
     return Array.from(new Set(metadata.map(m => m.university))).sort();
@@ -38,42 +41,43 @@ export function SalaryComparisonPage({ metadata, yearsRange }: Props) {
     setError(null);
   }
 
-async function runSalary() {
-  if (!yearsRange) return;
+  async function runSalary() {
+    if (!yearsRange) return;
 
-  setRunning(true);
-  setResult(null);
-  setError(null);
+    setRunning(true);
+    setResult(null);
+    setError(null);
 
-  try {
-    const params = new URLSearchParams();
-    params.set("group_by", compareType);
-    params.set("start_year", String(years.start));
-    params.set("end_year", String(years.end));
+    try {
+      const params = new URLSearchParams();
+      params.set("group_by", compareType);
+      params.set("start_year", String(years.start));
+      params.set("end_year", String(years.end));
+      params.set("enable_prediction", String(enablePrediction));
 
-    if (compareType === "university") {
-      selectedItems.forEach((u) => params.append("universities", u));
-    } else {
-      selectedItems.forEach((d) => params.append("degrees", d));
+      if (compareType === "university") {
+        selectedItems.forEach((u) => params.append("universities", u));
+      } else {
+        selectedItems.forEach((d) => params.append("degrees", d));
+      }
+
+      const res = await fetch(
+        `${import.meta.env.VITE_API_BASE}/analytics/salary-comparison?${params.toString()}`
+      );
+
+      if (!res.ok) {
+        const txt = await res.text().catch(() => "");
+        throw new Error(txt || `Request failed (${res.status})`);
+      }
+
+      const data = await res.json();
+      setResult(data);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Failed to run salary analysis");
+    } finally {
+      setRunning(false);
     }
-
-    const res = await fetch(
-      `${import.meta.env.VITE_API_BASE}/analytics/salary-comparison?${params.toString()}`
-    );
-
-    if (!res.ok) {
-      const txt = await res.text().catch(() => "");
-      throw new Error(txt || `Request failed (${res.status})`);
-    }
-
-    const data = await res.json();
-    setResult(data);
-  } catch (e) {
-    setError(e instanceof Error ? e.message : "Failed to run salary analysis");
-  } finally {
-    setRunning(false);
   }
-}
 
   return (
     <div className="space-y-6">
@@ -114,39 +118,50 @@ async function runSalary() {
       </div>
 
       {/* Year range */}
-        {yearsRange && (
+      {yearsRange && (
         <div className="space-y-2">
-            <h3 className="text-base font-semibold">Step 3: Select Year Range</h3>
-            <EmploymentYearRangeSelector
+          <h3 className="text-base font-semibold">Step 3: Select Year Range</h3>
+          <EmploymentYearRangeSelector
             startYear={years.start}
             endYear={years.end}
             minYear={yearsRange.min}
             maxYear={yearsRange.max}
             onChange={(y) => { setYears(y); resetResults(); }}
-            />
+          />
         </div>
-        )}
+      )}
+
+      {/* STEP 4: Prediction Toggle */}
+      {yearsRange && (
+        <PredictionToggle
+          enabled={enablePrediction}
+          onChange={(val: boolean) => {
+            setEnablePrediction(val)
+            resetResults()
+          }}
+        />
+      )}
 
       {/* Run */}
-        {yearsRange && (
+      {yearsRange && (
         <div className="space-y-2">
-            {selectedItems.length === 0 && (
+          {selectedItems.length === 0 && (
             <p className="text-sm text-slate-600">
-                No items selected, showing Top 5 by {compareType}.
+              No items selected, showing Top 5 by {compareType}.
             </p>
-            )}
+          )}
 
-            {error && <p className="text-red-600 text-sm">{error}</p>}
+          {error && <p className="text-red-600 text-sm">{error}</p>}
 
-            <button
+          <button
             onClick={runSalary}
             disabled={running}
             className="px-4 py-2 rounded bg-slate-900 text-white disabled:opacity-50"
-            >
+          >
             {running ? "Running…" : "Run Salary Comparison"}
-            </button>
+          </button>
         </div>
-        )}
+      )}
 
       {/* Chart */}
       {result?.series && (

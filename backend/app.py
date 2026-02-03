@@ -52,7 +52,7 @@ def years():
     })
 
 # ----------------------------
-# Analytics Funciton 1: Employment Analytics
+# MARK: Analytics Funciton 1: Employment Analytics
 # ----------------------------
 @app.route("/analytics/employment", methods=["POST"])
 def employment_analytics():
@@ -175,6 +175,9 @@ def salary_comparison():
     selected_universities = request.args.getlist("universities")
     selected_degrees = request.args.getlist("degrees")
 
+    prediction_raw = request.args.get('enable_prediction', 'false').lower()
+    enable_prediction = prediction_raw == 'true'
+
     if group_by not in ["university", "degree"]:
         return jsonify({"error": "group_by must be 'university' or 'degree'"}), 400
 
@@ -237,13 +240,22 @@ def salary_comparison():
         else:
             items = selected_degrees
 
-    years = list(range(start_year, end_year + 1))
+    if enable_prediction:
+        data = get_predictions(data, numeric_columns)
+    else: 
+        data['data_source'] = 'actual'
+
+    latest_year = int(data['year'].unique().max())
+    years = list(range(start_year, latest_year + 1))
 
     # Aggregate per (item, year)
     grouped = (
-        data.groupby([group_by, "year"])[["gross_monthly_mean", "gross_monthly_median"]]
-        .mean()
-        .reset_index()
+        data.groupby([group_by, "year"], as_index=False)
+        .agg({
+            "gross_monthly_mean": "mean",
+            "gross_monthly_median": "mean",
+            "data_source": "first"  # Keeps the 'actual' or 'predicted' label
+        })
     )
 
     series = []
@@ -253,14 +265,17 @@ def salary_comparison():
         # map year to value
         mean_map = dict(zip(item_df["year"], item_df["gross_monthly_mean"]))
         median_map = dict(zip(item_df["year"], item_df["gross_monthly_median"]))
+        source_map = dict(zip(item_df["year"], item_df["data_source"]))
 
         mean_vals = [None if pd.isna(mean_map.get(y, None)) else float(mean_map.get(y)) for y in years]
         median_vals = [None if pd.isna(median_map.get(y, None)) else float(median_map.get(y)) for y in years]
+        source_vals = [source_map.get(y, "actual") for y in years]
 
         series.append({
             "label": item,
             "mean": mean_vals,
-            "median": median_vals
+            "median": median_vals,
+            "data_source": source_vals
         })
 
     return jsonify({

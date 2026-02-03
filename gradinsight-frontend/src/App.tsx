@@ -158,48 +158,48 @@ function App() {
         {error && <p className="text-red-600">{error}</p>}
 
         {!loading && !error && (
-        <>
-          {section === "employment" && (
-            <>
-              <div className="border-b pb-3">
-              <h2 className="text-xl font-semibold">
-                Employment Rate Analysis
-              </h2>
-              <p className="text-sm text-slate-600">
-                Explore overall graduate employment outcomes by university, course, and year.
-              </p>
-            </div>
-            {/* STEP 1 */}
-            <div>
-              <h3 className="text-base font-semibold">
-                Step 1: Select University(s)
-              </h3>
-              <EmploymentUniversitiesSelector
-                universities={allUniversities}
-                selected={selectedUniversities}
-                onChange={(vals) => {
-                  setSelectedUniversities(vals)
-                  setSelectedCourses([])
-                  resetResults()
-                }}
-              />
-            </div>
+          <>
+            {section === "employment" && (
+              <>
+                <div className="border-b pb-3">
+                  <h2 className="text-xl font-semibold">
+                    Employment Rate Analysis
+                  </h2>
+                  <p className="text-sm text-slate-600">
+                    Explore overall graduate employment outcomes by university, course, and year.
+                  </p>
+                </div>
+                {/* STEP 1 */}
+                <div>
+                  <h3 className="text-base font-semibold">
+                    Step 1: Select University(s)
+                  </h3>
+                  <EmploymentUniversitiesSelector
+                    universities={allUniversities}
+                    selected={selectedUniversities}
+                    onChange={(vals) => {
+                      setSelectedUniversities(vals)
+                      setSelectedCourses([])
+                      resetResults()
+                    }}
+                  />
+                </div>
 
-            {/* STEP 2 */}
-            {selectedUniversities.length > 0 && (
-              <div>
-                <h2 className="text-lg font-semibold">Step 2: Select Course(s)</h2>
-                <EmploymentCoursesSelector
-                  coursesByUniversity={coursesByUniversity}
-                  selectedUniversities={selectedUniversities}
-                  selectedCourses={selectedCourses}
-                  onChange={(courses) => {
-                    setSelectedCourses(courses)
-                    resetResults()
-                  }}
-                />
-              </div>
-            )}
+                {/* STEP 2 */}
+                {selectedUniversities.length > 0 && (
+                  <div>
+                    <h2 className="text-lg font-semibold">Step 2: Select Course(s)</h2>
+                    <EmploymentCoursesSelector
+                      coursesByUniversity={coursesByUniversity}
+                      selectedUniversities={selectedUniversities}
+                      selectedCourses={selectedCourses}
+                      onChange={(courses) => {
+                        setSelectedCourses(courses)
+                        resetResults()
+                      }}
+                    />
+                  </div>
+                )}
 
                 {/* STEP 2 */}
                 {selectedUniversities.length > 0 && (

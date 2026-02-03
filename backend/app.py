@@ -62,7 +62,7 @@ def employment_analytics():
     degrees = payload.get("degrees", [])
     start_year = payload.get("start_year")
     end_year = payload.get("end_year")
-
+    enable_prediction = payload.get("enable_prediction", False)
 
     if start_year is None or end_year is None:
         return jsonify({"error": "start_year and end_year are required"}), 400
@@ -83,10 +83,13 @@ def employment_analytics():
     if data.empty:
         return jsonify({"error": "No data found for the selected filters."}), 404
     
-    data = get_predictions(data, numeric_columns)
+    if enable_prediction:
+        data = get_predictions(data, numeric_columns)
+    else: 
+        data['data_source'] = 'actual'
 
-    current_year = datetime.now().year
-    full_years = list(range(start_year, current_year + 1))
+    latest_year = int(data['year'].unique().max())
+    full_years = list(range(start_year, latest_year + 1))
 
     # Build complete grid: (university, degree) x year
     course_keys = data[["university", "degree"]].drop_duplicates()

@@ -5,6 +5,7 @@ import { EmploymentRateLineChart } from "@/components/EmploymentRateLineChart"
 import { useEffect, useMemo, useState } from "react"
 import { fetchMetadataFull, fetchYears, type MetadataRow } from "@/utils/api"
 import { SalaryComparisonPage } from "./pages/SalaryComparisonPage"
+import { PredictionToggle } from "./components/PredictionToggle"
 
 type Section = "employment" | "salary" | "trends";
 
@@ -20,6 +21,8 @@ function App() {
   const [running, setRunning] = useState(false)
 
   const [years, setYears] = useState({ start: 2013, end: 2023 })
+
+  const [enablePrediction, setEnablePrediction] = useState(false)
 
   const [section, setSection] = useState<Section>("employment")
 
@@ -103,6 +106,7 @@ function App() {
           degrees: selectedCourses,
           start_year: years.start,
           end_year: years.end,
+          enable_prediction: enablePrediction
         }),
       }
     )
@@ -197,68 +201,95 @@ function App() {
               </div>
             )}
 
-            {/* STEP 3 */}
-            {selectedCourses.length > 0 && yearsRange && (
-              <div>
-                <h2 className="text-lg font-semibold">Step 3: Select Year Range</h2>
-                <EmploymentYearRangeSelector
-                  startYear={years.start}
-                  endYear={years.end}
-                  minYear={yearsRange.min}
-                  maxYear={yearsRange.max}
-                  onChange={(y) => {
-                    setYears(y)
-                    resetResults()
-                  }}
-                />
-              </div>
-            )}
-
-            {/* Warnings + Run */}
-            {selectedCourses.length > 0 && (
-              <div className="space-y-2">
-                {displayMode === "aggregate" && (
-                  <p className="text-sm text-blue-600">
-                    ℹ️ {courseCount} courses selected.
-                    Showing averages per university for clarity.
-                  </p>
+                {/* STEP 2 */}
+                {selectedUniversities.length > 0 && (
+                  <div>
+                    <h2 className="text-lg font-semibold">Step 2: Select Course(s)</h2>
+                    <EmploymentCoursesSelector
+                      coursesByUniversity={coursesByUniversity}
+                      selectedUniversities={selectedUniversities}
+                      selectedCourses={selectedCourses}
+                      onChange={(courses) => {
+                        setSelectedCourses(courses)
+                        resetResults()
+                      }}
+                    />
+                  </div>
                 )}
 
-                <button
-                  onClick={runAnalysis}
-                  disabled={running}
-                  className="px-4 py-2 rounded bg-slate-900 text-white disabled:opacity-50"
-                >
-                  {running ? "Running…" : "Run Analysis"}
-                </button>
-              </div>
+                {/* STEP 3 */}
+                {selectedCourses.length > 0 && yearsRange && (
+                  <div>
+                    <h2 className="text-lg font-semibold">Step 3: Select Year Range</h2>
+                    <EmploymentYearRangeSelector
+                      startYear={years.start}
+                      endYear={years.end}
+                      minYear={yearsRange.min}
+                      maxYear={yearsRange.max}
+                      onChange={(y) => {
+                        setYears(y)
+                        resetResults()
+                      }}
+                    />
+                  </div>
+                )}
+
+                {/* STEP 4: Prediction Toggle */}
+                {selectedCourses.length > 0 && yearsRange && (
+                  <PredictionToggle
+                    enabled={enablePrediction}
+                    onChange={(val: boolean) => {
+                      setEnablePrediction(val)
+                      resetResults()
+                    }}
+                  />
+                )}
+
+                {/* Warnings + Run */}
+                {selectedCourses.length > 0 && (
+                  <div className="space-y-2">
+                    {displayMode === "aggregate" && (
+                      <p className="text-sm text-blue-600">
+                        ℹ️ {courseCount} courses selected.
+                        Showing averages per university for clarity.
+                      </p>
+                    )}
+
+                    <button
+                      onClick={runAnalysis}
+                      disabled={running}
+                      className="px-4 py-2 rounded bg-slate-900 text-white disabled:opacity-50"
+                    >
+                      {running ? "Running…" : "Run Analysis"}
+                    </button>
+                  </div>
+                )}
+
+                {/* Chart */}
+                {result?.series && (
+                  <div className="mt-6 space-y-2">
+                    <h3 className="text-lg font-semibold">
+                      Employment Rate Over Time
+                    </h3>
+                    <p className="text-sm text-slate-600">
+                      Overall employment rate (%) of graduates across selected years.
+                    </p>
+
+                    <EmploymentRateLineChart
+                      series={result.series}
+                      aggregate={displayMode === "aggregate"}
+                    />
+                  </div>
+                )}
+              </>
             )}
-
-            {/* Chart */}
-            {result?.series && (
-              <div className="mt-6 space-y-2">
-                <h3 className="text-lg font-semibold">
-                  Employment Rate Over Time
-                </h3>
-                <p className="text-sm text-slate-600">
-                  Overall employment rate (%) of graduates across selected years.
-                </p>
-
-                <EmploymentRateLineChart
-                  series={result.series}
-                  aggregate={displayMode === "aggregate"}
-                />
-              </div>
+            {section === "salary" && (
+              <SalaryComparisonPage
+                metadata={metadata}
+                yearsRange={yearsRange}
+              />
             )}
           </>
-          )}
-          {section === "salary" && (
-            <SalaryComparisonPage
-              metadata={metadata}
-              yearsRange={yearsRange}
-            />
-          )}
-        </>
         )}
       </div>
     </div>

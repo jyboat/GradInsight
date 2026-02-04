@@ -7,7 +7,7 @@ import { fetchMetadataFull, fetchYears, type MetadataRow } from "@/utils/api"
 import { SalaryComparisonPage } from "./pages/SalaryComparisonPage"
 import { PredictionToggle } from "./components/PredictionToggle"
 
-type Section = "employment" | "salary" | "trends";
+type Section = "employment" | "salary" | "dispersion";
 
 function App() {
   const [metadata, setMetadata] = useState<MetadataRow[]>([])
@@ -138,7 +138,7 @@ function App() {
             onClick={() => setSection("employment")}
             className={`px-3 py-1 rounded ${section === "employment" ? "bg-slate-900 text-white" : "bg-white border"}`}
           >
-            Employment
+            Employment Rate
           </button>
           <button
             onClick={() => setSection("salary")}
@@ -147,10 +147,10 @@ function App() {
             Salary Comparison
           </button>
           <button
-            onClick={() => setSection("trends")}
-            className={`px-3 py-1 rounded ${section === "trends" ? "bg-slate-900 text-white" : "bg-white border"}`}
+            onClick={() => setSection("dispersion")}
+            className={`px-3 py-1 rounded ${section === "dispersion" ? "bg-slate-900 text-white" : "bg-white border"}`}
           >
-            Trends
+            Salary Dispersion
           </button>
         </div>
 

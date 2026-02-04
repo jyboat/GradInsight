@@ -241,7 +241,7 @@ def salary_comparison():
             items = selected_degrees
 
     if enable_prediction:
-        data = get_predictions(data, numeric_columns)
+        data = get_predictions(data, numeric_columns, group_by)
     else: 
         data['data_source'] = 'actual'
 
@@ -304,76 +304,81 @@ def sanitize_for_json(obj):
         return None
     return obj
 
-def get_predictions(df, target_columns, degree_col='degree'):
+def get_predictions(df, target_columns, group_col='degree'):
     current_year = datetime.now().year
-    unique_degrees = df[degree_col].unique()
     
+    if group_col not in df.columns:
+        raise ValueError(f"Column '{group_col}' not found in DataFrame.")
+
+    unique_groups = df[group_col].unique()
     all_new_rows = []
 
-    for degree in unique_degrees:
-        # Get all rows for this degree to capture 'other' column values
-        degree_df = df[df[degree_col] == degree].copy()
+    for group_val in unique_groups:
+        sub_df = df[df[group_col] == group_val].copy()
         
-        # Identify "other" columns (excluding year, degree, and targets)
-        other_cols = [c for c in df.columns if c not in target_columns and c != 'year' and c != degree_col]
+        # Identify metadata columns to carry forward
+        metadata_cols = [
+            c for c in df.columns 
+            if c not in target_columns and c not in ['year', group_col, 'data_source']
+        ]
         
-        # Get the most recent values for the 'other' columns to carry forward
-        last_known_metadata = degree_df.sort_values('year').iloc[-1][other_cols]
+        # Get the most recent values for metadata
+        latest_entry = sub_df.sort_values('year').iloc[-1]
+        last_known_metadata = latest_entry[metadata_cols].to_dict()
 
-        # Dictionary to store predictions for this specific degree
-        degree_predictions = {}
+        predictions_list = []
 
         for target in target_columns:
-            temp_df = degree_df.groupby('year')[target].mean().reset_index()
+            # Prepare data for Prophet
+            temp_df = sub_df.groupby('year')[target].mean().reset_index()
             last_data_year = temp_df['year'].max()
             periods_to_forecast = max(0, current_year - last_data_year) 
             
-            if len(temp_df) < 2 or periods_to_forecast == 0:
+            # Prophet needs at least 2 data points; also check if we actually need to forecast
+            if len(temp_df.dropna()) < 2 or periods_to_forecast <= 0:
                 continue
 
-            temp_df.columns = ['ds', 'y']
-            temp_df['ds'] = pd.to_datetime(temp_df['ds'], format='%Y') + YearEnd(0)
+            # Formatting for Prophet
+            prophet_df = temp_df.rename(columns={'year': 'ds', target: 'y'})
+            prophet_df['ds'] = pd.to_datetime(prophet_df['ds'], format='%Y') + YearEnd(0)
 
             model = Prophet(yearly_seasonality=False, changepoint_prior_scale=0.05)
-            model.fit(temp_df)
+            model.fit(prophet_df)
             
             future = model.make_future_dataframe(periods=periods_to_forecast, freq='YE')
             forecast = model.predict(future)
             
-            # Keep only the future years
+            # Extract only the predicted years
             forecast['year'] = forecast['ds'].dt.year
             new_preds = forecast[forecast['year'] > last_data_year][['year', 'yhat']]
-            degree_predictions[target] = new_preds
+            new_preds = new_preds.rename(columns={'yhat': target})
+            predictions_list.append(new_preds)
 
-        # If we have predictions, merge them and add the 'other' columns
-        if degree_predictions:
-            # Combine multiple targets for this degree
-            first_target = list(degree_predictions.keys())[0]
-            combined_future = degree_predictions[first_target].rename(columns={'yhat': first_target})
-            
-            for target in list(degree_predictions.keys())[1:]:
-                target_df = degree_predictions[target].rename(columns={'yhat': target})
-                combined_future = pd.merge(combined_future, target_df, on='year', how='outer')
+        if predictions_list:
+            # Merge all target predictions for this group on 'year'
+            # from reduce import reduce # or use a simple loop
+            group_future = predictions_list[0]
+            for next_df in predictions_list[1:]:
+                group_future = pd.merge(group_future, next_df, on='year', how='outer')
 
-            # Add the degree column back
-            combined_future[degree_col] = degree
+            # Re-insert the group identifier and metadata
+            group_future[group_col] = group_val
+            for col, val in last_known_metadata.items():
+                group_future[col] = val
             
-            # Carry forward the 'other' metadata columns
-            for col in other_cols:
-                combined_future[col] = last_known_metadata[col]
-            
-            all_new_rows.append(combined_future)
+            all_new_rows.append(group_future)
 
     if not all_new_rows:
         return df
 
-    # Combine everything
+    # Combine actual and predicted data
     final_predictions = pd.concat(all_new_rows, ignore_index=True)
-
-    df['data_source'] = 'actual'
+    
+    df_out = df.copy()
+    df_out['data_source'] = 'actual'
     final_predictions['data_source'] = 'predicted'
 
-    return pd.concat([df, final_predictions], ignore_index=True).sort_values(['year', degree_col])
+    return pd.concat([df_out, final_predictions], ignore_index=True).sort_values(['year', group_col])
 
 # ----------------------------
 # Analytics Function 3: Trend Analysis Over Time

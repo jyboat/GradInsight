@@ -201,22 +201,6 @@ function App() {
                   </div>
                 )}
 
-                {/* STEP 2 */}
-                {selectedUniversities.length > 0 && (
-                  <div>
-                    <h2 className="text-lg font-semibold">Step 2: Select Course(s)</h2>
-                    <EmploymentCoursesSelector
-                      coursesByUniversity={coursesByUniversity}
-                      selectedUniversities={selectedUniversities}
-                      selectedCourses={selectedCourses}
-                      onChange={(courses) => {
-                        setSelectedCourses(courses)
-                        resetResults()
-                      }}
-                    />
-                  </div>
-                )}
-
                 {/* STEP 3 */}
                 {selectedCourses.length > 0 && yearsRange && (
                   <div>

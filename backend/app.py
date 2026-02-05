@@ -14,6 +14,7 @@ CORS(app)
 # Load and preprocess dataset
 # ----------------------------
 df = pd.read_csv("data/GraduateEmploymentSurvey.csv")
+predictions_df = pd.read_csv("data/GES_with_Predictions.csv")
 
 numeric_columns = [
     "employment_rate_overall",
@@ -73,7 +74,11 @@ def employment_analytics():
     if not degrees:
         return jsonify({"error": "At least one degree is required"}), 400
 
-    data = df.copy()
+    if enable_prediction:
+        data = predictions_df.copy()
+    else: 
+        data = df.copy()
+        data['data_source'] = 'actual'
 
     # Apply filters (multi-select)
     data = data[data["university"].isin(universities)]
@@ -83,10 +88,10 @@ def employment_analytics():
     if data.empty:
         return jsonify({"error": "No data found for the selected filters."}), 404
     
-    if enable_prediction:
-        data = get_predictions(data, numeric_columns)
-    else: 
-        data['data_source'] = 'actual'
+    # if enable_prediction:
+    #     data = get_predictions(data, numeric_columns)
+    # else: 
+    #     data['data_source'] = 'actual'
 
     latest_year = int(data['year'].unique().max())
     full_years = list(range(start_year, latest_year + 1))
@@ -193,7 +198,12 @@ def salary_comparison():
     if start_year > end_year:
         return jsonify({"error": "start_year cannot be later than end_year"}), 400
 
-    data = df.copy()
+    if enable_prediction:
+        data = predictions_df.copy()
+        end_year = int(data['year'].unique().max())
+    else: 
+        data = df.copy()
+        data['data_source'] = 'actual'
 
     # Filter by year range
     data = data[(data["year"] >= start_year) & (data["year"] <= end_year)]
@@ -240,13 +250,12 @@ def salary_comparison():
         else:
             items = selected_degrees
 
-    if enable_prediction:
-        data = get_predictions(data, numeric_columns, group_by)
-    else: 
-        data['data_source'] = 'actual'
+    # if enable_prediction:
+    #     data = get_predictions(data, numeric_columns, group_by)
+    # else: 
+    #     data['data_source'] = 'actual'
 
-    latest_year = int(data['year'].unique().max())
-    years = list(range(start_year, latest_year + 1))
+    years = list(range(start_year, end_year + 1))
 
     # Aggregate per (item, year)
     grouped = (

@@ -4,6 +4,7 @@ import { EmploymentYearRangeSelector } from "@/components/EmploymentYearRangeSel
 import { SalaryCompareSelector } from "@/components/SalaryCompareSelector";
 import { SalaryLineChart } from "@/components/SalaryLineChart";
 import { PredictionToggle } from "@/components/PredictionToggle";
+import { EmploymentCoursesSelector } from "@/components/EmploymentCoursesSelector";
 
 type YearsRange = { min: number; max: number };
 
@@ -25,16 +26,32 @@ export function SalaryComparisonPage({ metadata, yearsRange }: Props) {
 
   const [enablePrediction, setEnablePrediction] = useState(false)
 
+  const AGG_THRESHOLD = 5;
+
+  const aggregate = compareType === "degree" && selectedItems.length > AGG_THRESHOLD;
+
   // Build the selectable list from metadata
+  // const allDegrees = useMemo(() => {
+  //   return Array.from(new Set(metadata.map(m => m.degree))).sort();
+  // }, [metadata]);
+
+  const coursesByUniversity = useMemo(() => {
+    const map: Record<string, string[]> = {};
+    metadata.forEach((row) => {
+      if (!map[row.university]) map[row.university] = [];
+      map[row.university].push(row.degree);
+    });
+    Object.keys(map).forEach((uni) => {
+      map[uni] = Array.from(new Set(map[uni])).sort();
+    });
+    return map;
+  }, [metadata]);
+
   const allUniversities = useMemo(() => {
-    return Array.from(new Set(metadata.map(m => m.university))).sort();
-  }, [metadata]);
+    return Object.keys(coursesByUniversity).sort();
+  }, [coursesByUniversity]);
 
-  const allDegrees = useMemo(() => {
-    return Array.from(new Set(metadata.map(m => m.degree))).sort();
-  }, [metadata]);
-
-  const items = compareType === "university" ? allUniversities : allDegrees;
+  // const items = compareType === "university" ? allUniversities : allDegrees;
 
   function resetResults() {
     setResult(null);
@@ -54,6 +71,7 @@ export function SalaryComparisonPage({ metadata, yearsRange }: Props) {
       params.set("start_year", String(years.start));
       params.set("end_year", String(years.end));
       params.set("enable_prediction", String(enablePrediction));
+      params.set("aggregate", aggregate ? "1" : "0");
 
       if (compareType === "university") {
         selectedItems.forEach((u) => params.append("universities", u));
@@ -109,12 +127,30 @@ export function SalaryComparisonPage({ metadata, yearsRange }: Props) {
 
       {/* Items selector (checkbox + search UI) */}
       <div className="space-y-2">
-        <h3 className="text-base font-semibold">Step 2: Select Item(s)</h3>
-        <SalaryCompareSelector
-          items={items}
-          selected={selectedItems}
-          onChange={(vals) => { setSelectedItems(vals); resetResults(); }}
-        />
+        <h3 className="text-base font-semibold">
+          Step 2: Select {compareType === "university" ? "University(s)" : "Degree Programme(s)"}
+        </h3>
+
+        {compareType === "university" ? (
+          <SalaryCompareSelector
+            items={allUniversities}
+            selected={selectedItems}
+            onChange={(vals) => {
+              setSelectedItems(vals);
+              resetResults();
+            }}
+          />
+        ) : (
+          <EmploymentCoursesSelector
+            coursesByUniversity={coursesByUniversity}
+            selectedUniversities={allUniversities}
+            selectedCourses={selectedItems}       
+            onChange={(courses) => {
+              setSelectedItems(courses);
+              resetResults();
+            }}
+          />
+        )}
       </div>
 
       {/* Year range */}
@@ -140,6 +176,12 @@ export function SalaryComparisonPage({ metadata, yearsRange }: Props) {
             resetResults()
           }}
         />
+      )}
+
+      {aggregate && (
+        <p className="text-sm text-blue-600">
+          ℹ️ {selectedItems.length} degrees selected — showing averages per university for clarity.
+        </p>
       )}
 
       {/* Run */}

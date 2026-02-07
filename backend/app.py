@@ -179,6 +179,7 @@ def salary_comparison():
     group_by = request.args.get("group_by", default="university")
     selected_universities = request.args.getlist("universities")
     selected_degrees = request.args.getlist("degrees")
+    aggregate = request.args.get("aggregate", default="0") == "1"
 
     prediction_raw = request.args.get('enable_prediction', 'false').lower()
     enable_prediction = prediction_raw == 'true'
@@ -255,23 +256,33 @@ def salary_comparison():
     # else: 
     #     data['data_source'] = 'actual'
 
+    label_col = group_by
+    if group_by == "degree" and aggregate:
+        label_col = "university"
+
     years = list(range(start_year, end_year + 1))
 
-    # Aggregate per (item, year)
+    years = list(range(start_year, end_year + 1))
+
+    # Aggregate per (label_col, year)
     grouped = (
-        data.groupby([group_by, "year"], as_index=False)
+        data.groupby([label_col, "year"], as_index=False)
         .agg({
             "gross_monthly_mean": "mean",
             "gross_monthly_median": "mean",
-            "data_source": "first"  # Keeps the 'actual' or 'predicted' label
+            "data_source": "first"
         })
     )
 
-    series = []
-    for item in items:
-        item_df = grouped[grouped[group_by] == item]
+    if group_by == "degree" and aggregate:
+        items_for_series = sorted(grouped[label_col].dropna().unique().tolist())
+    else:
+        items_for_series = items
 
-        # map year to value
+    series = []
+    for item in items_for_series:
+        item_df = grouped[grouped[label_col] == item]
+
         mean_map = dict(zip(item_df["year"], item_df["gross_monthly_mean"]))
         median_map = dict(zip(item_df["year"], item_df["gross_monthly_median"]))
         source_map = dict(zip(item_df["year"], item_df["data_source"]))
@@ -294,7 +305,8 @@ def salary_comparison():
             "degrees": selected_degrees,
             "start_year": start_year,
             "end_year": end_year,
-            "top5_default": selection_was_empty
+            "top5_default": selection_was_empty,
+            "aggregate": aggregate
         },
         "years": years,
         "series": series

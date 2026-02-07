@@ -3,7 +3,7 @@ import pandas as pd
 from flask_cors import CORS
 
 import pandas as pd
-from prophet import Prophet
+# from prophet import Prophet
 from pandas.tseries.offsets import YearEnd
 from datetime import datetime
 
@@ -325,81 +325,81 @@ def sanitize_for_json(obj):
         return None
     return obj
 
-def get_predictions(df, target_columns, group_col='degree'):
-    current_year = datetime.now().year
+# def get_predictions(df, target_columns, group_col='degree'):
+#     current_year = datetime.now().year
     
-    if group_col not in df.columns:
-        raise ValueError(f"Column '{group_col}' not found in DataFrame.")
+#     if group_col not in df.columns:
+#         raise ValueError(f"Column '{group_col}' not found in DataFrame.")
 
-    unique_groups = df[group_col].unique()
-    all_new_rows = []
+#     unique_groups = df[group_col].unique()
+#     all_new_rows = []
 
-    for group_val in unique_groups:
-        sub_df = df[df[group_col] == group_val].copy()
+#     for group_val in unique_groups:
+#         sub_df = df[df[group_col] == group_val].copy()
         
-        # Identify metadata columns to carry forward
-        metadata_cols = [
-            c for c in df.columns 
-            if c not in target_columns and c not in ['year', group_col, 'data_source']
-        ]
+#         # Identify metadata columns to carry forward
+#         metadata_cols = [
+#             c for c in df.columns 
+#             if c not in target_columns and c not in ['year', group_col, 'data_source']
+#         ]
         
-        # Get the most recent values for metadata
-        latest_entry = sub_df.sort_values('year').iloc[-1]
-        last_known_metadata = latest_entry[metadata_cols].to_dict()
+#         # Get the most recent values for metadata
+#         latest_entry = sub_df.sort_values('year').iloc[-1]
+#         last_known_metadata = latest_entry[metadata_cols].to_dict()
 
-        predictions_list = []
+#         predictions_list = []
 
-        for target in target_columns:
-            # Prepare data for Prophet
-            temp_df = sub_df.groupby('year')[target].mean().reset_index()
-            last_data_year = temp_df['year'].max()
-            periods_to_forecast = max(0, current_year - last_data_year) 
+#         for target in target_columns:
+#             # Prepare data for Prophet
+#             temp_df = sub_df.groupby('year')[target].mean().reset_index()
+#             last_data_year = temp_df['year'].max()
+#             periods_to_forecast = max(0, current_year - last_data_year) 
             
-            # Prophet needs at least 2 data points; also check if we actually need to forecast
-            if len(temp_df.dropna()) < 2 or periods_to_forecast <= 0:
-                continue
+#             # Prophet needs at least 2 data points; also check if we actually need to forecast
+#             if len(temp_df.dropna()) < 2 or periods_to_forecast <= 0:
+#                 continue
 
-            # Formatting for Prophet
-            prophet_df = temp_df.rename(columns={'year': 'ds', target: 'y'})
-            prophet_df['ds'] = pd.to_datetime(prophet_df['ds'], format='%Y') + YearEnd(0)
+#             # Formatting for Prophet
+#             prophet_df = temp_df.rename(columns={'year': 'ds', target: 'y'})
+#             prophet_df['ds'] = pd.to_datetime(prophet_df['ds'], format='%Y') + YearEnd(0)
 
-            model = Prophet(yearly_seasonality=False, changepoint_prior_scale=0.05)
-            model.fit(prophet_df)
+#             model = Prophet(yearly_seasonality=False, changepoint_prior_scale=0.05)
+#             model.fit(prophet_df)
             
-            future = model.make_future_dataframe(periods=periods_to_forecast, freq='YE')
-            forecast = model.predict(future)
+#             future = model.make_future_dataframe(periods=periods_to_forecast, freq='YE')
+#             forecast = model.predict(future)
             
-            # Extract only the predicted years
-            forecast['year'] = forecast['ds'].dt.year
-            new_preds = forecast[forecast['year'] > last_data_year][['year', 'yhat']]
-            new_preds = new_preds.rename(columns={'yhat': target})
-            predictions_list.append(new_preds)
+#             # Extract only the predicted years
+#             forecast['year'] = forecast['ds'].dt.year
+#             new_preds = forecast[forecast['year'] > last_data_year][['year', 'yhat']]
+#             new_preds = new_preds.rename(columns={'yhat': target})
+#             predictions_list.append(new_preds)
 
-        if predictions_list:
-            # Merge all target predictions for this group on 'year'
-            # from reduce import reduce # or use a simple loop
-            group_future = predictions_list[0]
-            for next_df in predictions_list[1:]:
-                group_future = pd.merge(group_future, next_df, on='year', how='outer')
+#         if predictions_list:
+#             # Merge all target predictions for this group on 'year'
+#             # from reduce import reduce # or use a simple loop
+#             group_future = predictions_list[0]
+#             for next_df in predictions_list[1:]:
+#                 group_future = pd.merge(group_future, next_df, on='year', how='outer')
 
-            # Re-insert the group identifier and metadata
-            group_future[group_col] = group_val
-            for col, val in last_known_metadata.items():
-                group_future[col] = val
+#             # Re-insert the group identifier and metadata
+#             group_future[group_col] = group_val
+#             for col, val in last_known_metadata.items():
+#                 group_future[col] = val
             
-            all_new_rows.append(group_future)
+#             all_new_rows.append(group_future)
 
-    if not all_new_rows:
-        return df
+#     if not all_new_rows:
+#         return df
 
-    # Combine actual and predicted data
-    final_predictions = pd.concat(all_new_rows, ignore_index=True)
+#     # Combine actual and predicted data
+#     final_predictions = pd.concat(all_new_rows, ignore_index=True)
     
-    df_out = df.copy()
-    df_out['data_source'] = 'actual'
-    final_predictions['data_source'] = 'predicted'
+#     df_out = df.copy()
+#     df_out['data_source'] = 'actual'
+#     final_predictions['data_source'] = 'predicted'
 
-    return pd.concat([df_out, final_predictions], ignore_index=True).sort_values(['year', group_col])
+#     return pd.concat([df_out, final_predictions], ignore_index=True).sort_values(['year', group_col])
 
 # ----------------------------
 # Analytics Function 3: Trend Analysis Over Time

@@ -32,6 +32,9 @@ function App() {
   const [employmentResult, setEmploymentResult] = useState<any>(null)
   const [dispersionResult, setDispersionResult] = useState<any>(null)
 
+  const [dispersionReady, setDispersionReady] = useState(false)
+  const [dispersionMessage, setDispersionMessage] = useState<string | null>(null)
+
   // ----------------------------
   // Load metadata
   // ----------------------------
@@ -138,6 +141,67 @@ function App() {
     setDispersionResult(data)
     setRunning(false)
   }
+
+  useEffect(() => {
+    async function validateDispersion() {
+      // Only validate when inputs make sense
+      if (
+        section !== "dispersion" ||
+        selectedCourses.length === 0 ||
+        selectedCourses.length > 7 ||
+        !yearsRange
+      ) {
+        setDispersionReady(false)
+        setDispersionMessage(null)
+        return
+      }
+
+      try {
+        const res = await fetch(
+          `${import.meta.env.VITE_API_BASE}/analytics/salary-dispersion`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              universities: selectedUniversities,
+              degrees: selectedCourses,
+              year: years.start,
+            }),
+          }
+        )
+
+        if (!res.ok) {
+          setDispersionReady(false)
+          setDispersionMessage("No salary data available for this selection.")
+          return
+        }
+
+        const data = await res.json()
+
+        if (!data.series || data.series.length === 0) {
+          setDispersionReady(false)
+          setDispersionMessage("No salary data available for the selected year.")
+          return
+        }
+
+        // Valid data exists
+        setDispersionReady(true)
+        setDispersionMessage(null)
+      } catch {
+        setDispersionReady(false)
+        setDispersionMessage("Unable to validate salary data.")
+      }
+    }
+
+    validateDispersion()
+  }, [
+    section,
+    selectedUniversities,
+    selectedCourses,
+    years.start,
+    yearsRange,
+  ])
+
 
   // ----------------------------
   // UI
@@ -352,11 +416,16 @@ function App() {
                     You can compare salary dispersion for up to 7 degrees at a time.
                   </p>
                 )}
+                {dispersionMessage && (
+                  <p className="text-sm text-amber-600">
+                    ⚠️ {dispersionMessage}
+                  </p>
+                )}
 
                 {selectedCourses.length > 0 && selectedCourses.length <= 7 && (
                   <button
                     onClick={runSalaryDispersion}
-                    disabled={running}
+                    disabled={running || !dispersionReady}
                     className="px-4 py-2 rounded bg-slate-900 text-white disabled:opacity-50"
                   >
                     {running ? "Running…" : "Run Salary Dispersion"}

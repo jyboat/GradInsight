@@ -377,5 +377,63 @@ def salary_dispersion():
         "series": series
     }))
 
+@app.route("/analytics/salary-dispersion/validate", methods=["POST"])
+def validate_salary_dispersion():
+    payload = request.get_json(silent=True) or {}
+
+    universities = payload.get("universities", [])
+    degrees = payload.get("degrees", [])
+    year = payload.get("year")
+
+    if year is None:
+        return jsonify({"error": "year is required"}), 400
+
+    if not degrees:
+        return jsonify({"error": "At least one degree is required"}), 400
+
+    data = df.copy()
+    data = data[data["year"] == int(year)]
+    data = data[data["degree"].isin(degrees)]
+
+    if universities:
+        data = data[data["university"].isin(universities)]
+
+    # Only keep rows with at least one dispersion value
+    data = data.dropna(
+        subset=[
+            "gross_mthly_25_percentile",
+            "gross_monthly_median",
+            "gross_mthly_75_percentile",
+        ],
+        how="all",
+    )
+
+    valid = []
+    invalid = []
+
+    # Build lookup of valid (degree, university)
+    valid_pairs = set(
+        (row["degree"], row["university"])
+        for _, row in data.iterrows()
+    )
+
+    for deg in degrees:
+        matched = False
+        for uni in universities or df["university"].unique():
+            if (deg, uni) in valid_pairs:
+                matched = True
+                valid.append(f"{deg} ({uni})")
+        if not matched:
+            invalid.append(deg)
+
+    return jsonify({
+        "year": int(year),
+        "valid": sorted(set(valid)),
+        "invalid": sorted(set(invalid)),
+        "valid_count": len(set(valid)),
+        "invalid_count": len(set(invalid)),
+    })
+
+
 if __name__ == "__main__":
     app.run(debug=True)

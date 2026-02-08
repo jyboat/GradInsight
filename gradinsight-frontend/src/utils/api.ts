@@ -51,3 +51,31 @@ export async function fetchSalaryDispersion(params: {
 
   return data
 }
+
+
+export async function validateSalaryDispersion(params: {
+  universities: string[]
+  degrees: string[]
+  year: number
+}): Promise<{
+  valid: string[]
+  invalid: string[]
+  valid_count: number
+  invalid_count: number
+}> {
+  const base = requireApiBase()
+
+  const res = await fetch(`${base}/analytics/salary-dispersion/validate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(params),
+  })
+
+  const data = await res.json().catch(() => null)
+
+  if (!res.ok) {
+    throw new Error(data?.error || "Validation failed")
+  }
+
+  return data
+}

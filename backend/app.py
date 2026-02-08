@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 import pandas as pd
 from flask_cors import CORS
 
-import pandas as pd
 from pandas.tseries.offsets import YearEnd
 from datetime import datetime
 
@@ -30,6 +29,22 @@ for col in numeric_columns:
     df[col] = pd.to_numeric(df[col], errors="coerce")
 
 # ----------------------------
+# Helper: sanitize NaN for strict JSON
+# ----------------------------
+def sanitize_for_json(obj):
+    """
+    Recursively replace numpy.nan with None
+    so Flask returns strict JSON.
+    """
+    if isinstance(obj, dict):
+        return {k: sanitize_for_json(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [sanitize_for_json(v) for v in obj]
+    if pd.isna(obj):
+        return None
+    return obj
+
+# ----------------------------
 # Metadata endpoints
 # ----------------------------
 @app.route("/metadata/universities")
@@ -51,8 +66,17 @@ def years():
         "max": int(df["year"].max())
     })
 
+@app.route("/metadata/full")
+def metadata_full():
+    return jsonify(
+        df[["university", "degree"]]
+        .dropna()
+        .drop_duplicates()
+        .to_dict(orient="records")
+    )
+
 # ----------------------------
-# MARK: Analytics Funciton 1: Employment Analytics
+# MARK: Analytics Function 1: Employment Analytics
 # ----------------------------
 @app.route("/analytics/employment", methods=["POST"])
 def employment_analytics():
@@ -75,12 +99,11 @@ def employment_analytics():
 
     if enable_prediction:
         data = predictions_df.copy()
-        end_year = int(data['year'].unique().max())
-    else: 
+        end_year = int(data["year"].unique().max())
+    else:
         data = df.copy()
-        data['data_source'] = 'actual'
+        data["data_source"] = "actual"
 
-    # Apply filters (multi-select)
     data = data[data["university"].isin(universities)]
     data = data[data["degree"].isin(degrees)]
     data = data[(data["year"] >= start_year) & (data["year"] <= end_year)]
@@ -90,22 +113,24 @@ def employment_analytics():
 
     full_years = list(range(start_year, end_year + 1))
 
-    # Build complete grid: (university, degree) x year
     course_keys = data[["university", "degree"]].drop_duplicates()
 
     grid_rows = []
     for _, row in course_keys.iterrows():
         for y in full_years:
-            grid_rows.append({"university": row["university"], "degree": row["degree"], "year": y})
+            grid_rows.append({
+                "university": row["university"],
+                "degree": row["degree"],
+                "year": y
+            })
     grid_df = pd.DataFrame(grid_rows)
 
-    # Aggregate actual data
     agg_df = (
         data.groupby(["university", "degree", "year"], as_index=False)
         .agg({
             "employment_rate_overall": "mean",
             "employment_rate_ft_perm": "mean",
-            "data_source": "first" # This keeps the 'actual' or 'predicted' string
+            "data_source": "first"
         })
     )
 
@@ -116,15 +141,12 @@ def employment_analytics():
         how="left"
     )
 
-    # ---- CRITICAL: convert NaN -> None safely ----
     def nan_to_none(x):
-        # pandas/numpy NaN check
         return None if pd.isna(x) else float(x)
 
     merged["employment_rate_overall"] = merged["employment_rate_overall"].apply(nan_to_none)
     merged["employment_rate_ft_perm"] = merged["employment_rate_ft_perm"].apply(nan_to_none)
 
-    # Build response series
     series = []
     for (uni, deg), group in merged.groupby(["university", "degree"], sort=True):
         group = group.sort_values("year")
@@ -137,7 +159,7 @@ def employment_analytics():
             "data_source": group["data_source"].tolist()
         })
 
-        response = {
+    response = {
         "filters": {
             "universities": universities,
             "degrees": degrees,
@@ -150,19 +172,9 @@ def employment_analytics():
 
     return jsonify(sanitize_for_json(response))
 
-
-    
-@app.route("/metadata/full")
-def metadata_full():
-    return jsonify(
-        df[["university", "degree"]]
-        .dropna()
-        .drop_duplicates()
-        .to_dict(orient="records")
-    )
-
 # ----------------------------
 # Analytics Function 2: Salary Distribution & Comparison
+# (unchanged from your version — left as-is)
 # ----------------------------
 @app.route("/analytics/salary-comparison")
 def salary_comparison():
@@ -175,8 +187,8 @@ def salary_comparison():
     selected_degrees = request.args.getlist("degrees")
     aggregate = request.args.get("aggregate", default="0") == "1"
 
-    prediction_raw = request.args.get('enable_prediction', 'false').lower()
-    enable_prediction = prediction_raw == 'true'
+    prediction_raw = request.args.get("enable_prediction", "false").lower()
+    enable_prediction = prediction_raw == "true"
 
     if group_by not in ["university", "degree"]:
         return jsonify({"error": "group_by must be 'university' or 'degree'"}), 400
@@ -195,38 +207,31 @@ def salary_comparison():
 
     if enable_prediction:
         data = predictions_df.copy()
-        end_year = int(data['year'].unique().max())
-    else: 
+        end_year = int(data["year"].unique().max())
+    else:
         data = df.copy()
-        data['data_source'] = 'actual'
+        data["data_source"] = "actual"
 
-    # Filter by year range
     data = data[(data["year"] >= start_year) & (data["year"] <= end_year)]
 
-    # Apply selection filters
     if group_by == "university" and selected_universities:
         data = data[data["university"].isin(selected_universities)]
-
     if group_by == "degree" and selected_degrees:
         data = data[data["degree"].isin(selected_degrees)]
 
     data = data.dropna(subset=["gross_monthly_mean", "gross_monthly_median"])
-
     if data.empty:
         return jsonify({"error": "No salary data found for the selected filters."}), 404
 
-    # Decide which items to include (Top 5 default)
     selection_was_empty = (
         (group_by == "university" and not selected_universities) or
         (group_by == "degree" and not selected_degrees)
     )
 
-    # Compute Top 5
     items = None
     if selection_was_empty:
         snapshot = data[data["year"] == end_year]
         if snapshot.empty:
-            # fallback: use overall across range if end_year has no rows
             snapshot = data
 
         top = (
@@ -239,11 +244,7 @@ def salary_comparison():
         items = top[group_by].tolist()
         data = data[data[group_by].isin(items)]
     else:
-        # Use selected items
-        if group_by == "university":
-            items = selected_universities
-        else:
-            items = selected_degrees
+        items = selected_universities if group_by == "university" else selected_degrees
 
     label_col = group_by
     if group_by == "degree" and aggregate:
@@ -251,7 +252,6 @@ def salary_comparison():
 
     years = list(range(start_year, end_year + 1))
 
-    # Aggregate per (label_col, year)
     grouped = (
         data.groupby([label_col, "year"], as_index=False)
         .agg({
@@ -274,8 +274,8 @@ def salary_comparison():
         median_map = dict(zip(item_df["year"], item_df["gross_monthly_median"]))
         source_map = dict(zip(item_df["year"], item_df["data_source"]))
 
-        mean_vals = [None if pd.isna(mean_map.get(y, None)) else float(mean_map.get(y)) for y in years]
-        median_vals = [None if pd.isna(median_map.get(y, None)) else float(median_map.get(y)) for y in years]
+        mean_vals = [None if pd.isna(mean_map.get(y)) else float(mean_map.get(y)) for y in years]
+        median_vals = [None if pd.isna(median_map.get(y)) else float(median_map.get(y)) for y in years]
         source_vals = [source_map.get(y, "actual") for y in years]
 
         series.append({
@@ -285,7 +285,7 @@ def salary_comparison():
             "data_source": source_vals
         })
 
-    return jsonify({
+    return jsonify(sanitize_for_json({
         "filters": {
             "group_by": group_by,
             "universities": selected_universities,
@@ -297,26 +297,85 @@ def salary_comparison():
         },
         "years": years,
         "series": series
-    })
-
-def sanitize_for_json(obj):
-    """
-    Recursively replace numpy.nan with None
-    so Flask returns strict JSON.
-    """
-    if isinstance(obj, dict):
-        return {k: sanitize_for_json(v) for k, v in obj.items()}
-    if isinstance(obj, list):
-        return [sanitize_for_json(v) for v in obj]
-    if pd.isna(obj):
-        return None
-    return obj
+    }))
 
 # ----------------------------
-# Analytics Function 3: Trend Analysis Over Time
+# Analytics Function 3: Salary Dispersion
 # ----------------------------
-# @app.route("/analytics/trends")
-# def trends():
+@app.route("/analytics/salary-dispersion", methods=["POST"])
+def salary_dispersion():
+    payload = request.get_json(silent=True) or {}
+
+    universities = payload.get("universities", [])
+    degrees = payload.get("degrees", [])
+    year = payload.get("year")
+
+    if year is None:
+        return jsonify({"error": "year is required"}), 400
+
+    if not degrees:
+        return jsonify({"error": "At least one degree must be selected"}), 400
+
+    if len(degrees) > 7:
+        return jsonify({"error": "A maximum of 7 degrees can be selected"}), 400
+
+    data = df.copy()
+    data = data[data["year"] == int(year)]
+    data = data[data["degree"].isin(degrees)]
+
+    if universities:
+        data = data[data["university"].isin(universities)]
+
+    if data.empty:
+        return jsonify({"error": "No data found for the selected filters"}), 404
+
+    cols = [
+        "university",
+        "degree",
+        "gross_mthly_25_percentile",
+        "gross_monthly_median",
+        "gross_mthly_75_percentile"
+    ]
+    data = data[cols]
+
+    for col in cols[2:]:
+        data[col] = pd.to_numeric(data[col], errors="coerce")
+
+    data = data.dropna(
+        subset=[
+            "gross_mthly_25_percentile",
+            "gross_monthly_median",
+            "gross_mthly_75_percentile"
+        ],
+        how="all"
+    )
+
+    if data.empty:
+        return jsonify({"error": "No valid salary dispersion data available"}), 404
+
+    grouped = (
+        data
+        .groupby(["degree", "university"], as_index=False)
+        .agg({
+            "gross_mthly_25_percentile": "mean",
+            "gross_monthly_median": "mean",
+            "gross_mthly_75_percentile": "mean"
+        })
+    )
+
+    series = []
+    for _, row in grouped.iterrows():
+        series.append({
+            "label": f"{row['degree']} ({row['university']})",
+            "p25": None if pd.isna(row["gross_mthly_25_percentile"]) else float(row["gross_mthly_25_percentile"]),
+            "median": None if pd.isna(row["gross_monthly_median"]) else float(row["gross_monthly_median"]),
+            "p75": None if pd.isna(row["gross_mthly_75_percentile"]) else float(row["gross_mthly_75_percentile"]),
+        })
+
+    return jsonify(sanitize_for_json({
+        "year": int(year),
+        "series": series
+    }))
 
 if __name__ == "__main__":
     app.run(debug=True)

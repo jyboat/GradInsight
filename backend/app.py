@@ -75,6 +75,7 @@ def employment_analytics():
 
     if enable_prediction:
         data = predictions_df.copy()
+        end_year = int(data['year'].unique().max())
     else: 
         data = df.copy()
         data['data_source'] = 'actual'
@@ -87,8 +88,7 @@ def employment_analytics():
     if data.empty:
         return jsonify({"error": "No data found for the selected filters."}), 404
 
-    latest_year = int(data['year'].unique().max())
-    full_years = list(range(start_year, latest_year + 1))
+    full_years = list(range(start_year, end_year + 1))
 
     # Build complete grid: (university, degree) x year
     course_keys = data[["university", "degree"]].drop_duplicates()
@@ -248,8 +248,6 @@ def salary_comparison():
     label_col = group_by
     if group_by == "degree" and aggregate:
         label_col = "university"
-
-    years = list(range(start_year, end_year + 1))
 
     years = list(range(start_year, end_year + 1))
 

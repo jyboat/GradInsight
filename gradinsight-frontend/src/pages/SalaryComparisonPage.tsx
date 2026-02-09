@@ -24,16 +24,13 @@ export function SalaryComparisonPage({ metadata, yearsRange }: Props) {
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const [metric, setMetric] = useState<"mean" | "median">("mean");
+
   const [enablePrediction, setEnablePrediction] = useState(false)
 
   const AGG_THRESHOLD = 5;
 
   const aggregate = compareType === "degree" && selectedItems.length > AGG_THRESHOLD;
-
-  // Build the selectable list from metadata
-  // const allDegrees = useMemo(() => {
-  //   return Array.from(new Set(metadata.map(m => m.degree))).sort();
-  // }, [metadata]);
 
   const coursesByUniversity = useMemo(() => {
     const map: Record<string, string[]> = {};
@@ -167,6 +164,25 @@ export function SalaryComparisonPage({ metadata, yearsRange }: Props) {
         </div>
       )}
 
+      {/* Salary Metric */}
+      <div className="space-y-2">
+        <h3 className="text-base font-semibold">Step 4: Choose Salary Metric</h3>
+        <div className="flex gap-2">
+          <button
+            onClick={() => { setMetric("mean"); resetResults(); }}
+            className={`px-3 py-1 rounded ${metric === "mean" ? "bg-slate-900 text-white" : "bg-white border"}`}
+          >
+            Mean
+          </button>
+          <button
+            onClick={() => { setMetric("median"); resetResults(); }}
+            className={`px-3 py-1 rounded ${metric === "median" ? "bg-slate-900 text-white" : "bg-white border"}`}
+          >
+            Median
+          </button>
+        </div>
+      </div>
+
       {/* STEP 4: Prediction Toggle */}
       {yearsRange && (
         <PredictionToggle
@@ -213,7 +229,7 @@ export function SalaryComparisonPage({ metadata, yearsRange }: Props) {
             Salary metric per year across selected items.
           </p>
 
-          <SalaryLineChart years={result.years} series={result.series} />
+          <SalaryLineChart years={result.years} series={result.series} metric={metric} />
         </div>
       )}
     </div>

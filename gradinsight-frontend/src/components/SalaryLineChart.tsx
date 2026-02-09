@@ -8,12 +8,15 @@ type SalarySeries = {
   data_source: string[];
 };
 
+type SalaryMetric = "mean" | "median";
+
 type Props = {
   years: number[];
   series: SalarySeries[];
+  metric: SalaryMetric;
 };
 
-export function SalaryLineChart({ years, series }: Props) {
+export function SalaryLineChart({ years, series, metric }: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const chartRef = useRef<Chart | null>(null);
 
@@ -27,31 +30,18 @@ export function SalaryLineChart({ years, series }: Props) {
       chartRef.current = null;
     }
 
-    const datasets = series.flatMap((s) => [
-      {
-        label: `${s.label} (Median)`,
-        data: s.median,
-        borderWidth: 2,
-        spanGaps: false,
-        segment: {
-          // ctx.p1DataIndex is the index of the point the line is drawing towards
-          borderDash: (ctx: any) =>
-            s.data_source[ctx.p1DataIndex] === 'predicted' ? [6, 6] : undefined,
-        }
+    const metricLabel = metric === "mean" ? "Mean" : "Median";
+
+    const datasets = series.map((s) => ({
+      label: `${s.label} (${metricLabel})`,
+      data: metric === "mean" ? s.mean : s.median,
+      borderWidth: 2,
+      spanGaps: false,
+      segment: {
+        borderDash: (ctx: any) =>
+          s.data_source?.[ctx.p1DataIndex] === "predicted" ? [6, 6] : undefined,
       },
-      {
-        label: `${s.label} (Mean)`,
-        data: s.mean,
-        borderWidth: 2,
-        // borderDash: [6, 6],
-        spanGaps: false,
-        segment: {
-          // ctx.p1DataIndex is the index of the point the line is drawing towards
-          borderDash: (ctx: any) =>
-            s.data_source[ctx.p1DataIndex] === 'predicted' ? [6, 6] : undefined,
-        }
-      },
-    ]);
+    }));
 
     chartRef.current = new Chart(canvas, {
       type: "line",
@@ -62,21 +52,29 @@ export function SalaryLineChart({ years, series }: Props) {
           legend: { display: true },
           tooltip: {
             callbacks: {
-              // Add a "Predicted" label to the tooltip itself
               footer: (items) => {
-                const index = items[0].dataIndex;
-                const isPredicted = series[0].data_source[index] === 'predicted';
-                return isPredicted ? '(AI Predicted Values)' : '(Official Data)';
-              }
-            }
-          }
+                const item = items?.[0];
+                if (!item) return "";
+
+                const index = item.dataIndex;
+
+                const dsLabel = item.dataset.label || "";
+                const baseLabel = dsLabel.replace(/\s*\((Mean|Median)\)\s*$/, "");
+
+                const s = series.find((x) => x.label === baseLabel);
+                const isPredicted = s?.data_source?.[index] === "predicted";
+
+                return isPredicted ? "(AI Predicted Values)" : "(Official Data)";
+              },
+            },
+          },
         },
         scales: {
           y: {
             beginAtZero: false,
-            title: { display: true, text: 'Monthly Salary (SGD)' }
-          }
-        }
+            title: { display: true, text: "Monthly Salary (SGD)" },
+          },
+        },
       },
     });
 
@@ -86,7 +84,7 @@ export function SalaryLineChart({ years, series }: Props) {
         chartRef.current = null;
       }
     };
-  }, [years, series]);
+  }, [years, series, metric]);
 
   return <canvas ref={canvasRef} />;
 }
